@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #myHeader {
+                background-color: lightblue;
+                color: black;
+                padding: 40px;
+                text-align: center;
+            } 
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <h1 id="myHeader">My Header</h1>
+
+        <button onclick="updateHeader()">Update Header</button>
+
+        <script>
+            function updateHeader() {
+                document.getElementById("myHeader").innerHTML = "Have a nice day!";
+            }
+        </script>
+    </body>
+</html>

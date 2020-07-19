@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" />
+
+    <title>Bootstrap</title>
+    <style>
+        .container div {
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+        }
+        .d-flex div, .d-sm-flex div, .d-md-flex div, .d-lg-flex div, .d-xl-flex div {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h5><a href="index.html">&lt;&lt; Back To Home</a></h5>
+    <div class="container">
+        <h4>Spacing Utilities - Margin and Padding</h4>
+        <p>{property}{sides}-{breakpoint}-{size} Ex: pl-sm-1</p>
+        <p>{property}{sides}-{size} If we omit the {breakpoint} then, it is effective on all the devices. Ex: pl-1</p>
+        <p>{property}-{size} - If we omit the {sides}, then property will be applied to all sides. Ex: p-1</p>
+        <p>Below are possible values</p>
+        <p>{property} - m, p</p>
+        <p>{sides} - t, b, l, r, x, y</p>
+        <p>{breakpoint} - sm, md, lg, xl</p>
+        <p>{size} - 0, 1, 2, 3, 4, 5, auto</p>
+        <p>{size} ranging from 0-3 rem. 1rem = 16px. 'auto' works only for margin.</p>
+        
+        <p><b>Padding All sides - {property}-{size}</b></p>
+        <div class="p-0">Some content</div>
+        <div class="p-1">Some content</div>
+        <div class="p-2">Some content</div>
+        <div class="p-3">Some content</div>
+        <div class="p-4">Some content</div>
+        <div class="p-5">Some content</div>
+
+        <p><b>Margin All sides - {property}-{size}</b></p>
+        <div class="m-0">Some content</div>
+        <div class="m-1">Some content</div>
+        <div class="m-2">Some content</div>
+        <div class="m-3">Some content</div>
+        <div class="m-4">Some content</div>
+        <div class="m-5">Some content</div>
+        <div class="w-50 m-auto">'auto' works only for margin property.</div><br>
+
+        <p><b>Specific side - {property}{sides}-{size}</b></p> 
+        <div class="pl-3">Some content</div>
+        <div class="ml-3">Some content</div>
+        <div class="px-3">Some content</div>
+        <div class="mx-3">Some content</div>
+        <div class="py-3">Some content</div>
+        <div class="my-3">Some content</div>
+        <div class="mx-auto w-75">Some content</div>
+        <div class="ml-auto w-75">Some content</div>
+        <div class="mr-auto w-75">Some content</div><br>
+
+        <p><b>Including breakpoint - {property}{sides}-{breakpoint}-{size}</b></p> 
+        <div class="pl-0 pl-sm-1 pl-md-2 pl-lg-3 pl-xl-4">Some content</div>
+        <div class="p-0 p-sm-1 p-md-2 p-lg-3 p-xl-4">Some content</div>
+        <div class="px-0 px-sm-1 px-md-2 px-lg-3 px-xl-4">Some content</div>
+        <div class="ml-0 ml-sm-1 ml-md-2 ml-lg-3 ml-xl-4">Some content</div>
+        <div class="m-0 m-sm-1 m-md-2 m-lg-3 m-xl-4">Some content</div>
+        <div class="mx-0 mx-sm-1 mx-md-2 mx-lg-3 mx-xl-4">Some content</div><br>
+
+        <p><b>Negative Margins</b></p> 
+        <div class="m-n3">Some content</div> <br>
+        <div class="mx-n3">Some content</div>
+        
+        <h4>Flex Utilities</h4>
+        <p><b>display: flex;</b></p> 
+        <div class="d-flex">
+            <div>Flex item 1</div>
+            <div>Flex item 2</div>
+        </div>
+        <div class="d-sm-flex">
+            <div>Flex item 1</div>
+            <div>Flex item 2</div>
+        </div>
+        <div class="d-md-flex">
+            <div>Flex item 1</div>
+            <div>Flex item 2</div>
+        </div>
+        <div class="d-lg-flex">
+            <div>Flex item 1</div>
+            <div>Flex item 2</div>
+        </div>
+        <div class="d-xl-flex">
+            <div>Flex item 1</div>
+            <div>Flex item 2</div>
+        </div>
+
+        <p><b>display: inline-flex;</b></p> 
+        <div class="d-inline-flex">Some Content</div>
+        <div class="d-sm-inline-flex">Some Content</div>
+        <div class="d-md-inline-flex">Some Content</div>
+        <div class="d-lg-inline-flex">Some Content</div>
+        <div class="d-xl-inline-flex">Some Content</div>
+
+        <p><b>Justify content</b></p>
+        <div class="d-flex justify-content-start mb-3">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+        <div class="d-flex justify-content-end mb-3">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+        <div class="d-flex justify-content-xl-center mb-3">
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Flex item</div>
+        </div>
+    </div>
+</body>
+
+</html>

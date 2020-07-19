@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media Queries</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .background-demo {
+                height: 100px;
+                background: gray;
+                border: 1px solid gray;
+                margin-bottom: 30px;
+            }
+
+            .parent {
+                border: 1px solid gray;
+                padding: 10px;
+                clear: both;
+                overflow: hidden;
+            }
+
+            .parent .child1, .parent .child2{
+                border: 1px solid gray;
+                padding: 10px;
+                width: 48%;
+            }
+
+            .parent .child1 {
+                float: left;
+            }
+
+            .parent .child2 {
+                float: right;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .background-demo {
+                    background: red;
+                }     
+
+                .parent .child1, .parent .child2 {
+                    width: 95.5%;
+                    float: none;
+                }
+
+                .parent .child1 {
+                    margin-bottom: 10px;
+                } 
+            }
+
+            @media only screen and (min-width: 600px) {
+                .background-demo {
+                    background: green;
+                }
+
+                .parent .child1, .parent .child2 {
+                    width: 97%;
+                    float: none;
+                }
+
+                .parent .child1 {
+                    margin-bottom: 10px;
+                }     
+            }
+
+            @media only screen and (min-width: 768px) {
+                .background-demo {
+                    background: blue;
+                }
+                
+                .parent .child1, .parent .child2 {
+                    width: 46%;
+                }
+
+                .parent .child1 {
+                    float: left;
+                    margin-bottom: 0px;
+                }
+
+                .parent .child2 {
+                    float: right;
+                }   
+            }
+
+            @media only screen and (min-width: 992px) {
+                .background-demo {
+                    background: purple;
+                }  
+
+                .parent .child1, .parent .child2 {
+                    width: 47%;
+                }   
+            }
+
+            @media (min-width: 1200px) { /* Not used only screen and */
+                .background-demo {
+                    background: yellow;
+                }   
+
+                .parent .child1, .parent .child2 {
+                    width: 48%;
+                }  
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+
+        <!-- Example 1 -->
+        <div class="background-demo"></div>
+
+        <!-- Example 2 -->
+        <div class="parent">
+            <div class="child1">Child 1</div>
+            <div class="child2">Child 2</div>
+        </div>
+    </body>
+</html>

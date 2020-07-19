@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <h3>Anchor tag Pseudo Classes</h3>
+        <style>
+            a:link {
+                color: green; 
+                text-decoration: none;
+            }
+            
+            a:visited {
+                color: pink;
+                text-decoration: none;
+            }
+            
+            a:hover {
+                color: red;
+                text-decoration: underline;
+            }
+            
+            a:active {
+                color: yellow;
+                text-decoration: underline;
+            }
+        </style>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+
+        <img src="./images/css-inspect-pseudo-classes.PNG" > <br><br>
+
+        <h3>Pseudo-classes and CSS Classes</h3>
+        <style>
+            a.highlight:hover {
+                color: maroon;
+                cursor: pointer;
+            }
+        </style>
+        <h3><a class="highlight">Back to Home Link</a></h3>
+
+        <h3>Show/Hide on hover</h3>
+        <style>
+            div.help-tooltip {
+                display: none;
+            }
+
+            div.parent:hover + div.help-tooltip {
+                display: block;
+            }
+        </style>
+        <div class="parent">Hover Me to see help tooltip!</div>
+        <div class="help-tooltip">Help text of a</div>
+
+        <h3>:first-child Pseudo-class</h3>
+        <style>
+            p:first-child {
+                color: green;
+            }
+        </style>
+        <div>
+            <p>first child</p>
+            <p>second child</p>
+        </div>
+
+        <div>
+            <p>first child</p>
+            <p>second child</p>
+        </div>
+
+        
+
+
+        <br><br><br><br><br><br>
+    </body>
+</html>

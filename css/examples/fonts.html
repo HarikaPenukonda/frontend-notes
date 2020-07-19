@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .size20 {
+                font-size: 20px;
+            }
+
+            p.font-family-demo {
+                font-family: "Times New Roman", Times, serif;
+            }
+
+            p.font-style-normal {
+                font-style: normal;
+            }
+
+            p.font-style-italic {
+                font-style: italic;
+            }
+
+            p.font-style-oblique {
+                font-style: oblique;
+            }
+
+            p.pixels-demo {
+                font-size: 16px;
+            }
+
+            p.em-demo {
+                font-size: 1em;
+            }
+
+            p.weight-normal {
+                font-weight: normal;
+            }
+
+            p.weight-bold {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <img src="./images/fonts.gif" /> <br><br>
+
+        <h3>Serif</h3>
+        <p class="size20" style="font-family:'Times New Roman';">Times New Roman</p>
+        <p class="size20" style="font-family:'Georgia';">Georgia</p> <br>
+
+        <h3>Sans-serif</h3>
+        <p class="size20" style="font-family:'Arial';">Arial</p>
+        <p class="size20" style="font-family:'Verdana';">Verdana</p> <br>
+
+        <h3>Monospace</h3>
+        <p class="size20" style="font-family:'Courier New';">Courier New</p>
+        <p class="size20" style="font-family:'Lucida Console';">Lucida Console</p> <br>
+
+        <h3>Font Family</h3>
+        <p class="font-family-demo">Some content</p>
+
+        <h3>Font Style</h3>
+        <p class="font-style-normal">normal content</p>
+        <p class="font-style-italic">italic content</p>
+        <p class="font-style-oblique">oblique content</p>
+
+        <h3>Font Size</h3> 
+        <p class="pixels-demo">font size in pixels</p>
+        <p class="em-demo">font size in em</p>
+        <h3 style="font-size:2vw;">Responsive Text</h3>
+        <p style="font-size:1.5vw;">Resize the browser window to see how the text size scales.</p>
+        <p style="font-size:1.5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+
+        <h3>Font Weight</h3> 
+        <p class="weight-normal">font weight normal</p>
+        <p class="weight-bold">font weight bold</p>
+
+        <h3>@font-face</h3>
+        <style>
+            @font-face {
+                font-family: 'Roboto';
+                src: url('./fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),  url('./fonts/Roboto-Regular.woff') format('woff'), url('./fonts/Roboto-Regular.ttf')  format('truetype');
+            }
+            .custom-font-demo{
+                font-size: 25px;
+                font-family: Roboto;
+            }
+        </style>
+        <div class="custom-font-demo">Some content</div>
+    </body>
+</html>

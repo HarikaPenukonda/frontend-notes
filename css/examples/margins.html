@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p.one {
+                margin-top: 50px;
+                margin-bottom: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+                border: 1px solid #868686;
+            }
+
+            div {
+                border: 1px solid #868686;
+            }
+
+            div.first{
+                margin-left: 10%;
+            }
+
+            div.parent{
+                margin-left: 50px;
+                padding: 10px;
+            }
+
+            div.child{
+                margin-left: inherit;
+            }
+
+            div.negative-demo {
+                margin-left: -25px;
+            }
+
+            div.shorthand-demo {
+                margin: 25px 50px 75px 100px;
+            }
+
+            div.auto-demo {
+                width: 50%;
+                margin: auto;
+            }
+
+            div.collapse1 {
+                margin-bottom: 50px;
+            }
+
+            div.collapse2 {
+                margin-top: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <p class="one">Paragraph with some content.</p>
+
+        <div class="first">First</div> <br><br>
+
+        <div class="parent">
+            <div class="child">Child div content</div>
+        </div>
+
+        <br><br>
+        <div class="negative-demo">Div with some content.</div>
+
+        <br><br>
+        <div class="shorthand-demo">Div with some content.</div>
+
+        <br><br>
+        <div class="auto-demo">Div with some content</div>
+
+        <br><br>
+        <div class="collapse1">Div with some content</div>
+        <div class="collapse2">Div with some content</div>
+
+    </body>
+</html>

@@ -1,0 +1,504 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins/Poppins-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-semibold';
+    src: url('../fonts/poppins/Poppins-SemiBold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-bold';
+    src: url('../fonts/poppins/Poppins-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-extra-bold';
+    src: url('../fonts/poppins/Poppins-ExtraBold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-black';
+    src: url('../fonts/poppins/Poppins-Black.ttf')  format('truetype');
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.mini-header {
+    background-color: #207DFF;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 0px;
+}
+
+.mini-header .sign-links {
+    text-transform: uppercase;
+}
+
+.mini-header .sign-links span {
+    padding: 0px 8px;
+}
+
+.mini-header .sign-links span:last-child {
+    padding-right: 0px;
+}
+
+.mini-header .sign-links span:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-header {
+    background-image: url('../mediplus/images/bg_3.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-header .logo-nav-holder {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item {
+    padding: 12px 18px 0px 18px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child {
+    padding: 13px 20px;
+    text-align: center;
+    background: #fe5f55;
+    border-radius: 5px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child:hover {
+    background: #207DFF;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child a {
+    padding: 0px !important;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item:last-child a:hover{
+    border-bottom: 0px solid #207DFF;
+    margin-bottom: 0px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a {
+    color: #000000;
+    font-size: 16px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a.nav-link {
+    padding: 0px;
+    padding-bottom: 5px;
+}
+
+.main-header .logo-nav-holder .navbar-collapse .nav-item a:hover{
+    border-bottom: 2px solid #207DFF;
+    margin-bottom: -2px;
+}
+
+.main-header .logo-nav-holder .navbar a.navbar-brand {
+    color: #000000;
+    font-family: 'Poppins-black', sans-serif;
+    font-size: 24px;
+}
+
+.header-content p.welcome {
+    color: #207DFF;
+    font-family: 'Poppins-semibold', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+
+
+.header-content p.main-desc {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.header-content .appointment-btn {
+    font-size: 14px;
+}
+
+.about-text {
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+}
+
+.about-text h1.bolder-text {
+    font-family: 'Poppins-bold', sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.bolder-text {
+    font-family: 'Poppins-black', sans-serif;
+}
+
+.blue-text {
+    color: #207DFF;
+}
+
+.about-img {
+    background-image: url('../mediplus/images/about.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 300px;
+}
+
+.about-text p {
+    font-size: 17px;
+    color: #999999;
+    line-height: 30px;
+}
+
+.contact-buttons .appointment-btn {
+    font-size: 15px;
+}
+
+.contact-buttons .appointment-btn.contact {
+    background: #fe5f55;
+    border: 1px solid #fe5f55;
+}
+
+.contact-buttons .appointment-btn.contact:hover {
+    background: transparent;
+    color: #fe5f55;
+}
+
+.services-holder {
+    background: #F8F9FA;
+}
+
+.consultation-form {
+    background: #ffffff;
+}
+
+.mediplus-media {
+    padding-right: 10px;
+}
+
+.mediplus-media .icon {
+    width: 75Px;
+    text-align: center;
+    height: 75px;
+    background: rgba(254, 95, 85, 0.2);
+    color: #fe5f55;
+    font-size: 35px;
+    border-radius: 50%;
+    padding-top: 13px;
+}
+
+.mediplus-media .media-body p {
+    color: #999999;
+    line-height: 27px;
+    margin-top: 15px;
+}
+
+.consultation-form {
+    padding: 50px;
+}
+
+.consultation-form .appointment-btn {
+    background: #fe5f55;
+    border: 1px solid #fe5f55;
+    font-size: 15px;
+}
+
+.consultation-form .appointment-btn:hover {
+    background: transparent;
+    color: #fe5f55;
+}
+
+.consultation-form h6 {
+    font-family: Poppins-semibold;
+    letter-spacing: 2px;
+}
+
+.consultation-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.consultation-form input, 
+.consultation-form select {
+    height: 58px;
+}
+
+.consultation-form textarea {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.consultation-form .input-group input {
+    border-right: none;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.consultation-form .input-group .input-group-append .input-group-text {
+    background: none;
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+}
+
+.highlight-section {
+    background: url('../mediplus/images/bg_2.jpg');
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-position: -50px;
+    position: relative;
+}
+
+.highlight-section h1 {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.highlight-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+}
+
+.highlight-section button {
+    background-color: white;
+    color: #000000;
+    border: #ffffff;
+    font-size: 15px;
+}
+
+.highlight-section button:hover {
+    background-color: white;
+    color: #000000;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0px;
+    background: #000000;
+    opacity: 0.2;
+}
+
+.one-doctor .doc-img {
+    position: relative;
+}
+
+.one-doctor .doc-img .doc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease, margin-top 0.3s ease; /* Safari */
+    transition: opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.one-doctor:hover .doc-img .doc-overlay {
+    opacity: 0.3;
+    margin-top: -15px;
+}
+
+.one-doctor .doc-img .img-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #ffffff;
+    color: #fe5f55;
+    padding: 15px 0px;
+    letter-spacing: 5px;
+    display: none;
+    -webkit-transition: display 0.3s ease; /* Safari */
+    transition: display 0.3s ease;
+}
+
+.one-doctor:hover .doc-img .img-footer {
+    display: block;
+}
+
+.one-doctor .doc-img img {
+    max-width: 100%;
+    -webkit-transition: margin-top 0.3s ease, margin-bottom 0.3s ease; /* Safari */
+    transition: margin-top 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.one-doctor:hover .doc-img img {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.one-doctor h3.doc-name {
+    font-size: 24px;
+    margin: 20px 0px 10px 0px;
+}
+
+.one-doctor .doc-study {
+    margin-bottom: 10px;
+    font-family: Poppins-semibold;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.one-doctor .about {
+    font-size: 17px;
+    color: #999999;
+}
+
+.one-doctor:hover h3.doc-name {
+    color: #207DFF;
+}
+
+.hospital-track {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: url('../mediplus/images/bg_3.jpg');
+    background-size: 100%;
+    color: #ffffff;
+    position: relative;
+}
+
+.hospital-track .hospital-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #207DFF;
+    opacity: 0.8;
+}
+
+.hospital-track .appointment-btn {
+    font-size: 15px;
+    background-color: #fe5f55;
+    border: 1px solid #fe5f55;
+    width: 100%;
+}
+
+.hospital-track .appointment-btn:hover {
+    background-color: transparent;
+    color: #fe5f55;
+}
+
+.hospital-track .left-section h1 {
+    font-family: 'Poppins-black';
+    font-size: 30px;
+}
+
+.hospital-track .left-section p {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hospital-track .right-section .col-12 {
+    border-bottom: 1px solid #ffffff42;
+}
+
+.hospital-track .right-section .col-12 h1 {
+    font-family: 'Poppins-black';
+}
+
+.hospital-track .right-section .col-12 h4 {
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../mediplus/images/footer-bg.jpg');
+    position: relative;
+}
+
+.footer .footer-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    opacity: 0.8;   
+}
+
+.footer .one-section h3 {
+    font-size: 22px;
+}
+
+.footer .one-section p {
+    color: #999999;
+}
+
+.footer .one-section .rounded-circle {
+    padding: 10px 17px;
+    text-align: center;
+    background-color: #207DFF;
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.footer .one-section .rounded-circle:first-child {
+    margin-left: 0px;
+}
+
+.footer .one-section ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.footer .one-section ul li {
+    margin-bottom: 7px;
+}
+
+.footer .one-section ul li::before {
+    content: '\2192';
+    font-size: 20px;
+    font-weight: bold;
+    color: #207DFF;
+    padding-right: 5px; 
+}
+
+.footer .one-section ul li a:hover {
+    text-decoration: none;
+}
+
+.footer .one-section .text {
+    color: #999999;
+}
+
+.footer .one-section.address-section .d-flex {
+    margin-bottom: 15px;
+}
+
+.footer .bottom-line {
+    text-align: center;
+    color: #999999;
+}
+
+.header-content {
+    padding: 50px 15px 40px 15px;
+}
+
+.header-content h1.we-here {
+    font-size: 40px;
+    font-family: 'Poppins-bold', sans-serif;
+}

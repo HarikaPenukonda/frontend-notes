@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3><a href="../index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <form>
+            Value attribute: <input type="text" name="firstname" value="John"> <br><br>
+
+            Disabled attribute: <input type="text" name="username" value="John" disabled> <br><br>
+
+            Readonly attribute: <input type="text" name="middlename" value="John" readonly> <br><br>
+
+            Size attribute: <input type="text" name="size1" value="John" size="100"><br><br>
+            Size attribute: <input type="text" name="size2" value="John" size="10"><br><br>
+
+            Maxlength attribute: <input type="text" name="surname" maxlength="10"><br><br>
+
+            <input type="submit" value="Submit Form">
+        </form>
+
+        <h3>autocomplete, novalidate, autofocus, required</h3>
+        <form action="/add_user.php" autocomplete="on" novalidate>
+            First name:<input type="text" name="fname" required autofocus><br>
+            Last name: <input type="text" name="lname" required><br>
+            E-mail: <input type="email" name="email" autocomplete="off" required><br>
+            <input type="submit">
+        </form>
+
+        <h3>multiple, pattern, placeholder</h3>
+        <form action="/add_user.php">
+            First name:<input type="text" name="fname" placeholder="Enter first name"> <br><br>
+            County code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"> <br><br>
+            Profile pics: <input type="file" name="profile_pics" multiple> <br><br>          
+            <input type="submit">
+        </form>
+    </body>
+</html>

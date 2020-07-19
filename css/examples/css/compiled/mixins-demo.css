@@ -1,0 +1,20 @@
+.offer {
+  background: #908ced;
+  background: -moz-linear-gradient(left, #908ced 0%, #b172e8 100%);
+  background: -webkit-linear-gradient(left, #908ced 0%, #b172e8 100%);
+  background: -o-linear-gradient(left, #908ced 0%, #b172e8 100%);
+  background: -ms-linear-gradient(left, #908ced 0%, #b172e8 100%);
+  background: linear-gradient(to right, #908ced 0%, #b172e8 100%);
+  color: #fff;
+  padding: 25px 0px;
+  margin-top: 150px; }
+
+.price-section {
+  background: #d3d3d3;
+  background: -moz-linear-gradient(left, #d3d3d3 0%, #ffffff 100%);
+  background: -webkit-linear-gradient(left, #d3d3d3 0%, #ffffff 100%);
+  background: -o-linear-gradient(left, #d3d3d3 0%, #ffffff 100%);
+  background: -ms-linear-gradient(left, #d3d3d3 0%, #ffffff 100%);
+  background: linear-gradient(to right, #d3d3d3 0%, #ffffff 100%); }
+
+/*# sourceMappingURL=mixins-demo.css.map */

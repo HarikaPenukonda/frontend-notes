@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .cities {
+                background-color: #868686;
+                color: white;
+                margin: 20px;
+                padding: 20px;
+            } 
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <div class="cities">
+            <h2>London</h2>
+            <p>London is the capital of England.</p>
+        </div>
+        
+        <div class="cities">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France.</p>
+        </div>
+        
+        <div class="cities">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+        <p class="cities">test</p>
+
+        <button onclick="hideCities()">Hide Cities</button>
+
+        <script>
+            function hideCities() {
+                var cityElements = document.getElementsByClassName("cities");
+                console.log(cityElements);
+                for (var i = 0; i < cityElements.length; i++) {
+                    cityElements[i].style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>

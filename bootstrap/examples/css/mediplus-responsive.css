@@ -1,0 +1,82 @@
+/* Responsive styles */
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    font-size: 17px;
+    color: #999999;
+}
+
+@media (max-width: 991px) {
+    .main-header .logo-nav-holder .navbar a.navbar-brand,
+    .main-header .logo-nav-holder .navbar .navbar-toggler,
+    .main-header .logo-nav-holder .navbar-collapse .nav-item a.nav-link {
+        color: #ffffff;
+    }
+
+    .main-header .logo-nav-holder {
+        background: #000000;
+    }
+
+    .main-header .logo-nav-holder .navbar-collapse .nav-item {
+        padding-left: 0px;
+    }
+
+    .main-header .logo-nav-holder .navbar-collapse .nav-item:last-child {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        background: #000000 !important;
+        color: #ffffff !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-text {
+        padding-left: 60px !important;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .about-text h1.bolder-text {
+        font-family: 'Poppins-black', sans-serif;
+    }
+
+    .contact-buttons .appointment-btn {
+        width: auto !important;
+    }
+
+    .hospital-track .left-section h1 {
+        font-size: 50px;
+    }
+
+    .hospital-track .appointment-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-content {
+        padding: 80px 15px;
+    }
+
+    .header-content h1.we-here {
+        font-family: 'Poppins-black', sans-serif;
+        font-size: 60px;
+    }
+
+    .about-text {
+        padding-left: 95px !important;
+    }
+
+    .hospital-track .right-section .row:last-child .col-12 {
+        border-bottom: 0px solid #ffffff42;
+    }
+
+    .hospital-track .right-section .row .col-12:first-child {
+        border-right: 1px solid #ffffff42;
+    }
+}

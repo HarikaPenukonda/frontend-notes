@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <style>
+            /* Standard syntax */
+            @keyframes change-backgrounds {
+                from {background-color: red;}
+                to {background-color: yellow;}
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes change-backgrounds {
+                from {background-color: red;}
+                to {background-color: yellow;}
+            }
+
+            div.demo1 {
+                width: 150px;
+                height: 100px;
+                background-color: green;
+
+                -webkit-animation-name: change-backgrounds; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+                animation-name: change-backgrounds;
+                animation-duration: 4s;
+            }
+        </style>
+        <div class="demo1">Some Content 1</div>
+
+        <h3>Keyframes with percentages</h3>
+        <style>
+            @keyframes change-backgrounds-percentage {
+                0%   {background-color: red;width:200px;}
+                25%  {background-color: yellow;width:300px;}
+                50%  {background-color: blue;width:400px;}
+                100% {background-color: tomato;width:500px;}
+            }
+
+            div.demo2 {
+                width: 150px;
+                height: 100px;
+                background-color: green;
+
+                -webkit-animation-name: change-backgrounds-percentage; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+                animation-name: change-backgrounds-percentage;
+                animation-duration: 6s;
+                /* animation-iteration-count: 3; */
+                animation-iteration-count: infinite;
+            }
+        </style>
+        <div class="demo2">Some Content 2</div>
+    </body>
+</html>

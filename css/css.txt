@@ -1,0 +1,2788 @@
+Browsers can understand only three languages. HTML, CSS and Javascript.
+
+CSS is the language to beautify the HTML page.
+
+CSS stands for Cascading Style Sheets.
+
+CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+
+Syntax:
+-------
+h1 { 
+    color: blue; 
+    font-size:12px; 
+}
+
+A CSS rule-set consists of a selector and a declaration block.
+The selector points to the HTML element you want to style.
+The declaration block contains one or more declarations separated by semicolons.
+Each declaration includes a CSS property 'name' and 'value', separated by a colon.
+
+A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.
+
+Selectors
+=========
+CSS selectors are used to "find" (or select) HTML elements based on their element name, id, class, attribute, and more.
+
+Ex: selectors.html
+
+> element Selector
+- - - - - - - - -
+The element selector selects elements based on the element name.
+We can select all <p> elements on a page like below. 
+
+p {
+  text-align: center;
+  color: red;
+}
+
+In this case, all <p> elements will be center-aligned, with a red text color.
+
+> id Selector
+- - - - - - - 
+The id selector uses the id attribute of an HTML element to select a specific element.
+The id of an element should be unique within a page, so the id selector is used to select one unique element!
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+<p id="para1">Some content</p>
+
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+Element with 'id' 'para1' will be selected.
+
+** An id name cannot start with a number!
+
+class Selector
+- - - - - - -
+The class selector selects elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character, followed by the name of the class.
+
+.center {
+  text-align: center;
+}
+
+All HTML elements with class="center" will be center-aligned.
+
+We can also specify that only specific HTML elements should be affected by a class.
+
+h4.center {
+  text-align: center;
+}
+
+Only <h4> elements with class="center" will be effected.
+
+Elements can have more than one class.
+<h4 class="center large">This h4 refers to two classes.</h4>
+
+A class name cannot start with a number!.
+
+Grouping Selectors
+- - - - - - - - - 
+If you have elements with the same style definitions, like below
+
+h1 {
+  text-align: center;
+  color: blue;
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+}
+
+div {
+  text-align: center;
+  color: blue;
+}
+
+It will be better to group the selectors, to minimize the code.
+
+To group selectors, separate each selector with a comma.
+
+h1, h2, div {
+  text-align: center;
+  color: blue;
+}
+
+Comments
+--------
+/* This is a single-line comment */
+
+/* This is
+a multi-line
+comment */
+
+Ways to insert style Sheets
+---------------------------
+CSS can be added to HTML elements in 3 ways:
+- Inline - by using the style attribute in HTML elements
+- Internal - by using a <style> element in the <head> section
+- External - by using an external CSS file
+
+Inline CSS:
+<h1 style="color:blue;">This is a Blue Heading</h1>
+
+Internal CSS:
+An internal CSS is used to define a style for a single HTML page.
+An internal CSS is defined in the <head> section of an HTML page, within a <style> element.
+<head>
+    <style>
+        h1 {
+            color: blue;        
+        }
+    </style>
+</head>
+
+External CSS:
+An external style sheet is used to define the style for many HTML pages.
+With an external style sheet, you can change the look of an entire web site, by changing one file!
+To use an external style sheet, add a link to it in the <head> section of the HTML page.
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+External References:
+External style sheets can be referenced with a full URL.
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+CSS Style Sheets Insertion Order is Important
+---------------------------------------------
+Ex: css-override-precedence.html
+
+// style-sheet1.css   
+h1 { color: blue; }
+
+// style-sheet2.css   
+h1 { color: green; }
+
+// style-sheet3.css   
+h1 { color: red; }
+
+<head>
+    <link rel="stylesheet" href="style-sheet1.css">
+    <link rel="stylesheet" href="style-sheet2.css">
+    <link rel="stylesheet" href="style-sheet3.css">
+</head>
+
+If we insert the above 3 style sheets in order, h1 color will become 'red'. Because, the value from the last style sheet will be used. 
+
+Cascading Order
+---------------
+What style will be used when there is more than one declaration available for same property, for an HTML element?
+
+The order of priority would be like below,
+- Inline style (inside an HTML element)
+- External and internal style sheets (in the head section)
+- Browser default
+
+So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+
+Colors
+======
+Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+Ex: colors.html
+
+<h1 style="background-color:tomato;">tomato</h1>
+<h1 style="background-color:#ff6347;">#ff6347</h1>
+
+<h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.5);">rgb(255, 99, 71, 0.5)</h1>
+
+<h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">hsl(9, 100%, 64%, 0.5)</h1>
+
+RGB Value:
+- - - - - 
+RGB means combination color of Red, Green and Blue.
+
+rgb(red, green, blue)
+
+Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255.
+
+For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) and the others are set to 0.
+
+To display the color black, all color parameters must be set to 0, like this: rgb(0, 0, 0).
+
+To display the color white, all color parameters must be set to 255, like this: rgb(255, 255, 255).
+
+HEX Value
+-  - -  - 
+Color can be specified using a hexadecimal value.
+
+#rrggbb
+
+Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).
+
+For example, #ff0000 is displayed as red, because red is set to its highest value (ff) and the others are set to the lowest value (00).
+
+HSL Value
+- - - - -
+Color can be specified using hue, saturation, and lightness (HSL).
+
+hsl(hue, saturation, lightness)
+
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+
+Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color. Saturation can be described as the intensity of a color.100% is pure color, no shades of gray.50% is 50% gray, but you can still see the color.0% is completely gray, you can no longer see the color.
+
+Lightness is also a percentage, 0% is black, 50% is neither light or dark, 100% is white.
+hsl(9, 100%, 64%);
+
+RGBA Value
+- - - - -
+RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+
+rgba(red, green, blue, alpha)
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all).
+
+rgba(255, 99, 71, 0);
+rgba(255, 99, 71, 0.5);
+rgba(255, 99, 71, 1);
+
+HSLA Value
+- - -  - -
+HSLA color values are an extension of HSL color values with an alpha channel - which specifies the opacity for a color.
+
+hsla(hue, saturation, lightness, alpha)
+
+hsla(9, 100%, 64%, 0);
+hsla(9, 100%, 64%, 0.5);
+hsla(9, 100%, 64%, 1);
+
+ColorZilla is a chrome extension to get colors in webpage.
+
+Vendor Prefixes
+===============
+Few css properties work in one broswer and doesn't work in other. To make it work, we need to prefix vendor specific words.
+
+Below are few prefix words for few browsers.
+
+-ms-     Microsoft internet explorer
+-moz-    Mozilla Firefox (and other  Gecko-based browsers)
+-o-      Opera
+-webkit- Safari, Chrome (and other WebKit-based browsers)
+etc other ...
+
+.page-wrap {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+http://shouldiprefix.com/ contains the list of css properties and their Prefixes.
+
+Backgrounds
+===========
+CSS background properties are used to define the background effects for elements.
+
+Few important background properties are,
+- background-color
+- background-image
+- background-repeat
+- background-position
+
+Background Color:
+- - - - - - - - -
+background-color property specifies the background color of an element.
+body {
+  background-color: lightblue;
+}
+
+Background Image:
+- - - - - - - - -
+background-image property specifies an image to use as the background of an element.
+By default, the background-image property repeats an image both horizontally and vertically. So it covers the entire element.
+
+.image-demo {
+  background-image: url('../images/paper.PNG');
+}
+
+Background Repeat:
+- - - - - - - - -
+background-repeat can control the repeation of the background image.
+
+.image-demo2 {
+    background-image: url('../images/paper.PNG');
+    background-repeat: repeat-x;
+}
+
+.image-demo3 {
+    background-image: url('../images/paper.PNG');
+    background-repeat: repeat-y;
+}
+
+.image-demo4 {
+    background-image: url('../images/flowers.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 150px 150px;
+}
+
+Background Position:
+- - - - - - - - - -
+Using background-position we can place the image at certain position.
+
+background-position: right bottom;
+
+background-position: right 20px bottom 20px;
+
+Background Size:
+- - - - - - - -
+Usign background-size We can specity the width and height of the background image.
+
+background-size: 150px 150px;
+
+Shorthand property:
+- - - - - - - - - -
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+The shorthand property for background is 'background'.
+
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+
+Borders
+=======
+border properties allow you to specify the style, width, and color of an element's border.
+
+border-style
+- - - - - - -
+'border-style' property specifies what kind of border to display.
+p.solid {border-style: solid;}
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+
+Ex: borders.html
+
+border-width
+- - - - - - 
+'border-width' property specifies the width of the four borders.
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick.
+
+The border-width property can have from one to four values (for the top, right, bottom, and the left borders).
+p.seven {
+    border-style: solid;
+    border-width: 2px 10px 4px 20px;
+}
+
+p.four {
+    border-style: dotted;
+    border-width: thick;
+}
+
+p.five {
+    border-style: double;
+    border-width: 15px;
+}
+
+border-color
+- - - - - - 
+border-color property is used to set the color of the four borders.
+
+p.one {
+  border-style: solid;
+  border-color: red;
+}
+
+p.one {
+  border-style: solid;
+  border-color: #ff0000;
+}
+
+Border - Individual Sides
+- - - - - - - - - - - - -
+There are also properties for specifying each of the borders (top, right, bottom, and left).
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+
+The example above gives the same result as this:
+p {
+  border-style: dotted solid;
+}
+
+So, here is how it works:
+
+If the border-style property has four values:
+
+    border-style: dotted solid double dashed;
+        top border is dotted
+        right border is solid
+        bottom border is double
+        left border is dashed
+
+If the border-style property has three values:
+
+    border-style: dotted solid double;
+        top border is dotted
+        right and left borders are solid
+        bottom border is double
+
+If the border-style property has two values:
+
+    border-style: dotted solid;
+        top and bottom borders are dotted
+        right and left borders are solid
+
+If the border-style property has one value:
+
+    border-style: dotted;
+        all four borders are dotted
+
+The border-style property is used in the example above. However, it also works with border-width and border-color.
+
+Border - Shorthand Property
+- - - - - - - - - - - - - -
+The border property is a shorthand property for the following individual border properties:
+- border-width
+- border-style (required)
+- border-color
+
+p.short{
+  border: 5px solid red;
+}
+
+We can also specify all the individual border properties for just one side:
+p {
+  border-left: 6px solid red;
+}
+
+border-radius
+- - - - - - -
+border-radius property is used to add rounded borders to an element.
+
+p.radius {
+  border-radius: 5px;
+  border: 2px solid red;
+}
+
+We can apply border-radius to specific edge using below properties.
+border-top-left-radius 	    border of the top-left corner
+border-top-right-radius 	border of the top-right corner
+border-bottom-right-radius 	border of the bottom-right corner
+border-bottom-left-radius 	border of the bottom-left corner
+
+Margins
+=======
+margin properties are used to create space around elements, outside of any defined borders.
+
+Ex: margins.html
+
+margin has the properties for specifying each side of an element.
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+p.one {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 1px solid #868686;
+}
+
+All the margin properties can have the following values:
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+
+div.first{
+    margin-left: 10%;
+}
+
+div.parent{
+    margin-left: 50px;
+    padding: 10px;
+}
+
+div.child{
+    margin-left: inherit;
+}
+
+Negative values are also allowed.
+
+div.negative-demo {
+    margin-left: -25px;
+}
+
+Shorthand Property
+- - - - - - - - - 
+margin property is a shorthand property for the following individual margin properties:
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+If the margin property has four values:
+  margin: 25px 50px 75px 100px;
+    top margin is 25px
+    right margin is 50px
+    bottom margin is 75px
+    left margin is 100px
+
+div.shorthand-demo {
+  margin: 25px 50px 75px 100px;
+}
+
+If the margin property has three values:
+    margin: 25px 50px 75px;
+        top margin is 25px
+        right and left margins are 50px
+        bottom margin is 75px
+
+If the margin property has two values:
+    margin: 25px 50px;
+        top and bottom margins are 25px
+        right and left margins are 50px
+
+If the margin property has one value:
+    margin: 25px;
+        all four margins are 25px
+
+margin: auto;
+- - - - - - -
+Set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+div.auto-demo {
+  width: 50%;
+  margin: auto;
+}
+
+Margin Collapse
+- - - - - - - -
+div.collapse1 {
+    margin-bottom: 50px;
+}
+
+div.collapse2 {
+    margin-top: 25px;
+}
+
+<div class="collapse1">Div with some content</div>
+<div class="collapse2">Div with some content</div>
+
+The distance between two div's won't become 75px. It will be only 50px. Because, margin-top of second div will collapse the margin-bottom of first div.
+
+Padding
+=======
+The CSS padding properties are used to generate space around an element's content, inside of borders.
+
+There are properties for setting the padding for each side of an element (top, right, bottom, and left).
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+
+We can specify padding in below values.
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element
+
+Negative values are not allowed.
+
+div.padding-demo {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  border: 1px solid black;
+}
+
+Shorthand Property
+- - - - - - - - --
+'padding' is the shorthand property.
+
+If the padding property has four values:
+
+padding: 25px 50px 75px 100px;
+  top padding is 25px
+  right padding is 50px
+  bottom padding is 75px
+  left padding is 100px
+
+If the padding property has three values:
+
+padding: 25px 50px 75px;
+  top padding is 25px
+  right and left paddings are 50px
+  bottom padding is 75px
+
+If the padding property has two values:
+
+padding: 25px 50px;
+  top and bottom paddings are 25px
+  right and left paddings are 50px
+
+If the padding property has one value:
+
+padding: 25px;
+  all four paddings are 25px
+
+Padding and Element Width
+- - - - - - - - - - - - -
+The CSS width property specifies the width of the element's content area. (Padding, margins and borders are not included).
+
+div.width-demo {
+  width: 300px;
+  padding: 25px;
+  margin: 25px;
+}
+
+Width and Height
+================
+'height' and 'width' properties are used to set the height and width of an element.
+
+height and width can be specified in length values, like px, cm, etc., or in percent (%) of the containing block.
+
+Ex: width-height.html
+
+div.percentage-demo {
+    height: 100px;
+    width: 50%; /* Width in percentage */
+    background-color: powderblue;
+}
+
+div.pixel-demo {
+    height: 100px;
+    width: 100px; /* Width in pixel */
+    background-color: powderblue;
+}
+
+div.cm-demo {
+    height: 100px;
+    width: 25cm; /* Width in centimeter */
+    background-color: powderblue;
+}
+
+div.cm-demo .child{
+    height: 60%; /* Height in percentage */
+    width: 15cm;
+    background-color: dodgerblue;
+}
+
+*** The height and width properties do not include padding, borders, or margins; they set the height/width of the area inside the padding, border, and margin of the element(content of the element).
+
+max-width:
+'max-width' property is used to set the maximum width of an element.
+max-width can be specified in length values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default. Means that there is no maximum width).
+
+div.max-width-demo {
+    height: 100px;
+    background-color: powderblue;
+    width: 600px;
+    max-width: 500px; /*  width in px and max-width of 500px */
+}
+
+div.max-width-percentage-demo {
+    height: 100px;
+    background-color: powderblue;
+    width: 50%;
+    max-width: 500px; /*  width in % and max-width of 500px */
+}
+
+If you specify 'width' beyond 'max-width', it won't be applied.
+
+max-height	- Sets the maximum height of an element
+div.max-height-demo {
+    height: 100px;
+    max-height: 50px; /* height won't go beyond 50px */
+    background-color: powderblue;
+    width: 50%;
+}
+
+min-width	-  Sets the minimum width of an element
+div.min-width-demo {
+    width: 100px;
+    min-width: 250px; /* Take minimum 250px width even width is lessthan 250px */
+    background-color: powderblue;
+}
+
+min-height	- Sets the minimum height of an element
+div.min-height-demo {
+    height: 50px;
+    min-height: 100px; /* Take minimum 100px height even height is lessthan 100px */
+    background-color: powderblue;
+    width: 50%;
+}
+
+Box Model
+=========
+All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.
+
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+
+In order to set the width and height of an element correctly in all browsers, we need to know how the box model works.
+
+Ex: box-model.html
+
+div.box-model-demo {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+To calculate the full size of an element, we must also add padding, borders and margins.
+
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+
+Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+
+Box Sizing
+- - - - --
+Ex: examples/box-model.html
+'box-sizing' property allows us to include the padding and border in an element's total width and height.
+
+The default value of 'box-sizing' property is 'content-box'. We can change it to 'border-box' if required.
+
+.default {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+}
+
+.default-with-padding {
+    width: 300px;
+    height: 100px;
+    padding: 30px;
+    border: 1px solid red;
+}
+
+The width for above two divs is 300px, but those are different in sizes. Because, when box-sizing is 'content-box', 'width' property value applies to only the element's content area.
+
+.demo-border-box {
+    width: 300px;
+    height: 100px;
+    padding: 30px;
+    border: 1px solid green;
+    box-sizing: border-box;
+}
+
+when box-sizing is 'border-box', 'width' property considers padding+border+content.
+
+Outline
+=======
+An outline is a line that is drawn around elements, OUTSIDE the borders.
+
+Below are outline properties.
+- outline-style
+- outline-color
+- outline-width
+- outline-offset
+- outline
+
+outline properties works smilar border properties. 'outline' is the shorthand notation.
+
+Ex: outline.html
+
+div.outline-demo {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+    outline: 10px solid red;
+}
+
+Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline.
+
+'outline-offset' property adds space between an outline and the border of an element. The space between an element and its outline is transparent.
+
+The following example specifies an outline 15px outside the border edge:
+
+div.outline-offset-demo {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+    outline: 10px solid red;
+    outline-offset: 15px;
+}
+
+Text Formatting
+===============
+Ex: text-formatting.html
+
+> 'color' property is used to set the color of the text.
+
+color: blue;
+color: #0000ff;
+
+> 'text-align' property is used to set the horizontal alignment of a text. A text can be left or right aligned, centered, or justified.
+
+div.center {
+  text-align: center;
+}
+
+div.left {
+  text-align: left;
+}
+
+div.right {
+  text-align: right;
+}
+
+When the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers).
+
+div.justify {
+  text-align: justify;
+}
+
+> 'text-decoration' property is used to set or remove decorations from text.
+
+a.decorated {
+  text-decoration: none;
+}
+
+div.overline {
+  text-decoration: overline;
+}
+
+div.line-through {
+  text-decoration: line-through;
+}
+
+div.underline {
+  text-decoration: underline;
+}
+
+> 'text-transform' property is used to specify uppercase and lowercase letters in a text.
+
+div.uppercase {
+  text-transform: uppercase;
+}
+
+div.lowercase {
+  text-transform: lowercase;
+}
+
+div.capitalize {
+  text-transform: capitalize; /* capitalize the first letter of each word */
+}
+
+> 'text-indent' property is used to specify the indentation of the first line of a text.
+
+p.indent-demo {
+  text-indent: 50px;
+}
+
+> 'letter-spacing' property is used to specify the space between the characters in a text.
+
+div.letter-spacing-one {
+  letter-spacing: 3px;
+}
+
+div.letter-spacing-two {
+  letter-spacing: -3px;
+}
+
+> 'line-height' property is used to specify the space between lines
+
+div.line-height-one {
+  line-height: 0.8;
+}
+
+div.line-height-two {
+  line-height: 1.8;
+}
+
+> 'word-spacing' property is used to specify the space between the words in a text.
+
+div.word-spacing-one {
+  word-spacing: 10px;
+}
+
+div.word-spacing-two {
+  word-spacing: -5px;
+}
+
+> 'text-shadow' property adds shadow to text.
+
+h3.shadow-demo {
+  text-shadow: 3px 2px red;
+}
+
+The above example specifies the position of the horizontal shadow (3px), the position of the vertical shadow (2px) and the color of the shadow (red).
+
+Text Overflow
+- - - - - - -
+text-overflow property specifies how overflowed content should be displayed.
+
+.overflow-clip {
+    text-overflow: clip;
+}
+
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+}
+
+Word Wrapping
+- - - - - - -
+The CSS word-wrap property allows long words to be able to be broken and wrap onto the next line. 
+
+If a word is too long to fit within an area, it expands outside.
+
+The word-wrap property allows you to force the text to wrap - even if it means splitting it in the middle of a word.
+
+.word-wrap-fix {
+    word-wrap: break-word;
+}
+
+Word Breaking
+- - - - - - -
+The CSS word-break property specifies line breaking rules.
+
+.word-break-fix {
+    word-break: break-all;
+}
+
+Fonts
+=====
+'font' properties define the font family, boldness, size, and the style of a text.
+
+Font Families
+- - - - - - -
+There are two types of font family names:
+
+generic family - a group of font families with a similar look (like "Serif" or "Monospace")
+font family - a specific font family (like "Times New Roman" or "Arial")
+
+Serif - means small line
+Serif fonts have small lines at the character edges
+Times New Roman, Georgia etc...
+
+Sans - 'sans' means 'without'
+Sans-serif - Means without small lines
+Sans-serif fonts do not have the lines at the character edges
+Arial, Verdana etc...
+
+Monospace
+All monospace characters have the same width
+Courier New, Lucida Console etc...
+
+**** On computer screens, sans-serif fonts are considered easier to read than serif fonts.
+Ex: fonts.html
+
+Font Family property
+- - - - - - - - - --
+The font family of a text is set with the font-family property.
+
+The font-family property should hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font, and so on.
+
+Start with the font you want, and end with a generic family, to let the browser pick a similar font in the generic family, if no other fonts are available
+
+If the name of a font family is more than one word, it must be in quotation marks, like: "Times New Roman".
+
+More than one font family is specified in a comma-separated list.
+
+p.font-family-demo {
+  font-family: "Times New Roman", Times, serif;
+}
+
+Font Style property
+- - - - - - - - - -
+font-style property is mostly used to specify italic text.
+
+This property has three values:
+normal - The text is shown normally
+italic - The text is shown in italics
+oblique - The text is "leaning" (oblique is very similar to italic, but less supported)
+
+Font Size property
+- - - - - - - - --
+The font-size property sets the size of the text.
+
+font-size value can be an absolute, or relative size.
+
+Absolute size - Sets the text to a specified size
+Relative size - Sets the size relative to surrounding elements
+
+*** If you do not specify a font size, the default size for normal text, like paragraphs, is 16px (16px=1em).
+
+The size can be calculated from pixels to em using this formula: pixels/16=em
+40px/16=2.5em
+30px/16=1.875em
+14px/16=0.875em
+
+Responsive Font Size
+The text size can be set with a vw unit, which means the "viewport width".
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+Font Weight property
+- - - - - - - - - --
+font-weight property specifies the weight of a font.
+
+p.weight-normal {
+  font-weight: normal;
+}
+
+p.weight-thick {
+  font-weight: bold;
+}
+
+@font-face
+- - - - --
+Using @font-face, we can use fonts which are not available by default.
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),  url('./fonts/Roboto-Regular.woff') format('woff'), url('./fonts/Roboto-Regular.ttf')  format('truetype');
+}
+.custom-font-demo{
+    font-size: 25px;
+    font-family: Roboto;
+}
+
+We have different font formats like,
+TrueType Fonts (TTF)
+OpenType Fonts (OTF)
+The Web Open Font Format (WOFF)
+The Web Open Font Format (WOFF 2.0)
+SVG Fonts/Shapes
+Embedded OpenType Fonts (EOT)
+
+Few browsers doesn't support few font types. WOFF type supported by most of the broswers.
+
+We can give multiple sources. If one type doesn't supported by browser, other type will be used.
+
+Lists
+=====
+In HTML, there are two main types of lists:
+- unordered lists (<ul>) - the list items are marked with bullets
+- ordered lists (<ol>) - the list items are marked with numbers or letters
+
+Ex: lists.html
+
+list-style-type
+- - - - - - - --
+list-style-type property specifies the type of list item marker.
+
+ul.circle-demo {
+  list-style-type: circle;
+}
+
+ul.square-demo {
+  list-style-type: square;
+}
+
+ol.roman-demo {
+  list-style-type: upper-roman;
+}
+
+ol.alpha-demo {
+  list-style-type: lower-alpha;
+}
+
+list-style-image
+- - - - - - - --
+list-style-image property specifies an image as the list item marker.
+
+ul.image-demo {
+  list-style-image: url('sqpurple.gif');
+}
+
+list-style-position
+- - - - - - - - - -
+list-style-position property specifies the position of the list-item markers (bullet points).
+
+"list-style-position: outside;" means that the bullet points will be outside the list item. The start of each line of a list item will be aligned vertically. This is default.
+
+"list-style-position: inside;" means that the bullet points will be inside the list item. As it is part of the list item, it will be part of the text and push the text at the start.
+
+Lists by default get some margins and paddings around it. If we don't need, we have to remove those.
+
+shorthand - list-style
+- - - - - - - - - - --
+'list-style' property is a shorthand property. It is used to set all the list properties in one declaration.
+
+ul {
+  list-style: square inside url("sqpurple.gif");
+}
+
+Display Property
+- - - - - - - --
+The display property specifies if/how an element is displayed.
+
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+
+A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+
+An inline element does not start on a new line and only takes up as much width as necessary.
+
+Ex: display-visibility.html
+
+Changing an inline element to a block element, or vice versa, can be useful for making the page look a specific way, and still follow the web standards.
+
+.block-to-inline {
+    display: inline;
+}
+
+.inline-to-block {
+    display: block;
+}
+
+.none-demo {
+    display: none;
+}
+
+Setting the display property of an element only changes how the element is displayed, NOT what kind of element it is. So, an inline element with display: block; is not allowed to have other block elements inside it.
+
+inline-block
+- - - - - --
+By making an inline element to inline-block, we can apply top, bottom margins, paddings and also width and height properties.
+
+.inline-block-demo {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
+
+visibility
+- - - - --
+'visibility' is another css property to show/hide the elements in a webpage.
+
+If we set the display to 'none', the element will disappear from the page and it don't take any space(width and height).
+
+If we make visibility: hidden; the element will disappear but still it occupy the space it required.
+
+.visibility-demo {
+    visibility: hidden;
+    height: 50px;
+}
+
+Another possible value for visibility property is 'visible'.
+
+Position Property
+=================
+The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
+
+There are five different position values:
+1. static
+2. relative
+3. fixed
+4. absolute
+5. sticky
+
+Along with 'position' property, we need to use 'top', 'bottom', 'left' and 'right' properties to put an element at specific location.
+
+'top', 'bottom', 'left' and 'right' doesn't work alone without 'position' property.
+
+Ex: position.html
+
+position: static;
+- - - - - - - - -
+HTML elements are positioned static by default.
+
+Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page.
+
+div.static {
+  position: static;
+}
+
+position: relative;
+- - - - - - - - - -
+An element with position: relative; is positioned relative to its normal position.
+
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+
+.relative-demo {
+    position: relative;
+    left: 25px;
+    border: 3px solid #d3d3d3;
+}
+
+position: fixed;
+- - - - - - - --
+An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
+A fixed element does not leave a gap in the page where it would normally have been located.
+
+.fixed-demo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #d3d3d3;
+}
+
+An element with above class will be placed at bottom right corner of the web page.
+
+'margin' also applies to 'fixed' elements along with top, bottom, right and left properties.
+
+position: absolute;
+- - - - - - - - - -
+An element with position: absolute; is positioned relative to the nearest positioned ancestor element.
+
+A "positioned" element is one whose position is anything except static.
+
+However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+
+.relative-parent {
+    position: relative;
+    height: 150px;
+}
+
+.absolute-demo1 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 200px;
+}
+
+<div class="relative-parent">
+    <span>Relative parent element content</span>
+    <div class="absolute-demo1">content in absolute element</div>
+</div>
+
+.fixed-parent {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 150px;
+}
+
+.absolute-demo2 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+<div class="fixed-parent">
+    <span>Fixed parent element content</span>
+    <div class="absolute-demo2">content in absolute element</div>
+</div>
+
+'margin' also applies to 'absolute' elements along with top, bottom, right and left properties.
+
+position: sticky;
+- - - - - - - - -
+An element with position: sticky; is positioned based on the user's scroll position.
+
+A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+
+IE/Edge 15 and earlier versions do not support sticky position. And, Safari requires a -webkit- prefix.
+
+.sticky-demo {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;
+    background: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+
+<div class="sticky-demo">Some content in sticky element</div>
+
+Overlapping Elements
+--------------------
+When elements are positioned, they can overlap other elements.
+
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+
+An element can have a positive or negative stack order.
+
+An element with greater stack order is always in front of an element with a lower stack order.
+
+.some-parent {
+    position: relative;
+}
+.some-parent img{
+    width: 100px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+<div class="some-parent">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ......... </p>
+    <img src="./images/flowers.png" />
+</div>
+
+Overflow Property
+=================
+Using CSS overflow property we can control the content that is too big to fit into an area.
+
+The overflow property specifies whether to hide content or to add scrollbars when the content of an element is too big to fit in a specified area.
+
+The overflow property has the following values:
+visible - Default. The overflow is not clipped. It renders outside the element's box
+hidden - The overflow is clipped, and the rest of the content will be invisible
+scroll - The overflow is clipped, but a scrollbar is added to see the rest of the content
+auto - If content overflow, a scrollbar should be added to see the rest of the content
+
+The overflow property only works for block elements with a specified height.
+
+Ex: overflow.html
+
+overflow: visible
+- - - - - - - - -
+By default, the overflow is visible, meaning that it is not clipped and it renders outside the element's box.
+
+div {
+    width: 400px;
+    height: 100px;
+    background-color: #eee;
+    border: 1px solid #d3d3d3;
+}
+
+.visible-demo {
+    overflow: visible;
+}
+
+overflow: hidden
+- - - - - - - --
+With the hidden value, the overflow is clipped, and the rest of the content is hidden.
+
+.hidden-demo {
+    overflow: hidden;
+}
+
+overflow: scroll
+- - - - - - - --
+Setting the value to scroll, the overflow is clipped and a scrollbar is added to scroll inside the box. Note that this will add a scrollbar both horizontally and vertically (even if you do not need it).
+
+.scroll-demo {
+    overflow: scroll;
+}
+
+overflow: auto
+- - - - - - --
+The auto value is similar to scroll, only it add scrollbars when necessary.
+
+.auto-demo {
+    overflow: auto;
+}
+
+overflow-x and overflow-y
+- - - - - - - - - - - - -
+The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both).
+
+overflow-x specifies what to do with the left/right edges of the content.
+overflow-y specifies what to do with the top/bottom edges of the content.
+
+.xy-demo {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+float and clear
+===============
+The float property is used for positioning and formatting content.
+
+The float property can have one of the following values:
+    left - The element floats to the left of its container
+    right- The element floats to the right of its container
+    none - The element does not float (will be displayed just where it occurs in the text). This is default
+    inherit - The element inherits the float value of its parent
+
+Ex: float-clear.html
+
+The clear Property
+- - - - - - - - --
+The clear property specifies what elements can float beside the cleared element and on which side.
+
+The clear property can have one of the following values:
+    none - Allows floating elements on both sides. This is default
+    left - No floating elements allowed on the left side
+    right- No floating elements allowed on the right side
+    both - No floating elements allowed on either the left or the right side
+    inherit - The element inherits the clear value of its parent
+
+The most common way to use the clear property is after you have used a float property on an element.
+
+<style>
+    .clear-left-demo {
+        clear: left;
+        border: 3px solid green;
+    }
+</style>
+<div class="clear-parent">
+    <div class="content-left">Some content</div>
+    <div class="clear-left-demo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+</div>
+
+If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its container.
+
+Then we can add overflow: auto; to the containing element to fix this problem.
+
+.parent-container {
+    padding: 15px;
+    border: 1px solid #000000;
+    overflow: auto; /* By removing overflow property, the container won't cover the floated elements */
+}
+
+clearfix
+- - - --
+Generally we write a class with name 'clearfix' to prevent issues with clear and float properties.
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+<div class="clearfix"></div>
+
+'::after' is a pseudo-element. To fix the floating issues, we are placing empty content after the div and clearing both for that content.
+
+Horizontal & Vertical Align
+===========================
+Ex: horizontal-and-vertical-align.html
+
+Center Align Elements
+- - - - - - - - - - -
+To horizontally center a block element (like <div>), use margin: auto;
+
+.center-this {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #000000;
+}
+
+<div class="center-this">Some content</div>
+
+Center Align Text
+- - - - - - - - -
+To just center the text inside an element, use text-align: center;
+
+<style>
+    .text-center {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #000000;
+    }
+</style>
+<div class="text-center">Some content in the div</div>
+
+Center an Image
+- - - - - - - -
+To center an image, set left and right margin to auto and make it into a block element.
+
+<style>
+    .img-center {
+        display: block;
+        margin: auto;
+        width: 150px;
+    }
+</style>
+<img class="img-center" src="./images/flowers.png" />
+
+> We can set an element to left, right or center using 'absolute' positioning.
+
+> Using float we can set the element in right, left etc..
+
+Center Vertically - Using padding
+- - - - - - - - - - - - - - - - -
+We have many ways to center an element vertically in CSS. A simple solution is to use top and bottom padding.
+
+<style>
+    .vertically-center-by-padding {
+        text-align: center;
+        height: 100px;
+        padding-top: 75px;
+        border: 1px solid #000000;
+    }
+</style>
+<div class="vertically-center-by-padding">Some content in the div</div>
+
+Center Vertically - Using line-height
+- - - - - - - - - - - - - - - - - - -
+Another trick is to use the line-height property with a value that is equal to the height property.
+
+<style>
+    .vertically-center-by-lineheight {
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        border: 1px solid #000000;
+    }
+</style>
+<div class="vertically-center-by-lineheight">Some content in the div</div>
+
+CSS Selector Combinators
+========================
+A combinator is something that explains the relationship between the selectors.
+
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+There are four different combinators in CSS:
+- descendant selector (space)
+- child selector (>)
+- adjacent sibling selector (+)
+- general sibling selector (~)
+
+Descendant Selector
+- - - - - - - - - -
+The descendant selector matches all elements that are descendants of a specified element.
+
+div p {
+  background-color: yellow;
+}
+
+Select all the p elements in the div.
+
+Child Selector
+- - - - - - --
+The child selector selects all elements that are the immediate children(first level children) of a specified element.
+
+<style>
+    div.immediate-child-demo > p {
+        background-color: yellow;
+    }
+</style>
+<div class="immediate-child-demo">
+    <p>some content in paragraph 1</p>
+    <div>some content in div 1</div>
+    <p>some content in paragraph 2</p>
+    <div>
+        <p>content in next level paragraph</p>
+    </div>
+</div>
+
+Adjacent Sibling Selector
+- - - - - - - - - - - - -
+The adjacent sibling selector selects all elements that are the adjacent siblings of a specified element.
+
+"adjacent" means "immediately".
+<style>
+    div.adjacent-sibling-demo + p {
+        background-color: yellow;
+    }
+</style>
+<div>
+    <p>some paragraph content</p>
+    <p>some paragraph content</p>
+    <div class="adjacent-sibling-demo">Some content in div</div>
+    <p>some paragraph content</p> //This will be highlighted
+    <p>some paragraph content</p>
+</div>
+
+General Sibling Selector
+- - - - - - - - - - - --
+The general sibling selector selects all elements that are siblings of a specified element.
+
+<style>
+    div.general-sibling-demo ~ p {
+        background-color: yellow;
+    }
+</style>
+<div>
+    <p>some paragraph content</p>
+    <p>some paragraph content</p>
+    <div class="general-sibling-demo">Some content in div</div>
+    <p>some paragraph content</p> //This will be highlighted
+    <p>some paragraph content</p> //This will be highlighted
+</div>
+
+Pseudo-classes
+==============
+A pseudo-class is used to define a special state of an element.
+
+For example, pseudo-classes can be used to:
+- Style an element when a user mouses over it
+- Style visited and unvisited links differently
+- Style an element when it gets focus
+
+The syntax of pseudo-classes:
+selector:pseudo-class {
+  property:value;
+}
+
+Anchor Tag Pseudo-classes
+- - - - - - - - - - - - -
+a:link {
+    color: green; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    text-decoration: underline;
+}
+
+a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+To debug the pseudo classes effectively, browsers give us toggle pseudo classes controls.
+Ex: images/css-inspect-pseudo-classes.png
+
+Pseudo-classes and CSS Classes
+- - - - - - - - - - - - - - --
+Pseudo-classes can be combined with CSS classes.
+
+<style>
+    a.highlight:hover {
+        color: maroon;
+        cursor: pointer;
+    }
+</style>
+<h3><a class="highlight">Back to Home Link</a></h3>
+
+Show/Hide on hover
+- - - - - - - - --
+<style>
+    div.help-tooltip {
+        display: none;
+    }
+
+    div.parent:hover + div.help-tooltip {
+        display: block;
+    }
+</style>
+<div class="parent">Hover Me to see help tooltip!</div>
+<div class="help-tooltip">Help text of a</div>
+
+Hovering on div.parent will show help-tooltip.
+
+:first-child Pseudo-class
+- - - - - - - - - - - - -
+The :first-child pseudo-class matches a specified element that is the first child of another element.
+
+<style>
+    p:first-child {
+        color: green;
+    }
+</style>
+<div>
+    <p>first child</p> //This Will become green 
+    <p>second child</p>
+</div>
+
+<div>
+    <p>first child</p> //This Will become green
+    <p>second child</p>
+</div>
+
+Refer https://www.w3schools.com/css/css_pseudo_classes.asp for all other Pseudo-classes.
+
+CSS Pseudo-elements
+===================
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+    - Style the first letter, or line, of an element
+    - Insert content before, or after, the content of an element
+
+The syntax of pseudo-elements,
+
+selector::pseudo-element {
+  property: value;
+}
+
+Notice the double colon notation,
+::pseudo-element
+:pseudo-class
+
+::first-line Pseudo-element
+- - - - - - - - - - - - - -
+The ::first-line pseudo-element is used to add a special style to the first line of a text.
+
+<style>
+    p.first-line-demo::first-line {
+        color: red;
+    }
+</style>
+<p class="first-line-demo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. etc...</p>
+
+
+::first-letter Pseudo-element
+- - - - - - - - - - - - - - -
+The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+
+<style>
+    p.first-letter-demo::first-letter {
+        color: red;
+    }
+</style>
+<p class="first-line-demo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. etc...</p>
+
+::before Pseudo-element
+- - - - - - - - - - - -
+The ::before pseudo-element can be used to insert some content before the content of an element.
+
+<style>
+    p.before-demo::before {
+        content: 'Inserted ';
+    }
+</style>
+<p class="before-demo">Some content</p>
+
+
+::after Pseudo-element
+- - - - - - - - - - --
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+<style>
+    p.after-demo::after {
+        content: ' Inserted';
+    }
+</style>
+<p class="after-demo">Some content</p>
+
+
+::selection Pseudo-element
+- - - - - - - - - - - - --
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+<style>
+    ::-moz-selection { /* Code for Firefox */
+        color: red;
+        background: yellow;
+    }
+
+    ::selection {
+        color: red;
+        background: yellow;
+    }
+</style>
+<p>since the 1500s, when an un....</p>
+
+Opacity / Transparency
+======================
+The opacity property specifies the opacity/transparency of an element.
+
+.opacity-demo2 {
+    opacity: 0.5;
+}
+
+Attribute Selectors
+===================
+The [attribute] selector is used to select elements with a specified attribute.
+
+<style>
+    a[target] {
+        background-color: yellow;
+    }
+</style>
+<a href="#" target="_blank">Some Link</a>
+
+The above example selects all <a> elements with a target attribute.
+
+[attribute="value"] Selector
+- - - - - - - - - - - - - --
+The [attribute="value"] selector is used to select elements with a specified attribute and value.
+
+a[target="_blank"] {
+  background-color: yellow;
+}
+
+Selects all <a> elements with a target attribute having value '_blank'.
+
+We use the attribute selectors to select the form elements.
+input[type="text"] {}
+input[type="button"] {}
+
+CSS Units
+=========
+CSS has several different units for expressing a length.
+
+There are two types of length units: absolute and relative.
+
+Absolute Lengths
+- - - - - - - --
+The absolute length units are fixed and a length expressed in any of these will appear as exactly that size.
+
+cm 	centimeters
+mm 	millimeters
+in 	inches (1in = 96px = 2.54cm)
+px  pixels (1px = 1/96th of 1in)
+pt 	points (1pt = 1/72 of 1in)
+pc 	picas (1pc = 12 pt) 
+
+Relative Lengths
+- - - - - - - --
+Relative length units specify a length relative to another length property. Relative length units scales better between different rendering mediums.
+
+em 	 Relative to the font-size of the element (16px) 		
+rem  Relative to font-size of the root element 	
+vw 	 Relative to 1% of the width of the viewport* 	
+vh 	 Relative to 1% of the height of the viewport* 	
+% 	 Relative to the parent element
+
+CSS Specificity
+===============
+If there are two or more conflicting CSS rules that point to the same element, the browser follows some rules to determine which one is most specific and therefore wins out.
+
+Think of specificity as a score/rank that determines which style declarations are ultimately applied to an element.
+
+The universal selector (*) has low specificity, while ID selectors are highly specific! 
+
+Specificity is a common reason why your CSS-rules don't apply to some elements, although you think they should.
+
+Every selector has its place in the specificity hierarchy. There are four categories which define the specificity level of a selector:
+
+1. Inline styles - An inline style is attached directly to the element to be styled. 
+Example: <h1 style="color: #ffffff;">.
+
+2. IDs - An ID is a unique identifier for the page elements, such as #navbar.
+
+3. Classes, attributes and pseudo-classes - This category includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
+
+4. Elements and pseudo-elements - This category includes element names and pseudo-elements, such as h1, div, ::before and ::after.
+
+How to Calculate Specificity?
+- - - - - - - - - - - - - - -
+Memorize how to calculate specificity!
+
+Start at 0, 
+add 1000 for style attribute, 
+add 100 for each ID, 
+add 10 for each attribute, class or pseudo-class, 
+add 1 for each element name or pseudo-element.
+
+h1 //1
+#content h1 //101
+<div id="content"><h1 style="color: #ffffff">Heading</h1></div> //1000 
+
+Since 1 < 101 < 1000, the third rule has a greater level of specificity, and therefore will be applied.
+
+!important
+- - - - --
+We can use !important after property value to prevent overrides.
+
+h1 {
+    color: red !important;
+}
+
+Gradients
+=========
+CSS gradients let us display smooth transitions between two or more specified colors.
+
+CSS defines two types of gradients:
+    Linear Gradients (goes down/up/left/right/diagonally)
+    Radial Gradients (defined by their center)
+
+Linear Gradients
+- - - - - - - --
+To create a linear gradient we must define at least two color stops. Color stops are the colors we want to render smooth transitions among. We can also set a starting point and a direction (or an angle) along with the gradient effect.
+
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+Ex: gradients.html
+
+.linear-top-to-bottom {
+    background: linear-gradient(red, yellow);
+}
+
+.linear-to-right {
+    background: linear-gradient(to right, red, yellow);
+}
+
+.linear-to-bottom-right {
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+.linear-angles-demo {
+    background-image: linear-gradient(-90deg, red, yellow);
+}
+
+.linear-multiple-colors-demo {
+    background-image: linear-gradient(red, yellow, green);
+}
+
+.linear-transparent-demo {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+Radial Gradients
+- - - - - - - --
+A radial gradient is defined by its center.
+
+To create a radial gradient we must also define at least two color stops.
+
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+
+.radial-default-demo {
+    background-image: radial-gradient(red, yellow, green);
+}
+
+.radial-color-stops-demo {
+    background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+.radial-set-shape-demo {
+    background-image: radial-gradient(circle, red, yellow, green);
+}
+
+Shadow Effects
+==============
+With CSS you can add shadow to text and to elements.
+
+In this chapter you will learn about the following properties:
+1. text-shadow
+2. box-shadow
+
+Text Shadow
+- - - - - -
+The CSS text-shadow property applies shadow to text.
+
+text-shadow: 2px 2px;
+The meaning is horizontal shadow (2px) and the vertical shadow (2px).
+
+.text-shadow-default {
+    text-shadow: 2px 2px;
+}
+
+.text-shadow-color {
+    text-shadow: 2px 2px red;
+}
+
+.text-shadow-blur {
+    text-shadow: 2px 2px 5px red;
+}
+
+.text-shadow-blur-white-color {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+Box Shadow
+- - - - --
+The CSS box-shadow property applies shadow to elements.
+
+.box-shadow-default {
+    box-shadow: 10px 10px;
+}
+
+.box-shadow-color {
+    box-shadow: 10px 10px grey;
+}
+
+.box-shadow-blur {
+    box-shadow: 10px 10px 5px grey;
+}
+
+CSS calc() Function
+===================
+The calc() function performs a calculation to be used as the property value.
+
+div {
+    width: calc(100% - 100px);
+}
+
+Ex: calc-function.html
+
+Transitions
+===========
+Ex: transitions.html
+
+Transitions allows you to change property values smoothly (from one value to another), over a given duration.
+
+<style>
+    .demo1 {
+        width: 200px;
+        height: 100px;
+        background: #868686;
+        color: white;
+
+        -webkit-transition: width 2s; /* Safari */
+        transition: width 2s;
+    }
+
+    .demo1:hover {
+        width: 400px;
+    }
+</style>
+<div class="demo1">Some content</div>
+
+The transition effect will start when the specified CSS property (width) changes value.
+
+We can apply transition effect on many properties at a time.
+
+<style>
+    .demo2 {
+        width: 200px;
+        height: 100px;
+        background: #868686;
+        color: white;
+
+        -webkit-transition: width 2s, height 4s; /* Safari */
+        transition: width 2s, height 4s;
+    }
+
+    .demo2:hover {
+        width: 400px;
+        height: 200px;
+    }
+</style>
+<div class="demo2">Some content</div>
+
+Animations
+==========
+An animation lets an element gradually change from one style to another.
+
+You can change as many CSS properties you want, as many times you want.
+
+To use CSS animation, you must first specify some keyframes for the animation.
+
+Keyframes hold what styles the element will have at certain times.
+
+@keyframes change-backgrounds {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+div.demo1 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+
+    -webkit-animation-name: change-backgrounds; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: change-backgrounds;
+    animation-duration: 4s;
+}
+
+The animation-duration property defines how long time an animation should take to complete. If the animation-duration property is not specified, no animation will occur, because the default value is 0s (0 seconds). 
+
+In the example above we have specified when the style will change by using the keywords "from" and "to" (which represents 0% (start) and 100% (complete)).
+
+It is also possible to use percent. By using percent, you can add as many style changes as you like.
+
+'animation-iteration-count' property specifies the number of times an animation should run. 
+animation-iteration-count: 3;
+animation-iteration-count: infinite;
+
+Flexbox
+=======
+Ex: flexbox.html
+
+Using Flexible Box we can develop the page layouts easily with out using float and positions.
+
+The div becomes flexible box by setting the 'display' property to 'flex'.
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+.flex-container {
+  display: flex;
+}
+
+Now, <div class="flex-container"> is the flexible box / flexbox and the immediate child elements are the flex items / flexible items.
+
+The flexbox(parent) properties are:
+1. flex-direction
+2. flex-wrap
+3. flex-flow
+4. justify-content
+5. align-items
+6. align-content
+
+The flex item(children) properties are:
+1. order
+2. flex-grow
+3. flex-shrink
+4. flex-basis
+5. flex
+6. align-self
+
+Let us go through each of the flexbox(parent) properties.
+
+1. flex-direction
+- - - - - - - - -
+flex-direction property defines in which direction the container wants to stack the flex items.
+
+The possible values for flex-direction are,
+
+flex-direction: column;
+- The column value stacks the flex items vertically (from top to bottom)
+
+flex-direction: column-reverse; // first element will become last and vice versa.
+- The column-reverse value stacks the flex items vertically (but from bottom to top)
+
+flex-direction: row; // Default value
+- The row value stacks the flex items horizontally (from left to right)
+
+flex-direction: row-reverse; // first element will become last and vice versa.
+- The row-reverse value stacks the flex items horizontally (but from right to left)
+
+2. flex-wrap
+- - - - - --
+The flex-wrap property specifies whether the flex items should wrap or not.
+
+The possible values for flex-wrap are,
+
+flex-wrap: wrap;
+- The wrap value specifies that the flex items will wrap if necessary.
+
+flex-wrap: nowrap;
+- The nowrap value specifies that the flex items will not wrap (this is default)
+
+flex-wrap: wrap-reverse; // first row will become last and vice versa.
+- The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order
+
+3. flex-flow
+- - - - - --
+The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+flex-flow: row wrap;
+flex-flow: column wrap;
+flex-flow: row-reverse wrap-reverse;
+flex-flow: row-reverse nowrap;
+etc... other combinations...
+
+4. justify-content (To alignment flex items horizontally) 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The justify-content property is used to align the flex items horizontally.
+
+The possible values for justify-content are,
+
+justify-content: center;
+- The center value aligns the flex items at the center of the container
+
+justify-content: flex-start;
+- The flex-start value aligns the flex items at the beginning of the container (this is default)
+
+justify-content: flex-end;
+- The flex-end value aligns the flex items at the end of the container
+
+justify-content: space-around;
+- The space-around value displays the flex items with space before, between, and after the lines
+
+justify-content: space-between;
+- The space-between value displays the flex items with space between the lines
+
+5. align-items (To alignment flex items vertically)
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+The align-items property is used to align the flex items vertically.
+
+The possible values for align-items are,
+
+align-items: center;
+- The center value aligns the flex items in the middle of the container
+
+align-items: flex-start;
+- The flex-start value aligns the flex items at the top of the container
+
+align-items: flex-end;
+- The flex-end value aligns the flex items at the bottom of the container
+
+align-items: stretch;
+- The stretch value stretches the flex items to fill the container (this is default)
+
+align-items: baseline;
+- The baseline value aligns the flex items such as their baselines aligns (bottom of the text characters)
+
+6. align-content
+- - - - - - - --
+The align-content property is used to align the flex lines. *****( FLEX LINES NOT FLEX ITEMS )*****
+
+align-content: space-between;
+- The space-between value displays the flex lines with equal space between them
+
+align-content: space-around;
+- The space-around value displays the flex lines with space before, between, and after them
+
+align-content: stretch;
+- The stretch value stretches the flex lines to take up the remaining space (this is default)
+
+align-content: center;
+- The center value displays the flex lines in the middle of the container
+
+align-content: flex-start;
+- The flex-start value displays the flex lines at the start of the container
+
+align-content: flex-end;
+- The flex-end value displays the flex lines at the end of the container
+
+Child Items / Flexible Items Properties 
+---------------------------------------
+The direct child elements of a flex container automatically becomes flexible (flex) items.
+
+The flex item properties are:
+1. order
+2. flex-grow
+3. flex-shrink
+4. flex-basis
+5. flex
+6. align-self
+
+Let us go through each of the flex item properties.
+
+1. order
+- - - --
+The order property specifies the order of the flex items.
+
+The first flex item in the code does not have to appear as the first item in the layout. We can change it using the order property.
+
+<div class="parent flex-container28">
+    <div style="order: 2">1</div>
+    <div style="order: 4">2</div>
+    <div style="order: 3">3</div>
+    <div style="order: 1">4</div>
+</div> // The elements takes position of specified order value.
+
+Here the order would be 4 - 1 - 3 - 2
+
+If we miss order property for few elements those will fall first and the ordered elements follows.
+
+<div class="parent flex-container29">
+    <div style="order: 2">1</div>
+    <div style="order: 4">2</div>
+    <div>3</div>
+    <div style="order: 1">4</div>
+</div>
+
+Here the order would be 3 - 4 - 1 - 2
+
+2. flex-grow
+- - - - - --
+The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.
+
+<div class="parent flex-container30">
+    <div style="flex-grow: 2">1</div>
+    <div style="flex-grow: 4">2</div>
+    <div style="flex-grow: 1">3</div>
+</div>
+
+3. flex-shrink
+- - - - - - --
+The flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items.
+
+<div class="parent flex-container31">
+    <div>1</div>
+    <div style="flex-shrink: 2">2</div>
+    <div style="flex-shrink: 0">3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+
+4. flex-basis
+- - - - - - -
+The flex-basis property specifies the initial length of a flex item.
+
+<div class="parent flex-container32">
+    <div>1</div>
+    <div style="flex-basis: 300px;">2</div>
+    <div>3</div>
+</div>
+
+5. flex
+- - - -
+The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+
+<div class="parent flex-container33">
+    <div>1</div>
+    <div style="flex: 0 0 300px;">2</div>
+    <div>3</div>
+</div>
+
+6. align-self
+- - - - - - -
+The align-self property specifies the alignment for the selected item inside the flexible container.
+
+The align-self property overrides the default alignment set by the container's align-items property.
+
+<div class="parent flex-container34">
+    <div>1</div>
+    <div>2</div>
+    <div style="align-self: center;">3</div>
+    <div>4</div>
+</div>
+
+<div class="parent flex-container35">
+    <div>1</div>
+    <div style="align-self: flex-start;">2</div>
+    <div style="align-self: flex-end;">3</div>
+    <div>4</div>
+</div>
+
+***** NO justify-self property available. So, use auto margins to align items horizontally *****
+To pull an element to right use margin-left: auto;
+To pull an element to left use margin-right: auto;
+
+.pull-to-right {
+    margin-left: auto;
+}
+
+<div class="parent flex-container37">
+    <div>1</div>
+    <div>2</div>
+    <div class="pull-to-right">3</div>
+    <div>4</div>
+</div>
+
+Both div 3 and 4 will be pulled to right.
+
+Flexbox Summary
+---------------
+The flexbox(parent) properties are:
+1. flex-direction - column, column-reverse, row, row-reverse
+2. flex-wrap - wrap, nowrap, wrap-reverse
+3. flex-flow - flex-direction + flex-wrap
+4. justify-content - center, flex-start, flex-end, space-around, space-between
+5. align-items - center, flex-start, flex-end, stretch, baseline
+6. align-content - Deal with FLEX LINES NOT FLEX ITEMS. space-between, space-around, stretch, center, flex-start, flex-end
+
+The flex item(children) properties are:
+1. order - 1, 2, 3, 4 ...
+2. flex-grow - 1, 2, 3 ...
+3. flex-shrink - 0, 1, 2 ...
+4. flex-basis - 100, 200, 300 ..
+5. flex - flex-grow + flex-shrink + flex-basis 
+6. align-self - center, flex-start, flex-end
+
+Media Queries & Responsive Web Design(RWD)
+==========================================
+Media types
+-----------
+CSS2 Introduced Media Types.
+
+Ex: media-types.html
+
+You could have one set of style rules for computer screens, one for printers, one for handheld devices, one for television-type devices, and so on.
+
+Unfortunately these media types never got a lot of support by devices, other than the print media type.
+
+all 	Used for all media type devices
+print 	Used for printers
+screen 	Used for computer screens, tablets, smart-phones etc.
+speech 	Used for screenreaders that "reads" the page out loud
+
+Media Queries
+-------------
+Ex: media-queries.html
+
+Media queries in CSS3 extended the CSS2 media types idea: Instead of looking for a type of device, they look at the capability of the device.
+
+Media queries can be used to check many things, such as:
+- width and height of the viewport
+- width and height of the device
+- orientation (is the tablet/phone in landscape or portrait mode?)
+- resolution
+
+Using media queries are a popular technique for delivering different styles to desktops, laptops, tablets, and mobile phones.
+
+A media query consists of a media type and can contain one or more expressions, which resolve to either true or false.
+
+@media not|only mediatype and (expressions) {
+  CSS-Code;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media not screen and (min-width: 480px) and (min-height: 1024px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+Unless you use the not or only operators, the media type is optional and the 'all' type will be implied.
+
+We can also have different stylesheets for different media,
+
+<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+
+<link rel="stylesheet" media="print and (min-width: 480px)" href="style1.css">
+
+<link rel="stylesheet" media="screen and (min-width: 480px) and (min-height: 1024px)" href="style2.css">
+
+Responsive Web Design
+---------------------
+Responsive web design makes your web page look good on all devices.
+
+Responsive web design uses only HTML and CSS. Responsive web design is not a program or a JavaScript.
+
+It is called responsive web design when you use CSS and HTML to resize, hide, shrink, enlarge, or move the content to make it look good on any screen.
+
+Below are the common break points followed by most of the developers to achieve responsive design.
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...} 
+
+Media queries can also be used to change layout of a page depending on the orientation of the browser.
+
+@media only screen and (orientation: landscape) {...}
+
+@media only screen and (orientation: portrait) {...}
+
+Viewport meta tag
+-----------------
+The browser's viewport is the area of the window in which web content can be seen. This is often not the same size as the rendered page, in which case the browser provides scrollbars for the user to scroll and access all the content.
+
+Narrow screen devices (e.g. mobiles) render pages in a virtual window or viewport, which is usually wider than the screen, and then shrink the rendered result down so it can all be seen at once. Users can then pan and zoom to see different areas of the page. For example, if a mobile screen has a width of 640px, pages might be rendered with a virtual viewport of 980px, and then it will be shrunk down to fit into the 640px space. All mobile browsers do this.
+
+This is done because many pages are not mobile optimized, and break (or at least look bad) when rendered at a small viewport width. This virtual viewport is a way to make non-mobile-optimized sites in general look better on narrow screen devices.
+
+To prevent this kind of fixed viewport width(mostly 980px in all mobile browsers), using viewport meta tag we can set the width to device width.
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+The width property controls the size of the viewport. It can be set to a specific number of pixels like width=600 or to the special value device-width, which is the width of the screen in CSS pixels at a scale of 100%.
+
+The initial-scale property controls the zoom level when the page is first loaded. The maximum-scale, minimum-scale, and user-scalable properties control how users are allowed to zoom the page in or out.
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, minimum-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+references:
+https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport
+https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html
+
+Ex1: responsive-page.html - Float&Clear - Responsive Blog Page
+
+Ex2: flexbox-page.html - Flexbox - Responsive Blog Page
+
+Icons
+=====
+https://fontawesome.com/
+
+Jruler
+======
+http://www.spadixbd.com/freetools/jruler.htm
+
+
+https://caniuse.com is to verify the browser compatibility of html, css and javascript features.
+
+Reference: https://www.w3schools.com/css/default.asp
+
+I recommend reading CSS in w3schools. It is the best and simple site for html & css turorials.
+
+Templates
+=========
+https://colorlib.com
+
+
+CSS Preprocessors
+=================
+A CSS preprocessor is a program that has it's own syntax and generates css on compilation.
+
+There are many CSS preprocessors like sass, less, stylus etc...
+
+Most CSS preprocessors have some features that don't exist in pure CSS, such as variables, mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
+
+SASS
+----
+https://sass-lang.com/
+
+Sass supports two different syntaxes. .SCSS and .SASS
+
+Sass stands for Syntactically Awesome StyleSheets. This is OLDER Syntax. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties.
+
+nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    display: inline-block
+
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+
+
+Scss stands for Sassy CSS. It is new syntax of sass. It's syntax is almost similar to CSS syntax.
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+As .scss is the new syntax, most of the projects/developers use .scss extension. 
+
+Installation
+------------
+npm install -g sass
+
+To run Sass from the command line, just use
+
+> sass input.scss output.css
+> sass sass/variables-demo.scss:css/compiled/variables-demo.css
+
+You can also tell Sass to watch the file and update the CSS every time the Sass file changes:
+
+> sass --watch input.scss:output.css
+> sass --watch sass/variables-demo.scss:css/compiled/variables-demo.css
+
+If you have a directory with many Sass files, you can also tell Sass to watch the entire directory:
+
+> sass --watch app/sass:public/stylesheets
+> sass --watch sass:css/compiled 
+
+Variables
+---------
+Variables are a way to store information that we want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value we think we will reuse. 
+
+*** Sass uses the $ symbol to make something a variable. ***
+
+// variable-demo.scss
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+Nesting
+-------
+Sass will let us nest CSS selectors in a way that follows the same visual hierarchy of HTML. 
+
+// nesting-demo.scss
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li { 
+        display: inline-block;
+        a {
+            display: block;
+            padding: 6px 12px;
+            text-decoration: none;
+        } 
+    }
+  }
+}
+
+Partials and Import
+-------------------
+We can create partial Sass files that contain little snippets of CSS that we can include in other Sass files. A partial is simply a Sass file named with a leading underscore. We might name it something like _partial.scss. The underscore lets Sass know that the file is only a partial file and that it should not be generated into a CSS file. Sass partials are used with the @import directive.
+
+CSS has an import option that lets us split our CSS into smaller, more maintainable portions. The only drawback is that each time we use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that we want to import and combine it with the file we are importing into so we can serve a single CSS file to the web browser.
+
+// _reset.scss
+html, body, ul, ol {
+  margin:  0;
+  padding: 0;
+}
+
+// import-demo.scss
+@import 'reset';
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+
+Notice we are using @import 'reset'; in the import-demo.scss file. When we import a file we don't need to include the file extension .scss
+
+Mixins
+------
+Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets us make groups of CSS declarations that we want to reuse throughout our site. we can even pass in values to make our mixin more flexible. A good use of a mixin is for vendor prefixes.
+
+// mixins-demo.scss
+@mixin background-gradient($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -o-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -ms-linear-gradient(left, $color1 0%, $color2 100%);
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+.offer {
+    @include background-gradient(#908ced, #b172e8);
+    color: #fff;
+    padding: 25px 0px;
+    margin-top: 150px;
+}
+
+.price-section {
+    @include background-gradient(#d3d3d3, #ffffff);
+}
+
+Extend/Inheritance
+------------------
+Using @extend lets you share a set of CSS properties from one selector to another. It helps keep our Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes etc..
+
+// extend-inheritance-demo.scss
+/* This CSS will print because %message-shared is extended. */
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+// This CSS won't print because %equal-heights is never extended.
+%equal-heights {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+.success {
+    @extend %message-shared;
+    border-color: green;
+}
+
+.error {
+    @extend %message-shared;
+    border-color: red;
+}
+
+.warning {
+    @extend %message-shared;
+    border-color: yellow;
+}
+
+The main difference b/w mixin and inheritance is, Mixin repeat/copy the code where ever we include it. But, inheritance don't repeat the code, It group the selectors and apply the common code to some set of classes. The output for the above scss file will be like below.
+
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }
+
+If we use mixins here, the code would be like below.
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: green; }
+
+.error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: red; }
+
+.warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: yellow; }
+
+Note that the CSS in %equal-heights isn't generated in output file, because %equal-heights is never extended anywhere.
+
+Operators
+---------
+Sass has a handful of standard math operators like +, -, *, /, and %. 
+
+Along with the above mentioned sass basics, it provides many other feature like if else statements etc.. Please go through the docs.
+
+SASS Syntaxes Symmary
+---------------------
+1. variable - $ symbol
+- - - - - - - - - - -
+$primary-color: #333;
+
+body {
+  color: $primary-color;
+}
+
+2. '_' before file name makes it a partial. Ex: _reset.scss
+
+3. @mixin - @include
+- - - - - - - - - --
+@mixin background-gradient($color1, $color2) {
+    ....
+}
+
+.offer {
+    @include background-gradient(#908ced, #b172e8);
+    ....
+} 
+
+4. %name - @extend
+- - - - - - - - --
+%message-shared {
+    ....
+}
+
+.success {
+    @extend %message-shared;
+    border-color: green;
+}
+
+Ex1: flexbox-page-sassy.html
+Ex2: creative-agency-sassy.html
+
+.map files are used to debug sass in browser developer tools.

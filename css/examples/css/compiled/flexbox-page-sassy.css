@@ -1,0 +1,125 @@
+body {
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: rgba(211, 211, 211, 0.28);
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
+
+.header {
+  background: #343a40;
+  color: #ffffff;
+}
+
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header .container {
+  padding: 10px 0px 15px 0px;
+}
+.header .container .header-content {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.header .container .header-content .nav-links-container {
+  margin-left: auto;
+}
+.header .container .header-content .nav-links-container ul {
+  list-style: none;
+  margin: 0px;
+  padding: 7px 0px 0px;
+}
+.header .container .header-content .nav-links-container ul li {
+  display: inline-block;
+  padding-right: 25px;
+}
+.header .container .header-content .nav-links-container ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.header .container .header-content .nav-links-container ul li a:hover {
+  opacity: 1;
+}
+.header .container .header-content .logo-container .logo {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.main-content {
+  margin-top: 80px;
+}
+.main-content .head-image img {
+  max-width: 100%;
+}
+.main-content .blog-content {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-content .blog-content .posts-list {
+  width: 72%;
+}
+.main-content .blog-content .sidebar {
+  width: 25%;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+.card.article-card .card-header {
+  padding: 0px;
+  max-height: 300px;
+}
+.card .card-header {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 15px 20px;
+}
+.card .card-header img {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+}
+.card .card-body {
+  padding: 20px;
+}
+.card h3,
+.card p,
+.card h4 {
+  margin: 0px;
+}
+.card .card-footer {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 15px 20px;
+}
+
+.footer {
+  color: #ffffff;
+  background: #343a40;
+  text-align: center;
+  padding: 40px 0px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=flexbox-page-sassy.css.map */

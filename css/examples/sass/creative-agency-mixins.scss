@@ -1,0 +1,8 @@
+@mixin  background-gradient($color-stop1, $color-stop2) {
+    background: $color-stop1;
+    background: -moz-linear-gradient(left, $color-stop1 0%, $color-stop2 100%);
+    background: -webkit-linear-gradient(left, $color-stop1 0%, $color-stop2 100%);
+    background: -o-linear-gradient(left, $color-stop1 0%, $color-stop2 100%);
+    background: -ms-linear-gradient(left, $color-stop1 0%, $color-stop2 100%);
+    background: linear-gradient(to right, $color-stop1 0%, $color-stop2 100%);
+}

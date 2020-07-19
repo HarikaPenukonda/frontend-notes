@@ -1,0 +1,952 @@
+Browsers can understand only three languages. HTML, CSS and Javascript.
+
+HTML is the markup language to define the structure of Web pages.
+
+HTML - Hyper Text Markup Language
+
+HTML is the standard markup language for creating Web pages.
+
+HTML elements are represented by tags. Ex: <head></head>, <body></body>, <p></p> etc...
+
+Browsers parse these tags and render the content.
+
+Below is a basic html page,
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <h1>My First Heading</h1>
+        <p>My first paragraph.</p>
+    </body>
+</html>
+
+HTML tags normally come in pairs like <p> and </p>. The first tag in a pair is the start tag / opening tag, the second tag is the end tag / closing tag. 
+
+<!DOCTYPE>
+----------
+The <!DOCTYPE> declaration represents the document type, and helps browsers to display web pages correctly.
+
+It must only appear once, at the top of the page (before any HTML tags).
+
+The <!DOCTYPE> declaration is not case sensitive.
+
+The <!DOCTYPE> declaration for HTML5 is:
+<!DOCTYPE html>
+
+All HTML documents must start with a document type declaration: <!DOCTYPE html>.
+
+The HTML document itself begins with <html> and ends with </html>.
+
+The visible part of the HTML document is in between <body> and </body>.
+
+HTML headings are defined with the <h1> to <h6> tags. <h1> defines the most important heading. <h6> defines the least important heading.
+
+HTML paragraphs are defined with the <p> tag.
+
+<p>This is a paragraph.</p>
+
+HTML links are defined with anchor tag <a>.
+
+<a href="https://www.w3schools.com">This is a link</a>
+
+The link's destination is specified in the href attribute. 
+
+HTML images are defined with the <img> tag.
+
+<img src="person.jpg" alt="person" width="104" height="142">
+
+The source file (src), alternative text (alt), width, and height are attributes.
+
+HTML buttons are defined with the <button> tag. <button>Click me</button>
+
+HTML elements with no content are called empty elements. Empty elements do not have an end tag, such as the <br> element (which indicates a line break).
+
+Empty elements can be "closed" in the opening tag like this: <br />
+
+Do Not Forget the End Tag. It might produce unexpected results and/or errors if you forget the end tag. Some browsers display properly even we forget the end tags. But, don't relay on it.
+
+HTML tags are not case sensitive: <P> same as <p>. But, W3C recommends lowercase in HTML.
+
+HTML Attributes
+---------------
+Attributes provide additional information about HTML elements.
+
+Attributes are always specified in the start tag. Attributes usually come in name/value pairs like: name="value"
+
+The style attribute is used to specify the styling of an element, like color, font, size etc.
+<p style="color:red">I am a paragraph</p>
+
+The language of the document can be declared in the <html> tag. The language is declared with the lang attribute. Declaring a language is important for accessibility applications (screen readers) and search engines.
+
+<html lang="en-US">
+
+title Attribute: The value of the title attribute will be displayed as a tooltip when you mouse over the element.
+
+<h6 title="heading 6">Heading 6</h6>
+
+Ex: headings.html
+
+<hr> is used to get horizontal line. Ex: headings.html
+
+The title attribute can be written with uppercase or lowercase like title or TITLE. W3C recommends lowercase in HTML.
+
+Double quotes around attribute values are the most common in HTML, but single quotes can also be used.
+<h6 title='heading 6'>Heading 6</h6>
+
+<title></title> tag is different from 'title' attribute. Using title tag we can set the title of the page.
+
+We must place the title tag in <head></head> tag.
+
+The HTML <head> element is a container for metadata. HTML metadata is data about the HTML document. Metadata is not displayed. 
+
+Metadata typically define the document title, character set, styles, links, scripts, and other meta information.
+
+<meta charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="John Doe">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
+
+We need viewport meta tag to work with media queries. It plays key role in making a page responsive.
+
+The HTML <br> element defines a line break. 
+<p>This is<br>a paragraph<br>with line breaks.</p>
+
+HTML Text Formatting elements
+-----------------------------
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Small text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
+
+Ex: text-formatting.html
+
+HTML Comment
+<!-- Write your comments here -->
+
+Use Ctrl + / in VS Code to toggle comment.
+
+HTML Styles - CSS
+-----------------
+CSS stands for Cascading Style Sheets.
+
+CSS describes how HTML elements are to be displayed.
+
+CSS can be added to HTML elements in 3 ways:
+- Inline - by using the style attribute in HTML elements
+- Internal - by using a <style> element in the <head> section
+- External - by using an external CSS file
+
+Inline CSS
+<h1 style="color:blue;">This is a Blue Heading</h1>
+
+Internal CSS
+An internal CSS is used to define a style for a single HTML page.
+An internal CSS is defined in the <head> section of an HTML page, within a <style> element.
+Ex: internal-css.html
+
+External CSS
+An external style sheet is used to define the style for many HTML pages.
+With an external style sheet, you can change the look of an entire web site, by changing one file!
+To use an external style sheet, add a link to it in the <head> section of the HTML page.
+Ex: external-css.html
+
+External References
+External style sheets can be referenced with a full URL.
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+CDN - Content Delivery Network - There are lot of CDN's available for bootstrap and other css and js frameworks. CDN's deliver the content fast. But, style file not available in our server. 
+
+One advantage with CDN is, load on servers will decrease a little bit by loading data from other server.
+
+HTML Links - Anchor tag
+-----------------------
+A link does not have to be text. It can be an image or any other HTML element.
+
+<a href="url">link text</a>
+
+The href attribute specifies the destination address of the link.
+
+A local link (link to the same web site) is specified with a relative URL (without https://www....).
+
+<a href="./headings.html">Headings</a>
+
+By default, a link will appear like this (in all browsers):
+    - An unvisited link is underlined and blue
+    - A visited link is underlined and purple
+    - An active link is underlined and red
+
+We can change the default colors, by using CSS.
+
+target Attribute
+The target attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:
+
+_blank - Opens the linked document in a new window or tab
+_self - Opens the linked document in the same window/tab as it was clicked (this is default)
+_parent - Opens the linked document in the parent frame
+_top - Opens the linked document in the full body of the window
+framename - Opens the linked document in a named frame
+
+Create a Bookmark
+HTML bookmarks are used to allow readers to jump to specific parts of a Web page.
+
+Bookmarks can be useful if your webpage is very long.
+Ex: anchor-tag-bookmark.html
+
+Images
+- - --
+Different kind of images
+Four kind of images we use jpeg, png, svg, gif
+Ex: images.html
+
+Gif loaders: https://loading.io/, http://www.ajaxload.info/ and many other sites available.
+
+Tables
+------
+<table></table>
+
+<tr></tr> - Table row
+
+<th></th> - Column header cell
+
+<td></td> - data cell.
+
+If you want the borders to collapse into one border, add the CSS border-collapse property.
+Ex: tables.html
+
+colspan:
+To make one column span more than one column, use the colspan attribute.
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th colspan="2">Telephone</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+    <td>55577854</td>
+    <td>55577855</td>
+  </tr>
+</table>
+
+rowspan:
+To make a cell span more than one row, use the rowspan attribute
+<table style="width:100%">
+  <tr>
+    <th>Name:</th>
+    <td>Bill Gates</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Telephone:</th>
+    <td>55577854</td>
+  </tr>
+  <tr>
+    <td>55577855</td>
+  </tr>
+</table>
+
+HTML Lists
+----------
+We have two kinds of lists in html. Unordered list and ordered list.
+
+An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
+
+The list items will be marked with bullets (small black circles) by default:
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+The CSS list-style-type property is used to define the style of the list item marker.
+disc	Sets the list item marker to a bullet (default)
+circle	Sets the list item marker to a circle
+square	Sets the list item marker to a square
+none	The list items will not be marked
+
+Ordered lists:
+An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.
+
+The list items will be marked with numbers by default.
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+The type attribute of the <ol> tag, defines the type of the list item marker.
+type="1"	The list items will be numbered with numbers (default)
+type="A"	The list items will be numbered with uppercase letters
+type="a"	The list items will be numbered with lowercase letters
+type="I"	The list items will be numbered with uppercase roman numbers
+type="i"	The list items will be numbered with lowercase roman numbers
+
+<ol type="A">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<ol type="I">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+****** HTML Block and Inline Elements ******
+--------------------------------------------
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+
+Block-level Elements:
+A block-level element always starts on a new line and takes up the full width available.
+The <div> element is a block-level element.
+
+Block level elements in HTML:
+<address>, <article>, <aside>, <blockquote>, <canvas>, <dd>, <div>, <dl>, <dt>, <fieldset>, <figcaption>, <figure>, <footer>, <form>, <h1>-<h6>, <header>, <hr>, <li>, <main>, <nav>, <noscript>, <ol>, <output>, <p>, <pre>, <section>, <table>, <tfoot>, <ul>, <video>
+
+Inline Elements:
+An inline element does not start on a new line and only takes up as much width as necessary.
+<span> element is inline.
+<span>Hello</span>
+<span>World</span>
+
+Inline elements in HTML:
+<a>, <abbr>, <acronym>, <b>, <bdo>, <big>, <br>, <button>, <cite>, <code>, <dfn>, <em>, <i>, <img>, <input>, <kbd>, <label>, <map>, <object>, <q>, <samp>, <script>, <select>, <small>, <span>, <strong>, <sub>, <sup>, <textarea>, <time>, <tt>, <var>
+
+The <div> Element:
+The <div> element is often used as a container for other HTML elements.
+
+The <span> Element:
+The <span> element is often used as a container for some text.
+
+Class Attribute
+---------------
+The HTML class attribute is used to define equal styles for elements with the same class name.
+
+So, all HTML elements with the same class attribute will have the same format and style.
+
+The class attribute can be used on any HTML element.
+
+Ex: class-attribute.html
+
+The class name is case sensitive! cities and Cities are two different classes.
+
+HTML elements can have more than one class name, each class name must be separated by a space.
+
+<h2 class="city main">London</h2>
+
+Different tags, like <h2> and <p>, can have the same class name and thereby share the same style:
+
+<h2 class="city">Paris</h2>
+<p class="city">Paris is the capital of France</p>
+
+Using The class Attribute in JavaScript:
+The class name can also be used by JavaScript to perform certain tasks for elements with the specified class name.
+
+JavaScript can access elements with a specified class name by using the getElementsByClassName() method.
+
+When a user clicks on a button, hide all elements with the class name "cities":
+
+<script>
+    function hideCities() {
+        var cityElements = document.getElementsByClassName("cities");
+        for (var i = 0; i < cityElements.length; i++) {
+            cityElements[i].style.display = "none";
+        }
+    }
+</script>
+
+id Attribute
+------------
+A html page should contain only one element with one id. Having multiple elements with same id is WRONG.
+
+The id attribute specifies a unique id for an HTML element (the value must be unique within the HTML document).
+
+In CSS, to select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+</style>
+
+<h1 id="myHeader">My Header</h1>
+
+The id attribute can be used on any HTML element.The id value is case-sensitive.
+
+The id value must contain at least one character, and must not contain whitespace (spaces, tabs, etc.).
+
+id VS class:
+An HTML element can only have one unique id that belongs to that single element, while a class name can be used by multiple elements
+
+JavaScript can access an element with a specified id by using the getElementById() method.
+
+<script>
+    function updateHeader() {
+        document.getElementById("myHeader").innerHTML = "Have a nice day!";
+    }
+</script>
+
+Iframes
+-------
+An iframe is used to display a web page within a web page.
+
+An HTML iframe is defined with the <iframe> tag. 
+<iframe src="https://www.w3schools.com"></iframe>
+
+Use the height and width attributes to specify the size of the iframe.
+<iframe src="demo_iframe.html" height="200" width="300"></iframe>
+
+Or we can use CSS to set the height and width of the iframe.
+<iframe src="demo_iframe.html" style="height:200px;width:300px;"></iframe>
+
+By default, an iframe has a border around it.
+To remove the border, add the style attribute and use the CSS border property.
+<iframe src="demo_iframe.htm" style="height:200px;width:300px;border:none;"></iframe>
+
+An iframe can be used as the target frame for a link.
+The target attribute of the link must refer to the name attribute of the iframe.
+
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="./index.html" target="iframe_a">Index Page</a>></p>
+
+JavaScript
+----------
+JavaScript makes HTML pages more dynamic and interactive.
+
+<script> Tag:
+The <script> tag is used to include javascript file or script.
+<script src="js/main.js"></script>
+
+OR
+
+<script>
+    // Some script
+</script>
+
+The <script> element either contains scripting statements, or it points to an external script file through the src attribute.
+
+<noscript> Tag:
+The <noscript> tag is used to provide an alternate content for users that have disabled scripts in their browser or have a browser that doesn't support client-side scripts.
+
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+We can include scripts in 3 ways. Inpage, Infile and from CDN / Remote. It's better to include script files / scripts at end of page to load it faster. So that we can avoid seeing blank screen while loading scripts. Include style files in head to load page beautifully on page load. 
+
+File Paths
+----------
+A file path describes the location of a file in a web site's folder structure.
+
+File paths are used when linking to external files like:
+ - Web pages
+ - Images
+ - Style sheets
+ - JavaScripts
+
+<img src="picture.jpg">	picture.jpg is located in the same folder as the current page
+<img src="images/picture.jpg">	picture.jpg is located in the images folder in the current folder
+<img src="./images/picture.jpg">	picture.jpg is located in the images folder in the current folder. Same as above.
+<img src="../images/picture.jpg">	picture.jpg is located in the folder one level up from the current folder
+<img src="/images/picture.jpg">	picture.jpg is located in the images folder at the root of the current website
+
+It is best practice to use relative file paths.
+
+<base> Element
+--------------
+The <base> element specifies the base URL and base target for all relative URLs in a page.
+
+<base href="https://www.w3schools.com/" target="_blank">
+
+HTML Character Entities
+-----------------------
+Some characters are reserved in HTML.
+
+If you use the less than (<) or greater than (>) signs in your text, the browser might mix them with tags.
+
+Character entities are used to display reserved characters in HTML.
+
+Characters that are not present on your keyboard can also be replaced by entities.
+
+A character entity looks like below,
+
+&entity_name;
+OR
+&#entity_number;
+
+To display a less than sign (<) we must write: &lt; or &#60;
+
+A common character entity used in HTML is the non-breaking space: &nbsp;
+
+See the full list of html entities here: https://www.w3schools.com/html/html_entities.asp
+
+	non-breaking space	   &nbsp;	&#160;
+<	less than	             &lt;	  &#60;
+>	greater than	         &gt;	  &#62;
+&	ampersand	             &amp;	&#38;
+"	double quotation mark	 &quot;	&#34;
+'	single quotation mark  &apos;	&#39;
+©	copyright	             &copy;	&#169;
+®	registered trademark	 &reg;	&#174;
+
+<form> Element
+--------------
+The HTML <form> element defines a form that is used to collect user input. An HTML form contains form elements.
+
+Form elements are different types of input elements, like text fields, checkboxes, radio buttons, submit buttons, and more.
+
+The form-handler is specified in the form's action attribute.
+<form action="/action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+Ex: forms-demo/forms.html
+
+Action Attribute:
+The action attribute defines the action to be performed when the form is submitted.
+Normally, the form data is sent to a web page on the server when the user clicks on the submit button.
+In the example above, the form data is sent to a page on the server called "/action_page.php". This page contains a server-side script that handles the form data.
+
+If the action attribute is omitted, the action is set to the current page.
+
+Method Attribute:
+The method attribute specifies the HTTP method (GET or POST) to be used when submitting the form data.
+<form action="/action_page.php" method="get">
+
+<form action="/action_page.php" method="post">
+
+When to Use GET?
+The default method when submitting form data is GET. If the method attribute is omitted, the method is set to the 'get'.
+
+However, when GET is used, the submitted form data will be visible in the page address field.
+
+/action_page.php?firstname=Mickey&lastname=Mouse
+
+Notes on GET:
+ - Appends form-data into the URL in name/value pairs
+ - The length of a URL is limited (about 3000 characters)
+ - Never use GET to send sensitive data! (will be visible in the URL)
+ - Useful for form submissions where a user wants to bookmark the result
+ - GET is better for non-secure data, like query strings in Google
+
+When to Use POST?
+Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field.
+
+Notes on POST:
+- POST has no size limitations, and can be used to send large amounts of data.
+- Form submissions with POST cannot be bookmarked
+
+Name Attribute:
+Each input field must have a name attribute to be submitted.
+If the name attribute is omitted, the data of that input field will not be sent at all.
+
+On submission of the form, webpage will be refreshed. 
+
+In Single Page Applications(SPA) like Angular, React etc... we don't use this action attribute. The frameworks prevent the default action of submit button and send the form data to server on ajax call, using framework defined events like 'ngSubmit' etc...
+
+<form [formGroup]="userForm" (ngSubmit)="saveUser()" class="simplekart-form">
+
+Form Elements
+-------------
+<input> Element:
+- - - - - - - - 
+The most important form element is the <input> element. The <input> element can be displayed in several ways, depending on the type attribute.
+
+<input name="firstname" type="text">
+
+Ex: forms-demo/input-element.html
+
+If the type attribute is omitted, the input field gets the default type: "text".
+
+<input type="password"> defines a password field.
+
+<input type="submit"> defines a button for submitting form data to a form-handler.
+
+<input type="reset"> defines a reset button that will reset all form values to their default values.
+
+<input type="radio"> defines a radio button.
+Radio buttons let a user select ONLY ONE of a limited number of choices.
+<input type="radio" name="gender" value="male" checked> Male<br>
+<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other
+
+<input type="checkbox"> defines a checkbox.
+Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+<input type="checkbox" name="vehicle2" value="Car"> I have a car 
+
+<input type="button"> defines a button.
+<input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+HTML5 Input Types:
+HTML5 added several new input types.
+- color
+- date
+- datetime-local
+- email
+- month
+- number
+- range
+- search
+- tel
+- time
+- url
+- week
+
+New input types that are not supported by older web browsers, will behave as <input type="text">.
+
+The <input type="color"> is used for input fields that should contain a color.
+
+<input type="date"> is used for input fields that should contain a date.
+We can use the min and max attributes to add restrictions to dates.
+<input name="date2" type="date" min="2018-01-01" max="2019-12-31">
+
+<input type="datetime-local"> specifies a date and time input field, with no time zone.
+
+<input type="month"> allows the user to select a month and year.
+
+<input type="week"> allows the user to select a week of the year.
+
+<input type="email"> is used for input fields that should contain an e-mail address.
+Some smartphones recognize the email type, and adds ".com" to the keyboard to match email input.
+
+<input type="file"> defines a file-select field and a "Browse" button for file uploads.
+
+<input type="number"> defines a numeric input field.
+We can also set restrictions on what numbers are accepted.
+<input type="number" name="quantity" min="1" max="5">
+
+Dependes on the input type, smartphones open the appropriate keyboard or datepickers, time selectors etc...
+
+Input Element Attributes:
+- - - - - - - - - - - - -
+Ex: forms-demo/input-attributes.html
+
+> 'value' attribute specifies the initial value for an input field.
+<input type="text" name="firstname" value="John">
+
+> 'disabled' attribute specifies that the input field is disabled.
+A disabled input field is unusable and un-clickable, and its value will not be sent when submitting the form.
+<input type="text" name="username" value="John" disabled>
+
+> 'readonly' attribute specifies that the input field is read only (cannot be changed). A readonly element is just not editable, but gets sent when form submits.
+<input type="text" name="middlename" value="John" readonly>
+
+> 'size' attribute specifies the length of input field.
+<input type="text" name="size1" value="John" size="100"> - Lengthy input
+<input type="text" name="size2" value="John" size="10">  - Short input
+
+> maxlength attribute specifies the maximum allowed characters in input field.
+<input type="text" name="surname" maxlength="10">
+
+HTML5 Attributes:
+HTML5 added the following attributes for <input>,
+- autocomplete
+- autofocus
+- form
+- formaction
+- formenctype
+- formmethod
+- formnovalidate
+- formtarget
+- height and width
+- list
+- min and max
+- multiple
+- pattern (regexp)
+- placeholder
+- required
+- step
+
+and the following attributes for <form>:
+- autocomplete
+- novalidate
+
+> 'autocomplete' attribute specifies whether a form or input field should have autocomplete on or off.
+When autocomplete is on, the browser automatically completes the input values based on values that the user has entered before.The autocomplete attribute works on both <form> and <input> types.
+
+It is possible to have autocomplete "on" for the form, and "off" for specific input fields, or vice versa.
+
+<form action="/add_user.php" autocomplete="on" novalidate>
+    First name:<input type="text" name="fname" required autofocus><br>
+    Last name: <input type="text" name="lname" required><br>
+    E-mail: <input type="email" name="email" autocomplete="off" required><br>
+    <input type="submit">
+</form>
+
+> 'novalidate' attribute is a <form> attribute. To prevent the default HTML5 form validations, we can use this attribute on form element.
+
+<form action="/add_user.php" novalidate>
+
+> 'autofocus' attribute specifies that the input field should automatically get focus when the page loads.
+<input type="text" name="fname" autofocus>
+
+> 'required' attribute specifies that an input field must be filled out before submitting the form.
+<input type="text" name="lname" required>
+
+> 'multiple' attribute specifies that the user is allowed to enter more than one value in the <input> element.
+<input type="file" name="profile_pics" multiple>
+
+> 'pattern' attribute specifies a regular expression that the <input> element's value is checked against.
+<input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+> 'placeholder' attribute specifies a hint that describes the expected value of an input field. The hint is displayed in the input field before the user enters a value.
+<input type="text" name="fname" placeholder="Enter first name">
+
+> 'min' and 'max' attributes specify the minimum and maximum values for an <input> element.
+<input type="date" name="bday" max="1979-12-31">
+<input type="date" name="bday" min="2000-01-02">
+<input type="number" name="quantity" min="1" max="5">
+
+Other Form Elements
+- - - - - - - - - -
+select:
+<select> element defines a drop-down list.
+<select name="cars">
+  <option value="">Select a car</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat" selected>Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+To define a pre-selected option, add the 'selected; attribute to the option.
+Use the 'multiple' attribute to allow the user to select more than one value.
+<select name="vehicles" multiple></select>
+
+textarea:
+<textarea> element defines a multi-line input field.
+<textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+The rows attribute specifies the visible number of lines in a text area.
+The cols attribute specifies the visible width of a text area.
+
+button:
+<button> element defines a clickable button.
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+HTML Encoding (Character Sets)
+------------------------------
+To display an HTML page correctly, a web browser must know which character set (character encoding) to use.
+
+ASCII was the first character encoding standard (also called character set). ASCII defined 128 different alphanumeric characters that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ < > .
+
+ANSI (Windows-1252) was the original Windows character set, with support for 256 different character codes.
+
+ISO-8859-1 was the default character set for HTML 4. This character set also supported 256 different character codes.
+
+Because ANSI and ISO-8859-1 were so limited, HTML 4 also supported UTF-8.
+
+UTF-8 (Unicode) covers almost all of the characters and symbols in the world.
+
+The default character encoding for HTML5 is UTF-8.
+
+HTML charset Attribute is specified in the <meta> tag.
+
+<meta charset="UTF-8">
+
+URL Encoding
+------------
+URLs can only be sent over the Internet using the ASCII character-set. If a URL contains characters outside the ASCII set, the URL has to be converted.
+
+URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
+
+URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
+
+URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
+
+In javascript we have encodeURI() and decodeURI() functions.
+
+var uri = "my test.asp?name=ståle&car=saab";
+var res = encodeURI(uri); // my%20test.asp?name=st%C3%A5le&car=saab
+decodeURI(res); // my test.asp?name=ståle&car=saab
+
+HTML5
+=====
+HTML 5 is the latest version. It was released in 2014. By today, most of the browsers are supporting most of the features introduced by HTML5. Few are yet to support.
+
+The most interesting new HTML5 elements are: 
+New semantic elements like <header>, <footer>, <article>, and <section>.
+New attributes of form elements like number, date, time, calendar, and range.
+New graphic elements: <svg> and <canvas>.
+New multimedia elements: <audio> and <video>.
+
+New API's in HTML5 are:
+- HTML Geolocation
+- HTML Drag and Drop
+- HTML Local Storage
+- HTML Application Cache
+- HTML Web Workers
+- HTML SSE(Server Sent Events)
+
+HTML5 Browser Support:
+HTML5 is supported in all modern browsers.
+Old broswers like IE9, IE8 etc.. don't support HTML5. But, we can teach those browsers how to handle HTML5 elements using HTML5Shiv scripts.
+
+ <head>
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+  <![endif]-->
+</head> 
+
+The HTML5Shiv is a javascript file that is referenced in a <script> tag.
+
+You should use the HTML5Shiv when you are using the new HTML5 elements such as: <article>, <section>, <aside>, <nav>, <footer>.
+
+Reference to download: https://github.com/aFarkas/html5shiv
+OR CDN: https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js
+
+Below are few new HTML5 elements.
+
+<article> 	 - Defines an article in a document
+<aside> 	   - Defines content aside from the page content
+<dialog> 	   - Defines a dialog box or window
+<footer> 	   - Defines a footer for a document or section
+<header> 	   - Defines a header for a document or section
+<main> 	     - Defines the main content of a document
+<nav> 	     - Defines navigation links
+<section> 	 - Defines a section in a document
+<details> 	 - Defines additional details that the user can view or hide
+<summary> 	 - Defines a visible heading for a <details> element
+<mark> 	     - Defines marked/highlighted text
+etc ...
+
+Semantic Elements:
+- - - - - - - - -
+Semantic elements = elements with a meaning.
+
+A semantic element clearly describes its meaning.
+
+Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+
+Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+
+Many web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer">
+to indicate navigation, header, and footer.
+
+HTML5 offers new semantic elements to define different parts of a web page.
+
+<section> Element:
+<section> element defines a section in a document. Using section element we can divide a webpage into many parts.
+
+<section>
+  <h1>WWF</h1>
+  <p>The World Wide Fund for Nature (WWF) is....</p>
+</section>
+
+<article> Element:
+<article> element specifies independent, self-contained content. An article should make sense on its own, and it should be possible to read it independently from the rest of the web site.
+
+Examples of where an <article> element can be used:
+- Forum post
+- Blog post
+- Newspaper article
+
+<article>
+  <h1>What Does WWF Do?</h1>
+  <p>WWF's mission is to stop the degradation of our planet's natural environment,
+  and build a future in which humans live in harmony with nature.</p>
+</article> 
+
+Nesting <article> in <section> or Vice Versa?
+The<article> element specifies independent, self-contained content.
+
+The <section> element defines section in a document.
+
+Can we use the definitions to decide how to nest those elements? No, we cannot!
+
+So, on the Internet, you will find HTML pages with <section> elements containing <article> elements, and <article> elements containing <section> elements.
+
+You will also find pages with <section> elements containing <section> elements, and <article> elements containing <article> elements.
+
+<header> Element:
+The <header> element specifies a header for a document or section.
+
+The <header> element should be used as a container for introductory content.
+
+You can have several <header> elements in one document.
+<article>
+  <header>
+    <h1>What Does WWF Do?</h1>
+    <p>WWF's mission:</p>
+  </header>
+  <p>WWF's mission is to stop the degradation of our planet's natural environment,
+  and build a future in which humans live in harmony with nature.</p>
+</article> 
+
+<footer> Element:
+The <footer> element specifies a footer for a document or section.
+
+A <footer> element should contain information about its containing element.
+
+A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc.
+
+You may have several <footer> elements in one document.
+<footer>
+  <p>Posted by: Hege Refsnes</p>
+  <p>Contact information: <a href="mailto:someone@example.com">
+  someone@example.com</a>.</p>
+</footer> 
+
+<nav> Element:
+The <nav> element defines a set of navigation links.
+<nav>
+  <a href="/html/">HTML</a> 
+  <a href="/css/">CSS</a> 
+  <a href="/js/">JavaScript</a> 
+  <a href="/jquery/">jQuery</a>
+</nav>
+
+<aside> Element:
+The <aside> element defines some content aside from the content it is placed in (like a sidebar).
+
+The <aside> content should be related to the surrounding content.
+
+We can replace div's with semantic elements like below. 
+<div id="header">     - <header>
+<div id="menu">       - <nav>
+<div id="content">    - <section>
+<div class="article"> - <article>  
+<div id="footer">     - <footer>
+
+Difference Between <article> <section> and <div>:
+In the HTML5 standard, the <section> element is defined as a block of related elements.
+The <article> element is defined as a complete, self-contained block of related elements.
+The <div> element is defined as a block of children elements.
+
+HTML Comments
+-------------
+<!-- single line comment -->
+
+<!-- 
+Multi line comment
+Multi line comment 
+-->
+
+Please read Best Practices: https://www.w3schools.com/html/html5_syntax.asp
+
+https://caniuse.com is to verify the browser compatibility of html, css and javascript features.
+
+Reference: https://www.w3schools.com/html/default.asp
+
+I recommend reading HTML in w3schools. It is the best and simple site for html & css turorials.

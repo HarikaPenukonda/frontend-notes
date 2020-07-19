@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <h3>::first-line Pseudo-element</h3>
+        <style>
+            p.first-line-demo::first-line {
+                color: red;
+            }
+        </style>
+        <p class="first-line-demo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <h3>::first-letter Pseudo-element</h3>
+        <style>
+            p.first-letter-demo::first-letter {
+                color: red;
+            }
+        </style>
+        <p class="first-letter-demo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <h3>::before Pseudo-element</h3>
+        <style>
+            p.before-demo::before {
+                content: 'Inserted ';
+            }
+        </style>
+        <p class="before-demo">Some content</p>
+
+        <h3>::after Pseudo-element</h3>
+        <style>
+            p.after-demo::after {
+                content: ' Inserted';
+            }
+        </style>
+        <p class="after-demo">Some content</p>
+
+        <h3>::selection Pseudo-element</h3>
+        <style>
+            ::-moz-selection { /* Code for Firefox */
+                color: red;
+                background: yellow;
+            }
+
+            ::selection {
+                color: red;
+                background: yellow;
+            }
+        </style>
+        <p>since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+    </body>
+</html>

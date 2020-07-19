@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div {
+                margin-bottom: 15px;
+            }
+
+            div.percentage-demo {
+                height: 100px;
+                width: 50%; /* Width in percentage */
+                background-color: powderblue;
+            }
+
+            div.pixel-demo {
+                height: 100px;
+                width: 100px; /* Width in pixel */
+                background-color: powderblue;
+            }
+
+            div.cm-demo {
+                height: 100px;
+                width: 25cm; /* Width in centimeter */
+                background-color: powderblue;
+            }
+
+            div.cm-demo .child{
+                height: 60%; /* Height in percentage */
+                width: 15cm;
+                background-color: dodgerblue;
+            }
+
+            div.max-width-demo {
+                height: 100px;
+                background-color: powderblue;
+                width: 600px;
+                max-width: 500px; /* width in px and max-width of 500px */
+            }
+
+            div.max-width-percentage-demo {
+                height: 100px;
+                background-color: powderblue;
+                width: 50%;
+                max-width: 500px; /* width in % and max-width of 500px */
+            }
+
+            div.max-height-demo {
+                height: 100px;
+                max-height: 50px; /* height won't go beyond 50px */
+                background-color: powderblue;
+                width: 50%;
+            }
+
+            div.min-width-demo {
+                width: 100px;
+                min-width: 250px; /* Take minimum 250px width even width is lessthan 250px */
+                background-color: powderblue;
+            }
+
+            div.min-height-demo {
+                height: 50px;
+                min-height: 100px; /* Take minimum 100px height even height is lessthan 100px */
+                background-color: powderblue;
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <div class="percentage-demo">percentage-demo</div>
+        
+        <div class="pixel-demo">pixel-demo</div>
+        
+        <div class="cm-demo">
+            cm-demo
+            <div class="child">Child content</div>
+        </div>
+
+        <div class="max-width-demo">max-width-demo</div>
+
+        <div class="max-width-percentage-demo">max-width-percentage-demo</div>
+        
+        <div class="max-height-demo">max-height-demo</div>
+
+        <div class="min-width-demo">min-width-demo</div>
+
+        <div class="min-height-demo">min-height-demo</div>
+    </body>
+</html>

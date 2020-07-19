@@ -1,0 +1,33 @@
+body {
+    background-color: lightblue;
+}
+
+div {
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid #868686;
+}
+
+.image-demo {
+    background-image: url('../images/paper.PNG');
+    /* background-repeat: no-repeat; */
+}
+
+.image-demo2 {
+    background-image: url('../images/paper.PNG');
+    background-repeat: repeat-x;
+}
+
+.image-demo3 {
+    background-image: url('../images/paper.PNG');
+    background-repeat: repeat-y;
+}
+
+.image-demo4 {
+    background-image: url('../images/flowers.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    /* background-position: right 20px bottom 20px; */
+    background-size: 150px 150px;
+}

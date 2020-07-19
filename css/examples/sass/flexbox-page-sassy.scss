@@ -1,0 +1,131 @@
+@import './flexbox-page-sassy-variables';
+
+body {
+    margin: 0px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    background: $body-background;
+}
+
+.container {
+    width: $container-width;
+    margin: auto;
+}
+
+
+.header {
+    background: $gray-dark;
+    color: $white;
+}
+
+.fixed-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header {
+    .container {
+        padding: 10px 0px 15px 0px;
+        .header-content {
+            display: flex;
+            /* justify-content: space-between; */
+            .nav-links-container {
+                margin-left: auto;
+                ul {
+                    list-style: none;
+                    margin: 0px;
+                    padding: 7px 0px 0px;
+                    li{
+                        display: inline-block;
+                        padding-right: 25px;
+                        a{
+                            color: $white;
+                            text-decoration: none;
+                            opacity: 0.7;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .logo-container {
+                .logo {
+                    font-size: 23px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.main-content {
+    margin-top: 80px;
+    .head-image {
+        img {
+            max-width: 100%;
+        }
+    }
+    .blog-content {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        .posts-list {
+            width: 72%;
+        }
+        .sidebar {
+            width: 25%;
+        }
+    }
+}
+
+.card {
+    border: 1px solid $gray-light;
+    border-radius: 5px;
+    background: $white;
+    margin-bottom: 20px;
+    &.article-card {
+        .card-header {
+            padding: 0px;
+            max-height: 300px;
+        }
+    }
+    .card-header {
+        background-color: $gray-light2;
+        border-bottom: 1px solid $gray-light;
+        padding: 15px 20px;
+        img{
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+        }
+    }
+    .card-body {
+        padding: 20px;
+    }
+    h3, p, h4 {
+        margin: 0px;
+    }
+    .card-footer {
+        background-color: $gray-light2;
+        border-top: 1px solid $gray-light;
+        padding: 15px 20px;
+    }
+}
+
+.footer {
+    color: $white;
+    background: $gray-dark;
+    text-align: center;
+    padding: 40px 0px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div, span, ul li {
+                border: 1px solid #d3d3d3;
+                margin-bottom: 10px;
+            }
+
+            .block-to-inline {
+                display: inline;
+            }
+            
+            .inline-to-block {
+                display: block;
+            }
+
+            .none-demo {
+                display: none;
+            }
+
+            .inline-block-demo {
+                display: inline-block;
+                padding: 10px;
+                margin: 10px;
+                height: 100px;
+                width: 500px;
+            }
+
+            .visibility-demo {
+                visibility: hidden;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <div>Some content</div>
+        <span>Some content</span>
+        <span>Some content</span>
+        
+        <h3>Modifying display property</h3>
+        <div class="block-to-inline">div but displayed as inline</div>
+        <span class="inline-to-block">span but displayed as block</span>
+        <div class="none-demo">this won't ne visible</div>
+
+        <h3>inline-block</h3>
+        <p>By making an inline element to inline-block, we can apply top, bottom margins, paddings and also width and height properties.</p>
+        <div class="inline-block-demo">inline block Div</div>
+        <span class="inline-block-demo">inline block Div</span>
+
+        <h3>visibility</h3>
+        <div class="visibility-demo">some hidden content</div>
+        <div>some content below hidden element</div>
+    </body>
+</html>

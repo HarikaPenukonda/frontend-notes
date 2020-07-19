@@ -1,0 +1,19 @@
+@mixin background-gradient($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -o-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -ms-linear-gradient(left, $color1 0%, $color2 100%);
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+.offer {
+    @include background-gradient(#908ced, #b172e8);
+    color: #fff;
+    padding: 25px 0px;
+    margin-top: 150px;
+}
+
+.price-section {
+    @include background-gradient(#d3d3d3, #ffffff);
+}

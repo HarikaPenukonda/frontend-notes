@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <style>
+            .demo1 {
+                width: 200px;
+                height: 100px;
+                background: #868686;
+                color: white;
+
+                -webkit-transition: width 2s; /* Safari */
+                transition: width 2s;
+            }
+
+            .demo1:hover {
+                width: 400px;
+            }
+        </style>
+        <div class="demo1">Some content</div>
+
+        <br>
+
+        <style>
+            .demo2 {
+                width: 200px;
+                height: 100px;
+                background: #868686;
+                color: white;
+
+                -webkit-transition: width 2s, height 4s; /* Safari */
+                transition: width 2s, height 4s;
+            }
+
+            .demo2:hover {
+                width: 400px;
+                height: 200px;
+            }
+        </style>
+        <div class="demo2">Some content</div>
+    </body>
+</html>

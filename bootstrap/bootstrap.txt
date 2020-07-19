@@ -1,0 +1,199 @@
+https://getbootstrap.com/
+
+Bootstrap templates:
+https://startbootstrap.com
+
+Bootstrap is an open source css framework to build responsive webpages easily.
+
+Installation:
+
+1 > npm install bootstrap
+
+2 > Download and insert the bootstrap.min.css file
+
+3 > CDN
+
+If we want to work with bootstrap javascript components on plain webpages, we need to include jQuery and bootstrap.js in those webpages. Because, all bootstrap javascript components are dependent on jQuery.
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+To use bootstrap javascript components in Angular, we don't need jQuery. we need to install 'ng-bootstrap' package in our angular project. All the components in ng-bootstrap are build on latest version of Angular framework.
+
+https://ng-bootstrap.github.io
+
+Responsive meta tag and Mobile first
+------------------------------------
+Bootstrap is a mobile first framework. It optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head>.
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+Box-sizing
+----------
+For more straightforward sizing in CSS, bootstrap switch the global box-sizing value from content-box to border-box. This ensures padding does not affect the final computed width of an element, but it can cause problems with some third party plugins.
+
+On the rare occasion you need to override it, use something like the following:
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+> Bootstrap supports the latest, stable releases of all major browsers and platforms. On Windows, it support Internet Explorer 10-11 / Microsoft Edge.  If we require IE8-9 support, use Bootstrap 3.
+
+Layout
+======
+Containers
+----------
+Containers are the most basic layout element in Bootstrap and are required when using our default grid system. 
+
+Two types of Containers are available in bootstrap.
+1. Responsive, fixed-width container (meaning its max-width changes at each breakpoint)
+<div class="container">
+  <!-- Content here -->
+</div>
+
+2. fluid-width (meaning it’s 100% wide all the time).
+<div class="container-fluid">
+  ...
+</div>
+
+Ex: containers.html
+
+Responsive breakpoints
+----------------------
+Bootstrap primarily uses the following media query ranges / breakpoints.
+
+// Extra small devices (portrait phones, less than 576px).
+// No media query for `xs` since this is the default in Bootstrap. 
+// No media query like @media (min-width: 0px) { ... } which covers 0-575px ranage. This is the default range for bootstrap. So, all the open styles / global styles target this range.
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+Since bootstrap is developed with mobile first approch, we don't need media query for extra small devices(<576). Default styles are written for it.
+
+These breakpoints are based on minimum viewport widths((the given screen size or larger) and allow us to scale up elements as the viewport changes.
+
+*** Grid system ***
+-------------------
+Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with 'flexbox' and is fully responsive.
+
+> Number of columns in grid are 12.
+
+Below are class prefixes for each breakpoint.
+- Extra small   -   >0px      -   .col-*       -   .col-2 occupies two columns on extra small devices
+- Small         -   ≥576px    -   .col-sm-*    -   .col-sm-2 occupies two columns on small devices
+- Medium        -   ≥768px    -   .col-md-*    -   .col-md-2 occupies two columns on medium devices
+- Large         -   ≥992px    -   .col-lg-*    -   .col-lg-2 occupies two columns on large devices
+- Extra Large   -   ≥1200px   -   .col-xl-*    -   .col-xl-2 occupies two columns on extra large devices
+
+* - number of columns
+
+If we don't provide the number and just specified col / col-sm / col-md / col-lg / col-xl entire width will be equally distributed for all the columns.
+
+Ex: layout.html
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            One of three columns
+        </div>
+        <div class="col-sm">
+            One of three columns
+        </div>
+        <div class="col-sm">
+            One of three columns
+        </div>
+    </div>
+</div>
+
+It creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid classes.
+
+> Containers are used to center the site content horizontally. Use .container for a responsive fixed width or .container-fluid for width: 100% across all viewport and device sizes.
+
+> Rows are wrappers for columns.
+
+> Each column has horizontal padding (called a gutter) for controlling the space between them.
+
+> In a grid layout, content must be placed within columns and only columns may be immediate children of rows.
+
+> row is a flexbox. All columns in row are flexitems.
+
+> Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns. For example, four instances of .col-sm will each automatically be 25% wide from the small breakpoint and up. 
+
+> Column classes indicate the number of columns we would like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use .col-4.
+
+> Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.
+
+> Columns have horizontal padding to create the gutters between individual columns, however, you can remove the margin from rows and padding from columns with .no-gutters on the .row.
+
+> To make the grid responsive, there are five grid breakpoints, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
+
+> Grid breakpoints are based on minimum width media queries, meaning they apply to that one breakpoint and all those above it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices, but not the first xs breakpoint).
+
+> If we set the width of one column other columns will take the remaining space equally.
+<div class="container">
+    <div class="row">
+        <div class="col">Col 1</div>
+        <div class="col-6">Col 2</div>
+        <div class="col">Col 3</div>
+    </div>
+</div>
+
+> Use col-{breakpoint}-auto classes to size columns based on the natural width of their content(occupies only the required space).
+col-auto, col-sm-auto, col-md-auto, col-lg-auto, col-xl-auto
+
+> w-100 class occupies 100% width. Any elements beside that will be pushed up and down. We can use this class to get multiple rows in a row.
+<div class="container">
+    <div class="row">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <!-- Force next columns to break to new line -->
+        <div class="w-100"></div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+</div>
+
+Offsetting columns
+------------------
+Move columns to the right using .offset-* classes. These classes increase the left margin of a column by * columns.
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+  </div>
+</div>
+
+
+Content
+-------
+https://getbootstrap.com/docs/4.3/content/reboot/
+
+Components
+----------
+https://getbootstrap.com/docs/4.3/components/alerts/
+
+Utilities
+---------
+https://getbootstrap.com/docs/4.3/utilities/borders/
+
+Ex: utilities.html

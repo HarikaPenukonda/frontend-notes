@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div.box-model-demo {
+                background-color: lightgrey;
+                width: 300px;
+                border: 25px solid green;
+                padding: 25px;
+                margin: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        <img src="./images/box-model.PNG" />
+
+        <div class="box-model-demo">Some Content</div>
+        
+        <h3>Box Sizing</h3>
+        <style>
+            .default {
+                width: 300px;
+                height: 100px;
+                border: 1px solid blue;
+            }
+
+            .default-with-padding {
+                width: 300px;
+                height: 100px;
+                padding: 30px;
+                border: 1px solid red;
+            }
+
+            .demo-border-box {
+                width: 300px;
+                height: 100px;
+                padding: 30px;
+                border: 1px solid green;
+                box-sizing: border-box;
+            }
+        </style>
+        <div class="default">Default box-sizing</div> <br>
+        <div class="default-with-padding">box-sizing:content-box</div> <br>
+        <div class="demo-border-box">box-sizing:border-box</div>
+
+        <br><br><br>
+    </body>
+</html>

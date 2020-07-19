@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .parent {
+                background-color: #7bbdfc;
+                margin-bottom: 40px;
+            }
+
+            .parent > div {
+                background-color: #f1f1f1;
+                width: 100px;
+                margin: 10px 20px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <h1>Parent / Flexbox Properties</h1>
+        <h2>1. flex-direction</h2>
+        <h3>flex-direction: column;</h3>
+        <style>
+            .flex-container1 {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+        <div class="parent flex-container1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>flex-direction: column-reverse;</h3>
+        <style>
+            .flex-container2 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        </style>
+        <div class="parent flex-container2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>flex-direction: row;</h3>
+        <style>
+            .flex-container3 {
+                display: flex;
+                flex-direction: row;
+            }
+        </style>
+        <div class="parent flex-container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>flex-direction: row-reverse;</h3>
+        <style>
+            .flex-container4 {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        </style>
+        <div class="parent flex-container4">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h2>2. flex-wrap</h2>
+        <h3>flex-wrap: wrap;</h3>
+        <style>
+            .flex-container5 {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        </style>
+        <div class="parent flex-container5">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h3>flex-wrap: nowrap;</h3>
+        <style>
+            .flex-container6 {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+        </style>
+        <div class="parent flex-container6">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h3>flex-wrap: wrap-reverse;</h3>
+        <style>
+            .flex-container7 {
+                display: flex;
+                flex-wrap: wrap-reverse;
+                /* flex-direction: row-reverse; */
+            }
+        </style>
+        <div class="parent flex-container7">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h2>3. flex-flow</h2>
+        <h3>flex-flow: row wrap;</h3>
+        <style>
+            .flex-container8 {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        </style>
+        <div class="parent flex-container8">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h3>flex-flow: column wrap;</h3>
+        <style>
+            .flex-container9 {
+                display: flex;
+                flex-flow: column wrap;
+            }
+        </style>
+        <div class="parent flex-container9">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h3>flex-flow: row-reverse wrap-reverse;</h3>
+        <style>
+            .flex-container10 {
+                display: flex;
+                flex-flow: row-reverse wrap-reverse;
+            }
+        </style>
+        <div class="parent flex-container10">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h3>flex-flow: row-reverse nowrap;</h3>
+        <style>
+            .flex-container11 {
+                display: flex;
+                flex-flow: row-reverse nowrap;
+            }
+        </style>
+        <div class="parent flex-container11">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+        </div>
+
+        <h2>4. justify-content</h2>
+        <h3>justify-content: center;</h3>
+        <style>
+            .flex-container12 {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+        <div class="parent flex-container12">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>justify-content: flex-start;</h3>
+        <style>
+            .flex-container13 {
+                display: flex;
+                justify-content: flex-start;
+            }
+        </style>
+        <div class="parent flex-container13">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>justify-content: flex-end;</h3>
+        <style>
+            .flex-container14 {
+                display: flex;
+                justify-content: flex-end;
+            }
+        </style>
+        <div class="parent flex-container14">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>justify-content: space-around;</h3>
+        <style>
+            .flex-container15 {
+                display: flex;
+                justify-content: space-around;
+            }
+        </style>
+        <div class="parent flex-container15">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>justify-content: space-between;</h3>
+        <style>
+            .flex-container16 {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+        <div class="parent flex-container16">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h2>5. align-items</h2>
+        <h3>align-items: center;</h3>
+        <style>
+            .flex-container17 {
+                height: 200px;
+                display: flex;
+                align-items: center;
+            }
+        </style>
+        <div class="parent flex-container17">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>align-items: flex-start;</h3>
+        <style>
+            .flex-container18 {
+                height: 200px;
+                display: flex;
+                align-items: flex-start;
+            }
+        </style>
+        <div class="parent flex-container18">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>align-items: flex-end;</h3>
+        <style>
+            .flex-container19 {
+                height: 200px;
+                display: flex;
+                align-items: flex-end;
+            }
+        </style>
+        <div class="parent flex-container19">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>align-items: stretch;</h3>
+        <style>
+            .flex-container20 {
+                height: 200px;
+                display: flex;
+                align-items: stretch;
+            }
+        </style>
+        <div class="parent flex-container20">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+
+        <h3>align-items: baseline;</h3>
+        <style>
+            .flex-container21 {
+                height: 200px;
+                display: flex;
+                align-items: baseline;
+            }
+        </style>
+        <div class="parent flex-container21">
+            <div style="font-size: 12px;">1</div>
+            <div style="padding: 25px;">2</div>
+            <div style="font-size: 60px;">3</div>  
+        </div>
+
+        <h2>6. align-content</h2>
+        <h3>align-content: space-between;</h3>
+        <style>
+            .flex-container22 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+            }
+        </style>
+        <div class="parent flex-container22">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h3>align-content: space-around;</h3>
+        <style>
+            .flex-container23 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-around;
+            }
+        </style>
+        <div class="parent flex-container23">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h3>align-content: stretch;</h3>
+        <style>
+            .flex-container24 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: stretch;
+            }
+        </style>
+        <div class="parent flex-container24">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h3>align-content: center;</h3>
+        <style>
+            .flex-container25 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+            }
+        </style>
+        <div class="parent flex-container25">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h3>align-content: flex-start;</h3>
+        <style>
+            .flex-container26 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+        </style>
+        <div class="parent flex-container26">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h3>align-content: flex-end;</h3>
+        <style>
+            .flex-container27 {
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-end;
+            }
+        </style>
+        <div class="parent flex-container27">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h1>Child Items / Flexible Items Properties</h1>
+        <h2>1. order</h2>
+        <h3>All items have oreder property</h3>
+        <style>
+            .flex-container28 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container28">
+            <div style="order: 2">1</div>
+            <div style="order: 4">2</div>
+            <div style="order: 3">3</div>
+            <div style="order: 1">4</div>
+        </div>
+
+        <h3>Oreder property missing for few elements</h3>
+        <style>
+            .flex-container29 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container29">
+            <div style="order: 2">1</div>
+            <div style="order: 4">2</div>
+            <div>3</div>
+            <div style="order: 1">4</div>
+        </div>
+
+        <h2>2. flex-grow</h2>
+        <style>
+            .flex-container30 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container30">
+            <div style="flex-grow: 2">1</div>
+            <div style="flex-grow: 4">2</div>
+            <div style="flex-grow: 1">3</div>
+        </div>
+
+        <h2>3. flex-shrink</h2>
+        <style>
+            .flex-container31 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container31">
+            <div>1</div>
+            <div style="flex-shrink: 2">2</div>
+            <div style="flex-shrink: 0">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>  
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div> 
+        </div>
+
+        <h2>4. flex-basis</h2>
+        <style>
+            .flex-container32 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container32">
+            <div>1</div>
+            <div style="flex-basis: 300px;">2</div>
+            <div>3</div>
+        </div>
+
+        <h2>5. flex</h2>
+        <style>
+            .flex-container33 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container33">
+            <div>1</div>
+            <div style="flex: 0 0 300px;">2</div>
+            <div>3</div>
+        </div>
+
+        <h2>6. align-self</h2>
+        <style>
+            .flex-container34 {
+                display: flex;
+                height: 300px;
+            }
+        </style>
+        <div class="parent flex-container34">
+            <div>1</div>
+            <div>2</div>
+            <div style="align-self: center;">3</div>
+            <div>4</div>
+        </div>
+
+        <style>
+            .flex-container35 {
+                display: flex;
+                height: 300px;
+            }
+        </style>
+        <div class="parent flex-container35">
+            <div>1</div>
+            <div style="align-self: flex-start;">2</div>
+            <div style="align-self: flex-end;">3</div>
+            <div>4</div>
+        </div>
+
+        <h2>NO justify-self property available. So, use auto margins to align items horizontally</h2>
+        <style>
+            .flex-container36 {
+                display: flex;
+            }
+
+            .pull-to-right {
+                margin-left: auto !important;
+            }
+        </style>
+        <div class="parent flex-container36">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="pull-to-right">4</div>
+        </div>
+
+        <style>
+            .flex-container37 {
+                display: flex;
+            }
+        </style>
+        <div class="parent flex-container37">
+            <div>1</div>
+            <div>2</div>
+            <div class="pull-to-right">3</div>
+            <div>4</div>
+        </div>
+
+        <h2>Use flex-grow to get equal width to all items(columns)</h2>
+        <style>
+            .flex-container38 {
+                display: flex;
+            }
+            .flex-container38 div {
+                flex-grow: 1;
+            }
+        </style>
+        <div class="parent flex-container38">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="parent flex-container38">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+
+        <div class="parent flex-container38">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <div class="parent flex-container38">
+            <div>1</div>
+            <div>2</div>
+        </div>
+
+        <div class="parent flex-container38">
+            <div>1</div>
+        </div>
+    </body>
+</html>
