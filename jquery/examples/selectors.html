@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/jquery-3.4.1.js"></script>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+
+        <div id="username">John Doe</div> <br>
+
+        <div class="detail">Some content</div>
+        <div class="detail">Some content</div> <br>
+
+        <div id="sometext1">This Element example</div>
+        <button id="somebutton1">Hide Above</button><br>
+
+        <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Fourth</li>
+            <li>Fifth</li>
+        </ul> <br>
+
+        <a>Link 1</a> <br>
+        <a href="#">Link 2</a> <br>
+        <a target="_blank">Link 3</a> <br>
+        <a target="_self">Link 4</a> <br>
+
+        <script>
+            $(document).ready(function(){
+                // Element selector
+                var paragraphs = $("p");
+                console.log(paragraphs);
+                $("p").hide();
+                $("p").show();
+
+                // Id selector
+                var name = $('#username').text();
+                console.log('user name is ' + name);
+
+                // Class selector
+                $('.detail').hide();
+                $('.detail').show();
+
+                // $("*") selector
+                // $('*').hide();
+
+                // $(this) selector
+                $("#somebutton1").on('click', function() {
+                    $("#sometext1").hide();
+                    $(this).text('Done...!');
+                });
+
+                // selector with pseudo element
+                $("ul li:first-child").hide();
+
+                // Attribute selectors
+                // $("[href]").hide();
+                // $("a[target='_blank']").hide();
+
+            });
+        </script>
+    </body>
+</html>

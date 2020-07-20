@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/jquery-3.4.1.js"></script>
+        <style>
+            div {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #000000;
+            }
+
+            .red-border {
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+
+        <!-- text() -->
+        <h3>text()</h3>
+        <div id="demo-div1"><p>Some random text to demo text() method</p></div>
+        <button id="read-text-btn1">Read text</button>
+        <button id="update-text-btn1">Update text</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-text-btn1").click(function(){
+                    var text = $("#demo-div1").text();
+                    console.log(text);
+                });
+
+                $("#update-text-btn1").click(function(){
+                    $("#demo-div1").text("Changed to other text");
+                });
+            });
+        </script>
+
+        <!-- html() -->
+        <h3>html()</h3>
+        <div id="demo-div2"><p>Some random text to demo html() method</p></div>
+        <button id="read-text-btn2">Read html</button>
+        <button id="update-text-btn2">Update html</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-text-btn2").click(function(){
+                    var html = $("#demo-div2").html();
+                    console.log(html);
+                });
+
+                $("#update-text-btn2").click(function(){
+                    $("#demo-div2").html("<h1>Some heading content</h1>");
+                });
+            });
+        </script>
+
+        <!-- val() -->
+        <h3>val()</h3>
+        <input type="text" id="val-demo-1" value="Some value" /> <br><br>
+        <button id="read-input">Read input</button>
+        <button id="update-input">Update input</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-input").click(function(){
+                    var inputVal = $("#val-demo-1").val();
+                    console.log(inputVal);
+                });
+
+                $("#update-input").click(function(){
+                    $("#val-demo-1").val("Some other value.....!");
+                });
+            });
+        </script>
+
+        <!-- attr() -->
+        <h3>attr()</h3>
+        <a href="https://www.google.com/" id="link-demo">Some Link</a> <br><br>
+        <button id="read-href">Read href</button>
+        <button id="update-href">Update href</button>
+        <script>
+            $(document).ready(function(){
+                $("#read-href").click(function(){
+                    var hrefAttr = $("#link-demo").attr('href');
+                    console.log(hrefAttr);
+                });
+
+                $("#update-href").click(function(){
+                    $("#link-demo").attr('href', "https://in.yahoo.com/");
+                });
+            });
+        </script>
+
+        <!-- append() -->
+        <h3>append()</h3>
+        <p id="append-demo">Some paragraph content.</p>
+        <button id="append-btn">Append</button>
+        <script>
+            $(document).ready(function(){
+                $("#append-btn").click(function(){
+                    $("#append-demo").append("This is some appended content. ");
+                });
+            });
+        </script>
+
+        <!-- prepend() -->
+        <h3>prepend()</h3>
+        <p id="prepend-demo">Some paragraph content.</p>
+        <button id="prepend-btn">Prepend</button>
+        <script>
+            $(document).ready(function(){
+                $("#prepend-btn").click(function(){
+                    $("#prepend-demo").prepend("This is prepended content. ");
+                });
+            });
+        </script>
+
+        <!-- before() -->
+        <h3>before()</h3>
+        <p id="before-demo">Some paragraph content.</p>
+        <button id="before-btn">Add before</button>
+        <script>
+            $(document).ready(function(){
+                $("#before-btn").click(function(){
+                    $("#before-demo").before("This content will be added before. ");
+                });
+            });
+        </script>
+
+        <!-- after() -->
+        <h3>after()</h3>
+        <p id="after-demo">Some paragraph content.</p> <br>
+        <button id="after-btn">Add after</button>
+        <script>
+            $(document).ready(function(){
+                $("#after-btn").click(function(){
+                    $("#after-demo").after("This content will be added after. ");
+                });
+            });
+        </script>
+
+        <!-- remove() -->
+        <h3>remove()</h3>
+        <div id="remove-demo">Remove demo div</div>
+        <button id="remove-btn">Remove</button>
+        <script>
+            $(document).ready(function(){
+                $("#remove-btn").click(function(){
+                    $("#remove-demo").remove();
+                });
+            });
+        </script>
+
+        <!-- empty() -->
+        <h3>empty()</h3>
+        <div id="empty-demo">Empty demo div</div>
+        <button id="empty-btn">Empty</button>
+        <script>
+            $(document).ready(function(){
+                $("#empty-btn").click(function(){
+                    $("#empty-demo").empty();
+                });
+            });
+        </script>
+
+        <!-- addClass() -->
+        <h3>addClass()</h3>
+        <div id="addClass-demo">addClass demo div</div>
+        <button id="addClass-btn">Add Class</button>
+        <script>
+            $(document).ready(function(){
+                $("#addClass-btn").click(function(){
+                    $("#addClass-demo").addClass("red-border");
+                });
+            });
+        </script>
+
+        <!-- removeClass() -->
+        <h3>removeClass()</h3>
+        <div id="removeClass-demo" class="red-border">removeClass demo div</div>
+        <button id="removeClass-btn">Remove Class</button>
+        <script>
+            $(document).ready(function(){
+                $("#removeClass-btn").click(function(){
+                    $("#removeClass-demo").removeClass("red-border");
+                });
+            });
+        </script>
+
+        <!-- toggleClass() -->
+        <h3>toggleClass()</h3>
+        <div id="toggleClass-demo" class="red-border">toggleClass demo div</div>
+        <button id="toggleClass-btn">toggleClass Class</button>
+        <script>
+            $(document).ready(function(){
+                $("#toggleClass-btn").click(function(){
+                    $("#toggleClass-demo").toggleClass("red-border");
+                });
+            });
+        </script>
+
+        <!-- css() -->
+        <h3>css()</h3>
+        <div id="css-demo">css demo div</div>
+        <button id="css-btn">Add Css</button>
+        <script>
+            $(document).ready(function(){
+                $("#css-btn").click(function(){
+                    $("#css-demo").css("background-color", 'yellow');
+                    var backgroundValue = $("#css-demo").css("background-color");
+                    console.log(backgroundValue);
+                    $("#css-demo").css({
+                        "background-color": 'yellow',
+                        "font-size": '30px'
+                    });
+                });
+            });
+        </script>
+
+        <!-- Dimensions -->
+        <h3>Dimensions</h3>
+        <div id="dimensions-demo">Div with some content</div>
+        <button id="dimensions-btn">Set Width and Height</button>
+        <script>
+            $(document).ready(function(){
+                var width = $("#dimensions-demo").width();
+                var height = $("#dimensions-demo").height();
+                var innerWidth = $("#dimensions-demo").innerWidth();
+                var innerHeight = $("#dimensions-demo").innerHeight();
+                var outerWidth = $("#dimensions-demo").outerWidth();
+                var outerHeight = $("#dimensions-demo").outerHeight();
+                console.log("------Dimensions------");
+                console.log(width);
+                console.log(height);
+                console.log(innerWidth);
+                console.log(innerHeight);
+                console.log(outerWidth);
+                console.log(outerHeight);
+                console.log("------Dimensions------");
+
+                $("#dimensions-btn").click(function(){
+                    $("#dimensions-demo").width(500);
+                    $("#dimensions-demo").height(100);
+                });
+            });
+        </script>
+
+        <br><br><br><br><br><br><br>
+    </body>
+</html>

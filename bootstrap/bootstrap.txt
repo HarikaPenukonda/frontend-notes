@@ -2,6 +2,7 @@ https://getbootstrap.com/
 
 Bootstrap templates:
 https://startbootstrap.com
+https://colorlib.com/wp/cat/bootstrap/
 
 Bootstrap is an open source css framework to build responsive webpages easily.
 

@@ -1,0 +1,383 @@
+jQuery is a simple Javascript library. Which is used mostly for DOM manipulation and AJAX calls.
+
+Document Ready Event
+--------------------
+$(document).ready(function(){
+
+  // jQuery code goes here...
+
+});
+
+$(document).ready is a jQuery method. I will run once after the page load finished(page ready).
+
+We need to write our jQuery code in ready method. Otherwise, the code will run on partially loaded page, which produce many errors.
+
+Below are some example actions that can fail if methods are run before the document is fully loaded:
+- Trying to hide an element that is not created yet
+- Trying to get the size of an image that is not loaded yet
+
+Below is the alternate syntax for document ready function.
+
+$(function(){
+
+  // jQuery code goes here...
+
+});    
+
+jQuery Selectors
+----------------
+jQuery selectors are used to select DOM elements based on id, class, attribute etc...
+
+All CSS selectors are valid jQuery selectors. In addition, jQuery has some custom selectors.
+
+All selectors in jQuery start with the dollar sign and parentheses: $()
+
+> The element Selector
+- - - - - - - - - - --
+Element selector selects elements based on the element name.
+
+Ex: selectors.html
+
+$("p") - Select all <p> elements on a page.
+
+We can call the jQuery methods on selected elements.
+
+$("p").hide();
+$("p").show();
+
+> The #id Selector
+- - - - - - - - --
+#id Selector selects the element based on it's id.
+
+Generally we will be having only one element with one id.
+
+$('#username').text();
+
+> The .class Selector
+- - - - - - - - - - -
+.class selector is used to select element based on it's class name.
+
+$('.detail').hide(); // Selects all elements with class name 'detail' and hide it.
+
+> $("*") selector
+- - - - - - - - -
+Selects all elements in the DOM.
+
+> $(this) selector
+- - - - - - - - -
+Selects the current element.
+
+<button id="somebutton1">Hide Above</button>
+
+$("#somebutton1").on('click', function() {
+    $(this).text('Done...!');
+});
+
+> selector with pseudo element
+- - - - - - - - - - - - - - -
+$("ul li:first-child").hide();
+
+> Attribute selector
+- - - - - - - - - --
+$("[href]").hide();
+$("a[target='_blank']").hide();
+
+Events
+------
+Using jQuery we can bind events to DOM elements easily.
+
+Ex: events.html
+
+$("p").click(function(){
+  // action goes here!!
+});
+
+The above code binds click event to all 'p' elements in page.
+
+jQuery have methods for all the common events like click, dblclick, keydown, keypress, mousemove etc...
+
+// dblclick
+$("#dblclick-demo").dblclick(function(){
+    alert('Double clicked on div');
+});
+
+// mouseenter
+$("#mouseenter-demo").mouseenter(function(){
+    alert("You entered div!");
+});
+
+// mouseleave
+$("#mouseleave-demo").mouseleave(function(){
+    alert("You left from the div");
+});
+
+on() Method
+- - - - - - 
+We can bind events to the elements using 'on()' method as well.
+
+$('#on-method-demo').on('click', function() {
+  alert('Clicked on ' + $(this).text());
+});
+
+// Attaching multiple events using on method
+$('#on-method-demo2').on({
+  'mouseenter': function() {
+      $(this).css("background-color", "lightgray");
+  },
+  'mouseleave': function() {
+      $(this).css("background-color", "lightblue");
+  },
+  'click': function() {
+      $(this).css("background-color", "yellow");
+  },
+});
+
+jQuery Effects
+--------------
+hide(), show() and toggle()
+- - - - - - - - - - - - - -
+$('#hide-demo').hide();
+$('#hide-demo').hide(1000);
+$('#hide-demo').hide(1000, function(){
+    alert('Div hidden...!');
+});
+
+speed and callback are optional parameters. Available for all three methods.
+
+fadeIn(), fadeOut(), fadeToggle() and fadeTo()
+- - - - - - - - - - - - - - - - - - - - - - -
+$('#fadeIn-demo').fadeIn();
+$('#fadeIn-demo').fadeIn(2000);
+$('#fadeIn-demo').fadeIn(2000, function() {
+    alert('Div fadeIn completed..!');
+});
+
+$('#fadeOut-demo').fadeOut();
+
+$('#fadeToggle-demo').fadeToggle();
+
+$('#fadeTo-demo').fadeTo(1000, 0.1);
+
+slideDown(), slideUp() and slideToggle()
+- - - - - - - - - - - - - - - - - - - -
+$('#slideDown-demo').slideDown();
+$('#slideDown-demo').slideDown(2000);
+$('#slideDown-demo').slideDown(2000, function() {
+    alert('Div slideDown completed..!');
+});
+
+$('#slideUp-demo').slideUp();
+
+$('#slideToggle-demo').slideToggle();
+
+animate() method
+- - - - - - - -
+$('#animate-demo').animate({
+    width: '400px',
+    left: '250px'
+});
+
+Method chaining
+- - - - - - - -
+We can call one jQuery method after another.
+
+$('#chaining-demo').slideUp(1000).slideDown(1000);
+
+HTML & CSS Manipulation Methods
+-------------------------------
+Using jQuery we can manipulate the HTML and CSS.
+
+Ex: html-css.html
+
+> text() - For manipulation of text
+$("#demo-div1").text(); // Returns the text
+$("#demo-div1").text("Changed to other text"); // Set the text
+
+> html() - For manipulation of html
+$("#demo-div2").html(); // Returns html
+$("#demo-div2").html("<h1>Some heading content</h1>"); // set html
+
+> val() - For manipulation of input values
+$("#val-demo-1").val(); // Returns input value
+$("#val-demo-1").val("Some other value.....!"); // Set value
+
+> attr() - For manipulation of attributes
+$("#link-demo").attr('href'); // Returns attribute
+$("#link-demo").attr('href', "https://in.yahoo.com/"); // Set attribute
+
+> remove() - Remove element from the DOM
+$("#remove-demo").remove();
+
+> empty() - Remove the content of the element
+$("#empty-demo").empty();
+
+> addClass() - Add class to element
+$("#addClass-demo").addClass("red-border");
+
+> removeClass() - Remove class of element
+$("#removeClass-demo").removeClass("red-border");
+
+> toggleClass() - Add/Remove class of element
+$("#toggleClass-demo").toggleClass("red-border");
+
+> css() - To add/remove css properties
+$("#css-demo").css("background-color", 'yellow'); // Add single property
+$("#css-demo").css({
+    "background-color": 'yellow',
+    "font-size": '30px'
+}); // Add multiple properties
+var backgroundValue = $("#css-demo").css("background-color"); // Returns property value
+
+> Dimension methods
+Below are methods get the values.
+var width = $("#dimensions-demo").width();
+var height = $("#dimensions-demo").height();
+var innerWidth = $("#dimensions-demo").innerWidth();
+var innerHeight = $("#dimensions-demo").innerHeight();
+var outerWidth = $("#dimensions-demo").outerWidth();
+var outerHeight = $("#dimensions-demo").outerHeight();
+
+// Set width and height
+$("#dimensions-demo").width(500);
+$("#dimensions-demo").height(100);
+
+Element Traversing Methods
+--------------------------
+Travese means travel across and reach an element in the DOM, based on it's relation with some other element.
+
+Ex: traversing.html
+
+> parent() - Select parent of the element
+$('#parent-demo-3').click(function() {
+    $(this).parent().addClass('red-border');
+});
+
+> parents() - selects all the parents of the element
+$('#parents-demo-3').click(function() {
+    $(this).parents().addClass('red-border');
+});
+
+> parentsUntil() - selects all the elements until it finds the specified element in the hierarchy
+$('#parentsUntil-demo-3').click(function() {
+    $(this).parentsUntil('div#parentsUntil-demo-2').addClass('red-border');
+});
+
+> children() - selects all the immediate children of the element
+$('#children-demo-1').click(function() {
+    $(this).children().addClass('red-border');
+});
+
+> find() - Find the specified element
+$('#find-demo-1').click(function() {
+    $(this).find('span').addClass('red-border');
+});
+
+> siblings() - selects all the siblings
+$('#sibling3').click(function() {
+    $(this).siblings().addClass('red-border');
+});
+
+> next() - select only the immediate sibling element
+$('#sibling8').click(function() {
+    $(this).next().addClass('red-border');
+});
+
+> nextAll() - select all the next siblings
+$('#next-all-btn').click(function() {
+    $('#sibling8').nextAll().addClass('red-border');
+});
+
+> nextUntil() - select all the next siblings until it find the specified element
+$('#next-until-btn').click(function() {
+    $('#sibling8').nextUntil('div#sibling11').addClass('red-border');
+});
+
+> prev() - select the immediate previous sibling
+$('#sibling19').click(function() {
+    $(this).prev().addClass('red-border');
+});
+
+> prevAll() - select all the previous siblings
+$('#prev-all-btn').click(function() {
+    $('#sibling19').prevAll().addClass('red-border');
+});
+
+> prevUntil() - select all the previous siblings until it finds the specified element
+$('#prev-until-btn').click(function() {
+    $('#sibling19').prevUntil('div#sibling16').addClass('red-border');
+});
+
+> first() - select the first element of specified kind
+$("div").first().addClass('red-border');
+
+> last() - select the last element of specified kind
+$("div").last().addClass('red-border');
+
+> eq(n) - select the nth element. Index starts from 0
+$("div").eq(2).addClass('red-border');
+
+> filter() - select the elements and filter out some elements from the list
+$("div").filter("#siblings-parent").addClass('red-border');
+
+> not() - Exclude the elements with specified criteria
+$("div").not("#siblings-parent").addClass('red-border');
+
+AJAX in jQuery
+--------------
+We can do AJAX calls/Http requests to the server using jQuery get and post methods.
+
+// GET request
+$.get("https://todos-api-dev.herokuapp.com/todos", function(data, status){
+    console.log(data);
+    console.log(status);
+});
+
+// POST request
+$.post("https://todos-api-dev.herokuapp.com/todos", {title: 'test todo'}, function(data, status){
+    console.log(data);
+    console.log(status);
+});
+
+// ajax method
+$.ajax({
+    url: 'https://todos-api-dev.herokuapp.com/todosss',
+    type: 'GET',
+    success: function(data){ 
+        console.log(data);
+    },
+    error: function(error) {
+        console.log('Got some error', error);
+    },
+    complete: function() {
+        console.log('Completed');
+    }
+});
+
+Check jquery-todos-app for more examples. https://github.com/angular-online/jquery-todos-app
+
+jQuery - noConflict() Method
+----------------------------
+If some other library also using the '$' symbol in your application then using noConflict() method we can prevent the name clash between the libraries.
+
+Ex: no-conflict.html
+
+// We can use 'jQuery' instead of '$'
+jQuery(document).ready(function(){
+    console.log('Page ready...!');
+});
+
+// We can replace '$' with some other word.
+var jq = $.noConflict();
+jq(document).ready(function(){
+    console.log('Page ready...!');
+});
+
+$.noConflict(); // We can release '$' by calling $.noConflict() method.
+we can't use '$' after releasing it. The below code generate error.
+$(document).ready(function(){
+    console.log('Page ready...!');
+});
+
+Sample App: jquery-todos-app
+----------
+https://github.com/angular-online/jquery-todos-app

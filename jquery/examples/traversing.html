@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/jquery-3.4.1.js"></script>
+        <style>
+            div {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #000000;
+            }
+
+            .red-border {
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+
+        <!-- parent() -->
+        <h3>parent()</h3>
+        <div id="parent-demo-1">
+            <div id="parent-demo-2">
+                <div id="parent-demo-3">Some content</div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#parent-demo-3').click(function() {
+                    $(this).parent().addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- parents() -->
+        <h3>parents()</h3>
+        <div id="parents-demo-1">
+            <div id="parents-demo-2">
+                <div id="parents-demo-3">Some content</div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#parents-demo-3').click(function() {
+                    $(this).parents().addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- parentsUntil() -->
+        <h3>parentsUntil()</h3>
+        <div id="parentsUntil-demo-1">
+            <div id="parentsUntil-demo-2">
+                <div>
+                    <div>
+                        <div id="parentsUntil-demo-3">Some content</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#parentsUntil-demo-3').click(function() {
+                    $(this).parentsUntil('div#parentsUntil-demo-2').addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- children() -->
+        <h3>children()</h3>
+        <div id="children-demo-1">
+            <div id="children-demo-2">
+                <div id="children-demo-3">Some content</div>
+            </div>
+            <div id="children-demo-4">Some content</div>
+            <div id="children-demo-5">Some content</div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#children-demo-1').click(function() {
+                    $(this).children().addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- find() -->
+        <h3>find()</h3>
+        <div id="find-demo-1">
+            <div id="find-demo-2">
+                <div id="find-demo-3"><span>Some content</span></div>
+            </div>
+            <div id="find-demo-4">Some content</div>
+            <div id="find-demo-5">
+                <span>Some content</span>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#find-demo-1').click(function() {
+                    $(this).find('span').addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- siblings() -->
+        <h3>siblings()</h3>
+        <div id="siblings-parent">
+            <div id="sibling1">Div 1</div>
+            <div id="sibling2">Div 2</div>
+            <div id="sibling3">Div 3</div>
+            <div id="sibling4">Div 4</div>
+            <div id="sibling5">Div 5</div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#sibling3').click(function() {
+                    $(this).siblings().addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- next(), nextAll() & nextUntil() -->
+        <h3>next(), nextAll() & nextUntil()</h3>
+        <div id="siblings-parent2">
+            <div id="sibling6">Div 6</div>
+            <div id="sibling7">Div 7</div>
+            <div id="sibling8">Div 8</div>
+            <div id="sibling9">Div 9</div>
+            <div id="sibling10">Div 10</div>
+            <div id="sibling11">Div 11</div>
+            <div id="sibling12">Div 12</div>
+            <div id="sibling13">Div 13</div>
+        </div>
+        <button id="next-all-btn">Select next all</button>
+        <button id="next-until-btn">Select next until</button>
+        <script>
+            $(document).ready(function() {
+                $('#sibling8').click(function() {
+                    $(this).next().addClass('red-border');
+                });
+
+                $('#next-all-btn').click(function() {
+                    $('#sibling8').nextAll().addClass('red-border');
+                });
+
+                $('#next-until-btn').click(function() {
+                    $('#sibling8').nextUntil('div#sibling11').addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- prev(), prevAll() & prevUntil() -->
+        <h3>prev(), prevAll() & prevUntil()</h3>
+        <div id="siblings-parent3">
+            <div id="sibling14">Div 14</div>
+            <div id="sibling15">Div 15</div>
+            <div id="sibling16">Div 16</div>
+            <div id="sibling17">Div 17</div>
+            <div id="sibling18">Div 18</div>
+            <div id="sibling19">Div 19</div>
+            <div id="sibling20">Div 20</div>
+            <div id="sibling21">Div 21</div>
+        </div>
+        <button id="prev-all-btn">Select prev all</button>
+        <button id="prev-until-btn">Select prev until</button>
+        <script>
+            $(document).ready(function() {
+                $('#sibling19').click(function() {
+                    $(this).prev().addClass('red-border');
+                });
+
+                $('#prev-all-btn').click(function() {
+                    $('#sibling19').prevAll().addClass('red-border');
+                });
+
+                $('#prev-until-btn').click(function() {
+                    $('#sibling19').prevUntil('div#sibling16').addClass('red-border');
+                });
+            });
+        </script>
+
+        <!-- first(), last(), eq(), filter() and not() -->
+        <h3>first(), last(), eq(), filter() and not()</h3>
+        <button id="first-demo-btn">Check First Div in Page</button>
+        <button id="last-demo-btn">Check Last Div in Page</button>
+        <button id="eq-demo-btn">Check 3rd Div in Page</button>
+        <button id="filter-demo-btn">Filter some Div in Page</button>
+        <button id="not-demo-btn">Exclude some Div in Page</button>
+        <script>
+            $(document).ready(function() {
+                $("#first-demo-btn").click(function() {
+                    $("div").first().addClass('red-border');
+                });
+
+                $("#last-demo-btn").click(function() {
+                    $("div").last().addClass('red-border');
+                });
+
+                $("#eq-demo-btn").click(function() {
+                    $("div").eq(2).addClass('red-border'); // Select the 3rd div element in the page. Index starts from 0.
+                });
+
+                $("#filter-demo-btn").click(function() {
+                    $("div").filter("#siblings-parent").addClass('red-border');
+                });
+
+                $("#filter-demo-btn").click(function() {
+                    $("div").filter("#siblings-parent").addClass('red-border');
+                });
+
+                $("#not-demo-btn").click(function() {
+                    $("div").not("#siblings-parent").addClass('red-border');
+                });
+            });    
+        </script>
+        
+        <br><br><br><br><br><br><br>
+    </body>
+</html>

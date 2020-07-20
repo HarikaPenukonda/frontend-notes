@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/jquery-3.4.1.js"></script>
+        <style>
+            .container {
+                width: 50%;
+                margin: auto;
+            }
+            div {
+                padding: 20px;
+                margin-bottom: 15px;
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        <div class="container">
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p> <br>
+            <div id="dblclick-demo">Double click demo</div>
+            <div id="mouseenter-demo">mouseenter demo</div>
+            <div id="mouseleave-demo">mouseleave demo</div>
+            <div id="mousedown-demo">mousedown demo</div>
+            <div id="mouseup-demo">mouseup demo</div>
+            <div id="hover-demo">hover demo</div>
+            <input type="text" id="focus-demo" /> <br><br>
+            <input type="text" id="blur-demo" /> <br>
+            <script>
+                $(document).ready(function(){
+                    // click
+                    $('p').click(function() {
+                        alert($(this).text() + ' clicked!');
+                    });
+    
+                    // dblclick
+                    $("#dblclick-demo").dblclick(function(){
+                        alert('Double clicked on div');
+                    });
+    
+                    // mouseenter
+                    $("#mouseenter-demo").mouseenter(function(){
+                        alert("You entered div!");
+                    });
+    
+                    // mouseleave
+                    $("#mouseleave-demo").mouseleave(function(){
+                        alert("You left from the div");
+                    });
+    
+                    // mousedown
+                    $("#mousedown-demo").mousedown(function(){
+                        alert("Mouse down over div!");
+                    });
+    
+                    // mouseup
+                    $("#mouseup-demo").mouseup(function(){
+                        alert("Mouse released on div!");
+                    }); 
+    
+                    // hover
+                    $("#hover-demo").hover(function(){
+                        alert("hovered on div!");
+                    }, function(){
+                        alert("Left div!");
+                    });
+    
+                    // focus
+                    $("input#focus-demo").focus(function(){
+                        console.log("Focused into input!");  
+                    });
+    
+                    // blur
+                    $("input#blur-demo").blur(function(){
+                        alert("Focused out of input!");
+                    });
+                });
+
+                // Using on method
+                $("p").on("click", function(){
+                    // action goes here ...
+                });
+            </script>
+
+            <br>
+            <div id="on-method-demo">on method demo</div>
+            <div id="on-method-demo2">on method - attaching multiple events</div>
+            <script>
+                $(document).ready(function() {
+                    $('#on-method-demo').on('click', function() {
+                        alert('Clicked on ' + $(this).text());
+                    });
+
+                    $('#on-method-demo2').on({
+                        'mouseenter': function() {
+                            $(this).css("background-color", "lightgray");
+                        },
+                        'mouseleave': function() {
+                            $(this).css("background-color", "lightblue");
+                        },
+                        'click': function() {
+                            $(this).css("background-color", "yellow");
+                        },
+                    });
+                });
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/jquery-3.4.1.js"></script>
+        <style>
+            div {
+                padding: 20px;
+                margin-bottom: 15px;
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <h3><a href="./index.html">&lt;&lt; Back To Home</a></h3>
+        
+        <!-------hide(), show() and toggle()------->
+        <h3>hide(), show() and toggle()</h3>
+        <div id="hide-demo">Hide Demo</div>
+        <button id="hide-btn">Hide Above</button> <br><br>
+
+        <div id="show-demo">Show Demo</div>
+        <button id="show-btn">Show Above</button> <br><br>
+
+        <div id="toggle-demo">Toggle Demo</div>
+        <button id="toggle-btn">Toggle Above</button>
+
+        <script>
+            $(document).ready(function(){
+                $('#show-demo').hide();
+
+                // hide()
+                $('#hide-btn').click(function() {
+                    // $('#hide-demo').hide();
+                    // $('#hide-demo').hide(1000);
+                    $('#hide-demo').hide(1000, function(){
+                        alert('Div hidden...!');
+                    });
+                });
+
+                // show()
+                $('#show-btn').click(function() {
+                    $('#show-demo').show();
+                });
+
+                // toggle()
+                $('#toggle-btn').click(function() {
+                    $('#toggle-demo').toggle();
+                });
+            });
+        </script>
+
+        <!--------fadeIn(), fadeOut(), fadeToggle() and fadeTo()-------->
+        <br><br><br><br>
+        <h3>fadeIn(), fadeOut(), fadeToggle() and fadeTo()</h3>
+        <div id="fadeIn-demo" style="display: none;">fadeIn Demo</div>
+        <button id="fadeIn-btn">fadeIn Above</button> <br><br>
+
+        <div id="fadeOut-demo">fadeOut Demo</div>
+        <button id="fadeOut-btn">fadeOut Above</button> <br><br>
+
+        <div id="fadeToggle-demo">fadeToggle Demo</div>
+        <button id="fadeToggle-btn">fadeToggle Above</button> <br><br>
+
+        <div id="fadeTo-demo">fadeTo Demo</div>
+        <button id="fadeTo-btn">fadeTo Above</button> <br><br>
+
+        <script>
+            $(document).ready(function(){
+                // fadeIn()
+                $('#fadeIn-btn').click(function() {
+                    //$('#fadeIn-demo').fadeIn();
+                    //$('#fadeIn-demo').fadeIn(2000);
+                    $('#fadeIn-demo').fadeIn(2000, function() {
+                        alert('Div fadeIn completed..!');
+                    });
+                });
+
+                // fadeOut()
+                $('#fadeOut-btn').click(function() {
+                    $('#fadeOut-demo').fadeOut();
+                });
+
+                // fadeToggle()
+                $('#fadeToggle-btn').click(function() {
+                    $('#fadeToggle-demo').fadeToggle();
+                });
+
+                // fadeTo()
+                $('#fadeTo-btn').click(function() {
+                    $('#fadeTo-demo').fadeTo(1000, 0.1);
+                });
+            });
+        </script>
+
+        <!--------slideDown(), slideUp() and slideToggle()-------->
+        <br><br>
+        <h3>slideDown(), slideUp() and slideToggle()</h3>
+        <div id="slideDown-demo" style="display: none;">slideDown Demo</div>
+        <button id="slideDown-btn">slideDown Above</button> <br><br>
+
+        <div id="slideUp-demo">slideUp Demo</div>
+        <button id="slideUp-btn">slideUp Above</button> <br><br>
+
+        <div id="slideToggle-demo">slideToggle Demo</div>
+        <button id="slideToggle-btn">slideToggle Above</button> <br><br>
+
+        <script>
+            $(document).ready(function(){
+                // slideDown()
+                $('#slideDown-btn').click(function() {
+                    //$('#slideDown-demo').slideDown();
+                    //$('#slideDown-demo').slideDown(2000);
+                    $('#slideDown-demo').slideDown(2000, function() {
+                        alert('Div slideDown completed..!');
+                    });
+                });
+
+                // slideUp()
+                $('#slideUp-btn').click(function() {
+                    $('#slideUp-demo').slideUp();
+                });
+
+                // slideToggle()
+                $('#slideToggle-btn').click(function() {
+                    $('#slideToggle-demo').slideToggle();
+                });
+            });
+        </script>
+
+        <!--------animate()-------->
+        <br><br>
+        <h3>animate()</h3>
+        <div id="animate-demo" style="width: 200px; position: relative;text-align: center">Some content</div>
+        <button id="animate-btn">Animate</button> <br><br>
+        <script>
+            $(document).ready(function(){
+                $('#animate-btn').click(function() {
+                    $('#animate-demo').animate({
+                        width: '400px',
+                        left: '250px'
+                    });
+                });
+            });
+        </script>
+
+        <!--------Method chaining-------->
+        <br><br>
+        <h3>Method chaining</h3>
+        <div id="chaining-demo">Some content</div>
+        <button id="chaining-btn">slide up and down</button> <br><br>
+        <script>
+            $(document).ready(function(){
+                $('#chaining-btn').click(function() {
+                    $('#chaining-demo').slideUp(1000).slideDown(1000);
+                });
+            });
+        </script>
+    </body>
+</html>
