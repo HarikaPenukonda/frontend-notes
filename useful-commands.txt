@@ -6,6 +6,9 @@ Zoom room etiquette
 - For every 10-15 min I keep checking for questions. 
 - If you get any question, please try to hold it for 10-15 min. If you need answer instantly please feel free to unmute and speak. 
 - I don't check chat oftenly. Please try to use it when you have audio issues.
+- Zoom room url is same for all the sessions. No Password required.
+- https://zoom.us/j/9515302390
+- Zoom meeting id and my phone number are same. 
 
 Angular CLI:
 ============
