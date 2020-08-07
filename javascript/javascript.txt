@@ -1,5 +1,5 @@
-Browser
-=======
+Browser Architecture
+====================
 Browser is a collection of different software components together. Below are some components,
 - Browser Engine, Rendering Engine. Ex: Blink, Webkit, Gecko, Trident etc...
 - Javascript Engine. Ex: V8, SpiderMonkey, Chakra etc...
@@ -102,11 +102,11 @@ Ex: 10 - '2' = 8
 
 7 kinds of data types
 ---------------------
-'number' for numbers of any kind: integer or floating-point.
+'number' for any kind of numbers: integer or floating-point.
 'string' for strings. A string may have one or more characters, there’s no separate single-character type.
 'boolean' for true/false.
-'null' for unknown values – a standalone type that has a single value null. Reference of non-existing value.
 'undefined' for unassigned values – a standalone type that has a single value undefined. Existing but no value.
+'null' for unknown values – a standalone type that has a single value null. Reference of non-existing value.
 'object' for more complex data structures. object, array, function belong to object datatype.
 'symbol' for unique identifiers.
 
@@ -155,7 +155,7 @@ NaN == NaN // false
 
 So, we can't write checking conditions like below,
 var a = 'abc'/10;
-if(a == NaN) { //Do this } 
+if(a == NaN) { //some code } 
 
 Using isNaN() method we can check whether a value is NaN or not. 
 isNaN(0/0); // true
@@ -228,7 +228,7 @@ str.toLowerCase(); // 'test'
 indexOf() method
 ---------------- 
 - It is used to search substring in a string. 
-- Returns position of first occurence of substring.
+- Returns index of first occurence of substring.
 
 var str = "Widget with id Widget";
 str.indexOf("Widget");  // 0
@@ -242,16 +242,18 @@ If we write the condition like below, it will fail in some cases.
 if(str.indexOf("Widget")) { 
   // Do something if "Widget" is found in the string. 
   // It is found at 0th index. 
-  // Even it is truthy case, if condition treats 0 as falsy value and don't execute the targeted code.
+  // Even Widget is found at 0 index, if condition treats 0 as falsy value and don't execute the targeted code.
+  console.log('This code do not execute, even for truthy condition');
 }
 
 So, while using indexOf() method, always we need to compare value with '-1'. 
 if(str.indexOf("Widget") !== -1) { 
   // Do something if "Widget" is found in the string. 
   // 0 !== -1 -> true. So, code block will be executed
+  console.log('This code executes on truthy condition');
 }
 
-str.indexOf("id", 2) // start search from index 2
+str.indexOf("id", 2); // start search from index 2
 
 str.lastIndexOf("id"); // Returns the index of last occurence of 'id' 
 
@@ -263,6 +265,7 @@ Three important methods to extract substring from a string
 substring
 ---------
 substring(start, end) - exclude the end position
+start index and end index
 
 var str = "stringify"
 str.substring(0,1) // s
@@ -272,10 +275,10 @@ if we don't give end, it will take upto end
 substr
 ------
 substr(start [, length])
-start, how many characters to extract
+start index and how many characters to extract
 
-var str = "stringify"
-str = str.substr(2,4) // ring
+var str = "stringify";
+str = str.substr(2,4); // ring
 
 omitting the length will lead to end of the string
 
@@ -302,7 +305,7 @@ String(value); // Returns 'true'
 
 To Number
 ---------
-There is no toNumber() method. We have to use Number() Constructor method.
+There is no toNumber() method like toString(). We have to use Number() Constructor method to convert any value to Number.
 
 var str = 'abc'; 
 Number(str); // NaN

@@ -1,3 +1,12 @@
+Zoom room etiquette
+===================
+- You will be muted automatically on entering the room.
+- If you are not speaking, please be in mute always to avoid background noise.
+- Hold space bar to temporarily unmute yourself and release it to go mute again.
+- For every 10-15 min I keep checking for questions. 
+- If you get any question, please try to hold it for 10-15 min. If you need answer instantly please feel free to unmute and speak. 
+- I don't check chat oftenly. Please try to use it when you have audio issues.
+
 Angular CLI:
 ============
 ng new --skip-install angular-todo => create project without installing dependencies
