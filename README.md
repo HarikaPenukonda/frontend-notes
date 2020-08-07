@@ -1,1 +1,1 @@
-# Frontend Engineering Course Notes
+# Frontend Course Notes
