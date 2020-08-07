@@ -165,7 +165,7 @@ parseInt('12px'); // 12. Used to parse strings to numbers.
 parseInt('abc'); // NaN. If parsing failed, NaN will be returned.
 
 parseFloat('12.3.4'); // 12.3 Used to parse strings to floating numbers.
-parseFloat(''a.12.c''); // NaN. If parsing failed, NaN will be returned.
+parseFloat('a.12.c'); // NaN. If parsing failed, NaN will be returned.
 
 Except '+', other arithmetic operators automatically parse string to numbers. 
 '+' operator is used for concatination as well.

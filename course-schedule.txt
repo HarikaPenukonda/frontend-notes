@@ -7,12 +7,12 @@ Session1
 - Data types
 - typeof operator
 - Numbers
-- Strings
-- Type Conversions
 - Softwares required
 - Zoom room etiquette
 - Give github notes url
 
 Session2
 --------
+- Strings
+- Type Conversions
 - Functions
