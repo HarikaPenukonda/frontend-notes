@@ -2,6 +2,15 @@ Angular is developed by Google.
 
 Angular 1.x and Angular 2+ are completely different frameworks. We don't need to have Angular 1.x knowledge to learn / understand Angular 2+.
 
+We can build web, mobile and desktop applications with angular.
+
+Mobile app development reference: 
+https://ionicframework.com
+
+Desktop application development reference:
+https://electronjs.org/ 
+https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/
+
 Angular CLI:
 ============
 Angular CLI is the command line tool developed by google, to help in Angular application development process. Using Angular CLI we can create new Angular application, add files to it and perform a variety of ongoing development tasks such as testing, bundling, and deployment.
@@ -3802,12 +3811,3 @@ https://alligator.io/angular/angular-8/
 Generate TypeScript Interfaces from objects
 -------------------------------------------
 http://www.jsontots.com/
-
-We can build web, mobile and desktop applications with angular.
-
-Mobile app development reference: 
-https://ionicframework.com
-
-Desktop application development reference:
-https://electronjs.org/ 
-https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/

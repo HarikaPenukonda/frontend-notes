@@ -1,10 +1,24 @@
+Browser
+=======
+Browser is a collection of different software components together. Below are some components,
+- Browser Engine, Rendering Engine. Ex: Blink, Webkit, Gecko, Trident etc...
+- Javascript Engine. Ex: V8, SpiderMonkey, Chakra etc...
+- Networking component
+- Data storage component
+- XML parsing component
+- Plugin handling component
+
+In a browser Javascript is interpreted by Javascript Engine and HTML, CSS is parsed by Browser Engine.
+
+For chrome browser, Javascript engine is V8 and Browser engine is Blink. 
+
 JavaScript RunTime
 ==================
 
 --------------------------------------------------
 |          System Memory - RAM - 8GB             |
 | ---------------------------------------------- |
-| |      Chrome Browser - 1GB Allocated        | |
+| |      Chrome Browser(V8) - 1GB Allocated    | |
 | | ------------------------------------------ | |
 | | | ------------------  ------------------ | | |
 | | | |                |  |                | | | |
@@ -29,8 +43,37 @@ While executing code through console, to go to next line use Shift + Enter. If y
   console.log(z);
 </script>
 
-Variables:
-========== 
+JavaScript Versions
+===================
+ECMAScript is javascript language specification. 
+ 
+Ecma International is the organization defining the specification. 
+
+https://www.ecma-international.org/ecma-262/
+
+Javascript engines implement those features by following ECMA specifications.
+
+ES5 
+- Released in 2009
+- Supported by all the browsers.
+
+ES6 / ECMAScript 2015 
+- Most of the features supported by latest browsers.
+- Few features are still not yet supported by browsers.
+- Most of the javascript latest features we are using today belong to ES6.
+- All Javascript frameworks are using ES6 features throughly.
+- Learning ES6 features is very important to understand latest frameworks.
+
+ES7 / ECMAScript 2016
+- Currently, chrome and opera supporting ES7 features.
+- These features are not yet fully adopted by the community.
+
+ES8 / ECMAScript 2017, ES9 / ECMAScript 2018, ES10 / ECMAScript 2019, ES11 / ECMAScript 2020 specifications were released. Browsers are trying to bring those features. It will take some time.
+
+Currently, Javascript community is using ES6 features throughly, because of browser support.  
+
+Variables
+=========
 var x; 
  
 var x, y, z; 
@@ -46,19 +89,19 @@ Variable name must start with $, _ or an alphabet.
 Js is case sensitive. “test” and “Test” are two different variables. 
  
 var, function, return, class etc... are reserved words. 
- 
-Data types:
-===========
+
+Data types
+==========
 Javascript is a weekly typed language – we can assign any type of value to any type of variable.
-// no error
+
 var message = "hello";
-message = 123456;
+message = 123456; // no error
 
 JavaScript is dynamically typed language. Depends on context it will decide the data type.
 Ex: 10 - '2' = 8
 
-7 kinds of data types:
-----------------------
+7 kinds of data types
+---------------------
 'number' for numbers of any kind: integer or floating-point.
 'string' for strings. A string may have one or more characters, there’s no separate single-character type.
 'boolean' for true/false.
@@ -67,8 +110,8 @@ Ex: 10 - '2' = 8
 'object' for more complex data structures. object, array, function belong to object datatype.
 'symbol' for unique identifiers.
 
-typeof:
-=======
+typeof operator
+===============
 typeof is used to check the datatype of variable.
 
 typeof undefined // "undefined" 
@@ -83,9 +126,13 @@ typeof {} // "object"
 
 typeof function(){} // "function". There is no function data type. It comes under object type. But, typeof operator returns it as function for better differentiation from objects.
 
-
 typeof {} // 'object'
-typeof [] // 'object' // Array.isArray([]) - true, Array.isArray({}) - false
+typeof [] // 'object' 
+
+To check an array, we can use Array.isArray() method.
+- Array.isArray([]) - true 
+- Array.isArray({}) - false
+
 typeof new Date() // 'object'
 
 typeof "test" // string
@@ -93,41 +140,55 @@ typeof new String("test") // object
 
 typeof Symbol("id") // "symbol"
 
-Numbers:
-========
+Numbers
+=======
 Numbers in javascript range from 'Infinity' to '-Infinity'.
 1/0 // Infinity
 -1/0 // -Infinity
 
-NaN
-0 / 0 - failed to do mathematical calculation
+NaN - Not a Number
+- Javascript will return NaN when it failed to do mathematical calculation
+0 / 0 - NaN
 
-it is not equal to anything, including itself
+NaN is not equal to anything, including itself. 
+NaN == NaN // false
 
-isNaN(0/0)
+So, we can't write checking conditions like below,
+var a = 'abc'/10;
+if(a == NaN) { //Do this } 
 
-parseInt('12px')
+Using isNaN() method we can check whether a value is NaN or not. 
+isNaN(0/0); // true
+isNaN(10/5); // false
 
-parseFloat('12.3.4')
+parseInt('12px'); // 12. Used to parse strings to numbers.
+parseInt('abc'); // NaN. If parsing failed, NaN will be returned.
 
-Except +, other operators automatically parse string to numbers
-10 + '2' //"102"
+parseFloat('12.3.4'); // 12.3 Used to parse strings to floating numbers.
+parseFloat(''a.12.c''); // NaN. If parsing failed, NaN will be returned.
+
+Except '+', other arithmetic operators automatically parse string to numbers. 
+'+' operator is used for concatination as well.
+10 / '2'  // 5
+10 + 2    // 12
+10 + '2'  // "102"
 
 It's better to parse the values while doing mathematical operation.
 10 - parseInt('2'); // 8
 
 Math.floor
-Rounds down
+- Rounds number down
 
 Math.ceil
-Rounds up
+- Rounds number up
 
 Math.round
-Rounds to nearest
+- Rounds number to nearest
 
 Math.floor(3.1) // 3
 Math.ceil(3.1)  // 4
-Math.round(3.1)  // 3
+Math.round(3.1) // 3
+Math.round(3.5) // 4
 
 var a = 12.34;
 a.toFixed(1) // "12.3"
@@ -137,13 +198,13 @@ a.toFixed(5) // "12.34000"
 
 Math.random()
 
-Strings:
-========
-var text = "my value";
-var anotherText = 'another string';
-var latestText = `string with back ticks`;
+Strings
+=======
+We can use double quotes, single quotes or back ticks to define strings.
 
-We can use both double quotes or single quotes to define strings.
+var text = "my value"; // double quotes 
+var anotherText = 'another string'; // single quotes
+var latestText = `string with back ticks`; // back ticks
 
 \ - to escape special characters in the string. 
 
@@ -156,28 +217,48 @@ test"; // Escaping new line
 
 var str = "test";
 
-str.length
+str.length; // 4
 
-str.charAt(0)
+str.charAt(0); // 't'
 
-str.toUpperCase()
+str.toUpperCase(); // 'TEST'
 
-str.toLowerCase()
+str.toLowerCase(); // 'test'
 
-indexOf(): It is used to search substring in a string. Returns position of first occurence of substring.
+indexOf() method
+---------------- 
+- It is used to search substring in a string. 
+- Returns position of first occurence of substring.
 
 var str = "Widget with id Widget";
-str.indexOf("Widget")  // 0
-str.indexOf("id")  // 1
-str.indexOf("test")  // -1 if it can't find the substring
+str.indexOf("Widget");  // 0
+str.indexOf("id");  // 1
+str.indexOf("test");  // -1 if it can't find the substring
+str.indexOf("widget");  // -1 It do the case sensitive search. "widget" with small letter 'w' is not found.
 
-if(str.indexOf("Widget") !== -1) { } // Compare with -1 while using indexOf in if condition
+If the word is found at first position of the string, it will return it's index 0. 
 
-str.indexOf("id", 2) //search from index 2
+If we write the condition like below, it will fail in some cases.
+if(str.indexOf("Widget")) { 
+  // Do something if "Widget" is found in the string. 
+  // It is found at 0th index. 
+  // Even it is truthy case, if condition treats 0 as falsy value and don't execute the targeted code.
+}
 
-str.lastIndexOf("id"); // Returns the index of last occurence 
+So, while using indexOf() method, always we need to compare value with '-1'. 
+if(str.indexOf("Widget") !== -1) { 
+  // Do something if "Widget" is found in the string. 
+  // 0 !== -1 -> true. So, code block will be executed
+}
 
-Extracting a substring: substring, substr, slice
+str.indexOf("id", 2) // start search from index 2
+
+str.lastIndexOf("id"); // Returns the index of last occurence of 'id' 
+
+Three important methods to extract substring from a string
+- substring
+- substr
+- slice
 
 substring
 ---------
@@ -203,32 +284,34 @@ slice
 slice(start [, end])
 same as substring. Difference is handling the negative and overflow values.
 
-"testme".substring(-2) //testme  negative values becomes 0
-"testme".slice(-4)	//stme		count from the end of the string. backward counting starts from -1. 's' at -4. So, start at 's' and take remaining all.
+"testme".substring(-2) // testme  In substring, negative values becomes 0
+"testme".slice(-4)	// stme	 Count from the end of the string. Backward counting starts from -1. 's' at -4. So, start at 's' and take remaining all.
 
-"testme".slice(1, -1) //estm Start at 1, end at -1 and exclude last char.
+"testme".slice(1, -1) // estm Start at 1, end at -1 and exclude last char.
  
-Type Conversions:
-=================
-To String:
-----------
-var test = 123;
-test.toString();
+Type Conversions
+================
+To String
+---------
+var num = 123;
+num.toString(); // Returns '123'
 
 var value = true;
-value.toString();
-valStr = String(value);
+value.toString(); // Returns 'true'
+String(value); // Returns 'true'
 
-To Number:
-----------
+To Number
+---------
+There is no toNumber() method. We have to use Number() Constructor method.
+
 var str = 'abc'; 
 Number(str); // NaN
 
 var str = '123';
 Number(str); // 123
 
-To Boolean:
------------
+To Boolean
+----------
 Boolean(1); // true
 Boolean(0); // false
 
@@ -238,20 +321,20 @@ Boolean(""); // false
 Boolean("0"); // String "0" gives true
 Boolean(" "); // spaces, also true (any non-empty string is true)
 
-Double not(!!) – convert any data type to Boolean.
+Double not(!!) – simple technique to convert any data type to Boolean.
 str = 'test';
 !str // false
 !!str // true 
 
-JSON <=> String:
-----------------
+JSON <=> String
+---------------
 var obj = { "name":"John", "age":30, "city":"New York" };
 var myJSON = JSON.stringify(obj);
 
 var obj = JSON.parse(myJSON);
 
-Functions:
-========== 
+Functions
+=========
 // Named function 
 function greet(name) { 
   console.log("Hi, "+name) 
@@ -266,11 +349,11 @@ greet('John');
 
 If a function don't return anything, by default "undefined" will be returned.
 
-variables declared inside function are local to that function.
+variables declared inside a function are local to that function.
 Example: examples/scoping.html
 
 Global variables can be accessed from anywhere in the code. 
-Local variables can be accessed within the function block only.
+Local variables can be accessed only within the function block.
 
 Callback function
 -----------------
@@ -325,8 +408,8 @@ var minorAges = ages.filter(function (value, index){
 
 Ex: examples/ajax folder
 
-Self calling functions / Immediately invoked functions:
--------------------------------------------------------
+Self calling functions / Immediately invoked functions
+------------------------------------------------------
 (function() {
   
 	var a = 5, b=10;
@@ -344,12 +427,13 @@ function User() {
 }
 var user = new User();
 
-instanceof: for checking type of custom objects
-===========
-user instanceof User
+instanceof operator
+-------------------
+- Used for checking type of custom objects
+- Ex: user instanceof User // true
 
-AJAX:
-=====
+AJAX
+====
 AJAX - Asynchronous Javascript And Xml
 
 It's not a programming language. It's a technique to hit server and change webpage content without re-loading page.
@@ -379,150 +463,98 @@ Different readyStates available are below,
 
 Ex: ajax folder
 
-Closure
-=======
-A closure is an inner function that has access to the outer function’s variables, properties and scope.
+Arrays
+======
+var arr = []; // create array using square brackets
+var arr = new Array(); // create using Array constructor method 
 
-function getCounter() {
-  var count = 0;
-  function counter() {
-    count += 1;
-    console.log(count)
-  }
-  return counter;
-}
+arr.length; // Gives array length
+arr.push(elem); // Add element at end
+arr.pop(); // Remove element at end
 
-var counter = getCounter();
+push and pop Operates at tail.
+shift/unshift operates at head.
 
-counter();
-counter();
-counter();
+arr.unshift(elem) - Add new element at head.
+arr.shift() - Remove the first elment.
 
-Here counter() function is closure.
+var fruits = ["Apple", "Orange"];
+var apple = fruits.shift(); // now we have only ["Orange"] left
+fruits.unshift("Lemon"); // now got ["Lemon", "Orange"]
 
-Problems solved by closure:
----------------------------
-1. If we put 'var count = 0;' in global scope, any other script may change 'count' value. For example, if your colleague define a variable with same name, then our function doesn't work properly.
+join() and split() methods 
+--------------------------
+var fruitsArr = ["Lemon","Apple","Orange","Peach"];
 
-var count = 0;
-function counter() {
-  count += 1;
-  console.log(count)
-}
+var fruitsStr = fruits.join(',');
+console.log(fruitsStr); // "Lemon,Apple,Orange,Peach"
 
-counter();
-counter();
-
-2. If we put 'var count = 0;' in local scope, 'count' will be initiated again and again when we call count. So, counter doesn't work properly.
-
-function counter() {
-  var count = 0;
-  count += 1;
-  console.log(count)
-}
-
-counter();
-counter();
-
-To overcome these kind of problems we use closures.
-
-Arrays:
-=======
-var arr = [];
-new Array()
-.length
-.pop()
-.push() 
-
-push and pop Operates at end.
-
-shift/unshift operates from start.
-shift - Remove the first elment.
-unshift - Add new element at starting.
-
-var fruits = ["Apple", "Orange"]
-
-var apple = fruits.shift() // now we have only ["Orange"] left
-
-fruits.unshift("Lemon") // now got ["Lemon", "Orange"]
-
-console.log(fruits)
-
-join and split:
----------------
-var fruits = ["Lemon","Apple","Orange","Peach"];
-
-var str = fruits.join(', ');
-console.log(str);
-
-var fruits = "Apple,Orange,Peach";
-
-var arr = fruits.split(',');
-console.log(arr);
-
-// arr is ["Apple", "Orange", "Peach"]
+var fruitsStr = "Lemon,Apple,Orange,Peach";
+var fruitsArr = fruitsStr.split(',');
+console.log(fruitsArr); // ["Lemon","Apple","Orange","Peach"]
 
 length
 -------
 var arr = [0, 1, 2, 3];
 arr.length = 2; // trims the last two elements
-arr.length = 20; // insert 18 undefined 
+arr.length = 20; // insert 18 undefined values
 
 delete
 ------
 var arr = ["Go", "to", "home"]
-delete arr[1]
-// now arr = ["Go", undefined, "home"]
-console.log(arr[1]) // undefined
+delete arr[1]; // ["Go", undefined, "home"]
+console.log(arr[1]); // undefined
 
-splice:
--------
-arr.splice(index, deleteCount, [elem1, ..., elemN])
+delete operatior just erase the value at specified index in array. It don't erase the memory reference.
 
-var arr = ["Go", "to", "home"]
-arr.splice(1, 1)  // remove 1 element starting at index 1
+*** splice ***
+--------------
+We can perform any kind of manipulation on an array using splice method. 
+
+It mutate/change the array.
+
+arr.splice(index, deleteCount, [elem1, ..., elemN]);
+index - At what index to start
+deleteCount - How many elements to delete
+[elem1, ..., elemN] - Elements to insert after deletion
+
+var arr = ["Go", "to", "home"];
+var removedElements = arr.splice(1, 1);  // remove 1 element starting at index 1
 console.log(arr); // ["Go", "home"]
 
-splice returns array of removed elements.
+splice() method returns array of removed elements.
 
 replace elements:
 var arr = ["Go", "to", "home", "now"];
-// remove first 3 elements and add two
-arr.splice(0, 3, "Come", "here") 
-console.log( arr ) // ["Come", "here", "now"]
+arr.splice(0, 3, "Come", "here"); // remove first 3 elements and add two
+console.log(arr); // ["Come", "here", "now"]
 
-insert elements, just set deleteCount to 0
+To insert elements, just set deleteCount to 0
 var arr = ["Go", "to", "home"];
-// from 2nd position 
-// delete 0 
-// and insert "my", "sweet"
-arr.splice(2, 0, "my", "sweet") 
-console.log( arr) // "Go", "to", "my", "sweet", "home"
+arr.splice(2, 0, "my", "sweet"); // from 2nd position, delete 0 elements and insert "my", "sweet"
+console.log(arr); // "Go", "to", "my", "sweet", "home"
 
-a negative index, which counts from array end
-var arr = [1, 2, 5]
+Negative index counts from array end
+var arr = [1, 2, 5];
+arr.splice(-1, 0, 3, 4); // At element -1, delete 0 elements and insert 3 and 4
+console.log(arr);  // 1,2,3,4,5
 
-// at element -1
-// delete 0 elements, 
-// then insert 3 and 4
-arr.splice(-1, 0, 3, 4)
+Array slice
+-----------
+Array slice() method is used to extract sub array from array. Works same as string slice() method.
 
-console.log(arr)  // 1,2,3,4,5
+It don't mutate/change the array. it will return the sliced elements.
 
-Array slice:
-------------
 var arr = ["Why", "learn", "JavaScript"];
+var subArr = arr.slice(0, 2); // starting at 0 index, end at 2 index and omit last value 
+console.log(subArr); // ["Why", "learn"]
+console.log(arr); // ["Why", "learn", "JavaScript"]. Not changed/mutated.
 
-var arr2 = arr.slice(0,2) // starting at 0 index, end at 2 index and omit last value 
-
-console.log(arr2);
-it will return the sliced elements.
- 
-if we miss the end index, it will take until end.
+If we miss the end index, it will take until end.
 
 forEach()
 ---------
-To iterate through array elements.
+Used to iterate through every element.
 var arr = ["Why", "learn", "JavaScript"];
 
 arr.forEach(function(value, index){
@@ -532,7 +564,10 @@ arr.forEach(function(value, index){
 
 map()
 -----
-Take each value and manipulate and returns the new array.
+Used to take each value and manipulate and returns the new array.
+
+Don't mutate the array. Return a new array with manipulated values.
+
 var arr = [4, 9, 16, 25];
 
 var sqrts = arr.map(function(value, index){
@@ -541,7 +576,10 @@ var sqrts = arr.map(function(value, index){
 
 filter()
 --------
-Returns a new array of filtered values.
+Used to filter an array based on some condition. Returns a new array of filtered values.
+
+Don't mutate the array. Return a new array with filtered values.
+
 var ages = [4, 9, 16, 25];
 
 var minorAges = ages.filter(function (value, index){
@@ -552,13 +590,21 @@ reverse()
 --------- 
 arr.reverse() reverse the array. 
 
-Objects:
-========
-var user = new Object();
-var user = { };
-user.name = 'John'
+Mutate the array. 
+
+var ages = [4, 9, 16, 25];
+ages.reverse();
+console.log(ages); // [25, 16, 9, 4]
+
+Objects
+=======
+var user = new Object(); // create object using constructor method
+var user = { }; // create object using curly braces
+user.name = 'John';
 user.age = 25;
-delete user.name
+console.log(user.name); // dot notation for accessing an object property
+
+delete user.name; // delete the property reference also.
 
 We can also use [] to access properties of object.
 user['name'] // John
@@ -577,13 +623,17 @@ var box = {
 	type: {}
 } 
 
-We can place any kind of data in object.
+We can place any kind of data in an object.
 
 Non-existing properties returns undefined.
 box.area  // returns undefined
 
 JSON: JavaScript Object Notation
 -----
+- The notation of a javascript object. 
+- The format of a javascript object. 
+
+{name: 'john', age: 30, skills: ['js', 'java', 'ts', 'angular']}
 
 window Object
 =============
@@ -609,58 +659,69 @@ Object.keys(box) returns an array with all keys of box object.
 Object.values(box) returns an array with all values of box object.
 
 To check an object is empty or not, check the length of Object.keys(box) array.
+
 var user = {};
 if(user) {
 	console.log('not empty');
-} // If can't evaluate it.
+} // If can't evaluate that an object is empty or not.
 
-if(Object.keys(box).length) {
-  // box is not an empty object
+if(Object.keys(user).length) {
+  // user is not an empty object
 }
 
-this
-====
+'this' keyword behaviour in functions
+=====================================
 This behaviour will change depends on context.
-> In a regular function, this will become window object
+
+- In a regular function, this will become window object
 function test(){
   console.log(this); // this = window object
 }
 
-> Creating custom object:
+- In constructor function this will represent the current object.
+
 function User(name) {
   this.name = name;
  
   this.sayHi = function() {
-    console.log("I am "  + this.name)
+    console.log("I am "  + this.name);
   };
 }
 
-var userObj1 = new User("John");
+var userObj = new User("John");
+userObj.sayHi(); // I am John
 
-userObj1.sayHi()
+- The value of this in a function is dynamic. 
+- It is determined when function is called, not when it is declared.
 
-The value of this is dynamic. It is determined when function is called, not when it is declared.
-
-> In an object method, this will become current object.
-var obj = {
+- In an object method, this will become current object.
+var userObj = {
   name: 'John',
   printName: function(){
     console.log(this.name);
   }
 };
-obj.printName(); // this = obj
+userObj.printName(); // 'this' becomes userObj here. 
 
-DOM:
-====
+*** Simply remember, 'this' in a normal function represents 'window' object. In all other cases, it represents the current object.
+
+DOM
+===
 Document Object Model (DOM)
-- allow to access contents of the page, modify elements etc
-	
-The DOM represents document as a tree. The tree is made up of parent-child relationships, a parent can have one or many children nodes.
+- DOM allows us to access contents of a web page, modify elements, delete elements etc... other operations through javascript programs.
+- DOM represents webpage as a tree. The tree is made up of parent-child relationships, a parent can have one or many children nodes.
 
 window.document is the global object for DOM. We can access it as window.document OR document.
 
-Traversing:
------------
+- Every element/tag of a webpage is internally represented as an object. 
+- 'document' object contains references of all elements in object format.
+
+Webpage Traversing 
+------------------
+Webpage Traversing means traveling in a webpage from one element to another element programatically.
+
+'document' object contains many methods and properties to traverse a webpage.
+
 document.body
 document.body.childNodes
 document.body.firstChild
@@ -668,24 +729,28 @@ document.body.lastChild
 
 dir - method
 ------------
-dir() is a chrome console method to expand and see the list of properties available on a DOM element.
+dir() is a chrome console method to expand and see the list of properties available on a DOM object.
 
+HTML:
 <div id="logo">div for logo</div>
-var logo = document.getElementById('logo');
-console.log(logo);
 
-dir(logo);
+Javascript: 
+var logo = document.getElementById('logo'); // access element with id 'logo'
+console.log(logo); // variable 'logo' contains DOM object of element with id 'logo'. But, console.log print html format of that reference element.
 
-document.getElementById:
-------------------------
+dir(logo); // dir() method prints the object format of that element. This method works only in chrome console.
+
+document.getElementById('id') method
+------------------------------------
 <div id="info">Info</div>
+
 <script>
-  var div = document.getElementById('info')
-  console.log( div.innerHTML )
+  var div = document.getElementById('info');
+  console.log(div.innerHTML);
 </script>
 
-getElementsByTagName
---------------------
+document.getElementsByTagName('tagName')
+----------------------------------------
 <table id="myTable">
   <tr>
     <td>Your age:</td>
@@ -705,7 +770,7 @@ getElementsByTagName
 </table>
 
 <script>
-  var elements = document.getElementsByTagName('input');
+  var elements = document.getElementsByTagName('input'); // Returns a nodelist of 'input' elements
   console.log(elements);
   for(var i=0; i<elements.length; i++) {
     var input = elements[i]; 
@@ -713,17 +778,21 @@ getElementsByTagName
   }
 </script>
 
-document.getElementsByClassName
--------------------------------
+document.getElementsByClassName('className')
+--------------------------------------------
 <div class="abc def test">some text1</div>
 <div class="abc">some text2</div>
 <script>
-console.log( document.getElementsByClassName('abc') );
+console.log(document.getElementsByClassName('abc')); // Returns a nodelist of elements with class name 'abc'
 </script>
 
-document.querySelector, querySelectorAll:
------------------------------------------
+document.querySelector(), querySelectorAll()
+--------------------------------------------
 The methods querySelector and querySelectorAll allow to select elements by CSS3 query.
+
+document.querySelector() - returns the first matched element.
+document.querySelectorAll() - returns all matched elements with the query.
+
 <ul>
   <li>The</li>
   <li>Test</li>
@@ -732,49 +801,49 @@ The methods querySelector and querySelectorAll allow to select elements by CSS3 
   <li>Is</li>
   <li>Passed</li>
 </ul>
+
 <script>
-  var elements = document.querySelectorAll('UL > LI:last-child')
+  var elements = document.querySelectorAll('UL > LI:last-child'); 
 
   for(var i=0; i<elements.length; i++) {
     console.log(elements[i].innerHTML );
   }
 </script>
 
-// document.querySelector - returns the first matched element.
 var elem = document.querySelector('ul');
 console.log(elem);
 
-Events:
-=======
+Events
+======
 We can bind events to the elements in 3 ways,
 1. With element attribute
 2. With DOM-object property
 3. Using addEventListener method
 
-Handle events with element attribute:
--------------------------------------
+Handle events with element attribute
+------------------------------------
 <input id="b1" value="Click me" onclick="alert('Thanks!');" type="button"/>
 
-Inside an event handler, this references the current element.
+- Inside an event handler, this references the current element.
 
 <button onclick="alert(this.innerHTML)">Click me to see me</button>
 
-'event' contains the entire information about the event.
+- 'event' object contains the entire information about the event.
 
 <button onclick="console.log(event)">Click me to see me</button>
 
-Handle events with DOM-object property:
----------------------------------------
+Handle events with DOM-object property
+--------------------------------------
 <input id="myElement" type="button" value="Press me"/>
 <script>
 document.getElementById('myElement').onclick = function(event) {
-    console.log('Thanks');
-    console.log(event);
+  console.log('Thanks');
+  console.log(event);
 }
 </script>
 
-Handle events using addEventListener:
--------------------------------------
+Handle events using addEventListener() method
+---------------------------------------------
 Ex: event-listener.html
 
 // Add event to element
@@ -796,33 +865,20 @@ elem.removeEventListener(type, handlerFunction)
     }
 </script>
 
-mousedown
-Triggered by an element when a mouse button is pressed down over it
-mouseup
-Triggered by an element when a mouse button is released over it
-mouseover
-Triggered by an element when the mouse comes over it
-mouseout
-Triggered by an element when the mouse goes out of it
-mousemove
-Triggered by an element on every mouse move over it.
+mousedown - Triggered by an element when a mouse button is pressed down over it
+mouseup   - Triggered by an element when a mouse button is released over it
+mouseove  - Triggered by an element when the mouse comes over it
+mouseout  - Triggered by an element when the mouse goes out of it
+mousemove - Triggered by an element on every mouse move over it.
+click     - Triggered by a mouse click: mousedown and then mouseup over an element
+contextmenu - Triggered by a right-button mouse click over an element.
+dblclick  - Triggered by two clicks within a short time over an element
+keydown   - A key is pressed down.
+keypress  - A character key is pressed.
+keyup     - A key is released.
 
-click
-Triggered by a mouse click: mousedown and then mouseup over an element
-contextmenu
-Triggered by a right-button mouse click over an element.
-dblclick
-Triggered by two clicks within a short time over an element
-
-keydown
-A key is pressed down.
-keypress
-A character key is pressed.
-keyup
-A key is released.
-
-Event Propagation and Prevent default:
-======================================
+Event Propagation and Prevent default
+=====================================
 Examples: event-propagation.html
 
 // To prevent default action. Ex: Prevent navigation of <a> tag, form submission etc..
@@ -890,8 +946,7 @@ var lastname = localStorage.getItem("name"); // To retrieve data
 
 localStorage.removeItem("key"); // To remove data
 
-Only store strings
-------------------
+- localStorage only store strings
 If we store object in localStorage and trying to access it, we will get "[object Object]". So, we need to stringify the objects and store it in localStorage.
 
 WRONG:
@@ -905,32 +960,48 @@ user = JSON.parse(user); // {name: 'John', age: 25}
 
 NPM
 ===
-npm init
+> npm init
+- Initialize npm on a repository. Configure npm on a normal folder. Generates package.json file in it.
 
-npm install jquery
-npm i jquery
-npm install jquery --save // Old NPM version
+> npm install jquery
+> npm i jquery
+> npm install jquery --save // Old NPM version(<5)
+- Install jquery in project level and list under dependencies in package.json file
 
-npm install jasmine -D
-npm install jasmine --save-dev // Old NPM version
+> npm install jasmine -D
+> npm install jasmine --save-dev // Old NPM version(<5)
+- Install jasmine as dev dependency and list under 'devDependencies' in package.json file
 
-npm install -g @angular/cli - Global installation
+> npm install -g @angular/cli 
+- Globally install angular cli tool.
+- We can access 'ng' command anywhere in system after global installation.
 
 Specifying version in package.json
 ----------------------------------
-npm install jquery@2.2.4 - Install specific version
+> npm install jquery@2.2.4 
+- Install specific version
 
-"jquery": "*" - any version
+> "jquery": "*" 
+- "*" means any version
 
-"jquery": "latest" - latest version
+> "jquery": "latest" 
+- Install the latest version
 
-"jquery": "1.x"
-  or:
-"jquery": "^1.0.0" ----> install the latest minor version. Latest in 1.x.x but not 2.0.0
+> "jquery": "1.x"
+> "jquery": "^1.0.0" 
+- Install the latest minor and patch versions. 
+- Latest in 1.x.x but not 2.0.0
 
-"jquery": "~1.11"  -----> install the latest patch version. Upto 1.11.x but not 1.12.0
+> "jquery": "~1.11"  
+- Install the latest patch version.
+- Upto 1.11.x but not 1.12.0
 
-package-lock.json
+package-lock.json file
+----------------------
+- Help to install same version of dependency across all team members.
+- It will record which version of dependency installed for the first installer. It make sures to install the same version for all other team mates.
+- We need to push this file to git repo.
+- For example, If I specify "jquery": "*" and jquery 2.0.0 installed for me. package-lock.json file will record my version and install the same for all other team mates. Otherwise, each team mate get different version and causing different different bugs. 
 
 Sites to Refer:
 ===============

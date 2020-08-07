@@ -1,14 +1,9 @@
-- Hardware 
-  - Any PC/Laptop with at least 4GB of RAM.
-
-- Visual studio code
-  - https://code.visualstudio.com/download
-
 - NodeJs
   - https://nodejs.org/en/download/
   - Install LTS version
 
+- Visual studio code
+  - https://code.visualstudio.com/download
+
 - Git, GitHub Account
   - https://git-scm.com/downloads
-  - https://github.com/
-
